@@ -1,0 +1,165 @@
+INFO:waitress:Serving on http://127.0.0.1:4647
+[2026-07-30 21:04:22,006] INFO in app: access method=GET path=/api/health status=200 mode=web
+INFO:app:access method=GET path=/api/health status=200 mode=web
+[2026-07-30 21:04:23,001] INFO in app: access method=GET path=/ status=200 mode=web
+INFO:app:access method=GET path=/ status=200 mode=web
+[2026-07-30 21:04:23,012] INFO in app: access method=GET path=/css/style.css status=200 mode=web
+INFO:app:access method=GET path=/css/style.css status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+WARNING:waitress.queue:Task queue depth is 2
+[2026-07-30 21:04:23,016] INFO in app: access method=GET path=/js/store.js status=200 mode=web
+INFO:app:access method=GET path=/js/store.js status=200 mode=web
+[2026-07-30 21:04:23,017] INFO in app: access method=GET path=/js/chip.js status=200 mode=web
+INFO:app:access method=GET path=/js/chip.js status=200 mode=web
+[2026-07-30 21:04:23,017] INFO in app: access method=GET path=/js/tree.js status=200 mode=web
+INFO:app:access method=GET path=/js/tree.js status=200 mode=web
+[2026-07-30 21:04:23,017] INFO in app: access method=GET path=/js/wizard.js status=200 mode=web
+INFO:app:access method=GET path=/js/wizard.js status=200 mode=web
+[2026-07-30 21:04:23,020] INFO in app: access method=GET path=/js/detail.js status=200 mode=web
+INFO:app:access method=GET path=/js/detail.js status=200 mode=web
+[2026-07-30 21:04:23,020] INFO in app: access method=GET path=/js/search.js status=200 mode=web
+INFO:app:access method=GET path=/js/search.js status=200 mode=web
+[2026-07-30 21:04:23,022] INFO in app: access method=GET path=/js/app.js status=200 mode=web
+INFO:app:access method=GET path=/js/app.js status=200 mode=web
+[2026-07-30 21:04:23,072] INFO in app: access method=GET path=/api/config status=200 mode=web
+INFO:app:access method=GET path=/api/config status=200 mode=web
+[2026-07-30 21:04:23,076] INFO in app: access method=GET path=/api/device/TMS320F28034 status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034 status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+[2026-07-30 21:04:23,082] INFO in app: access method=GET path=/api/device/TMS320F28034/pinmux status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/pinmux status=200 mode=web
+[2026-07-30 21:04:23,084] INFO in app: access method=GET path=/api/device/TMS320F28034/constraints status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/constraints status=200 mode=web
+[2026-07-30 21:04:23,086] INFO in app: access method=GET path=/api/device/TMS320F28034/index status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/index status=200 mode=web
+[2026-07-30 21:04:23,087] INFO in app: access method=GET path=/api/device/TMS320F28034/wizards status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/wizards status=200 mode=web
+[2026-07-30 21:04:23,089] INFO in app: access method=GET path=/api/device/TMS320F28034/package/pnt80 status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/package/pnt80 status=200 mode=web
+[2026-07-30 21:04:23,115] INFO in app: access method=POST path=/api/preview status=200 mode=web
+INFO:app:access method=POST path=/api/preview status=200 mode=web
+[2026-07-30 21:04:23,655] INFO in app: access method=GET path=/ status=200 mode=web
+INFO:app:access method=GET path=/ status=200 mode=web
+[2026-07-30 21:04:23,662] INFO in app: access method=GET path=/css/style.css status=200 mode=web
+INFO:app:access method=GET path=/css/style.css status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+[2026-07-30 21:04:23,663] INFO in app: access method=GET path=/js/store.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 2
+INFO:app:access method=GET path=/js/store.js status=200 mode=web
+[2026-07-30 21:04:23,664] INFO in app: access method=GET path=/js/chip.js status=200 mode=web
+INFO:app:access method=GET path=/js/chip.js status=200 mode=web
+[2026-07-30 21:04:23,665] INFO in app: access method=GET path=/js/tree.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 2
+[2026-07-30 21:04:23,666] INFO in app: access method=GET path=/js/wizard.js status=200 mode=web
+INFO:app:access method=GET path=/js/tree.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 2
+INFO:app:access method=GET path=/js/wizard.js status=200 mode=web
+[2026-07-30 21:04:23,668] INFO in app: access method=GET path=/js/detail.js status=200 mode=web
+INFO:app:access method=GET path=/js/detail.js status=200 mode=web
+[2026-07-30 21:04:23,669] INFO in app: access method=GET path=/js/search.js status=200 mode=web
+INFO:app:access method=GET path=/js/search.js status=200 mode=web
+[2026-07-30 21:04:23,669] INFO in app: access method=GET path=/js/app.js status=200 mode=web
+INFO:app:access method=GET path=/js/app.js status=200 mode=web
+[2026-07-30 21:04:23,675] INFO in app: access method=GET path=/api/config status=200 mode=web
+INFO:app:access method=GET path=/api/config status=200 mode=web
+[2026-07-30 21:04:23,678] INFO in app: access method=GET path=/api/device/TMS320F28034 status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034 status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+[2026-07-30 21:04:23,682] INFO in app: access method=GET path=/api/device/TMS320F28034/constraints status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/constraints status=200 mode=web
+[2026-07-30 21:04:23,684] INFO in app: access method=GET path=/api/device/TMS320F28034/pinmux status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/pinmux status=200 mode=web
+[2026-07-30 21:04:23,686] INFO in app: access method=GET path=/api/device/TMS320F28034/index status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/index status=200 mode=web
+[2026-07-30 21:04:23,688] INFO in app: access method=GET path=/api/device/TMS320F28034/wizards status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/wizards status=200 mode=web
+[2026-07-30 21:04:23,689] INFO in app: access method=GET path=/api/device/TMS320F28034/package/pnt80 status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/package/pnt80 status=200 mode=web
+[2026-07-30 21:04:23,700] INFO in app: access method=POST path=/api/preview status=200 mode=web
+INFO:app:access method=POST path=/api/preview status=200 mode=web
+[2026-07-30 21:04:25,434] INFO in app: access method=POST path=/api/preview status=200 mode=web
+INFO:app:access method=POST path=/api/preview status=200 mode=web
+[2026-07-30 21:04:25,547] INFO in app: access method=GET path=/ status=200 mode=web
+INFO:app:access method=GET path=/ status=200 mode=web
+[2026-07-30 21:04:25,556] INFO in app: access method=GET path=/css/style.css status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+INFO:app:access method=GET path=/css/style.css status=200 mode=web
+[2026-07-30 21:04:25,557] INFO in app: access method=GET path=/js/store.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 2
+[2026-07-30 21:04:25,557] INFO in app: access method=GET path=/js/tree.js status=200 mode=web
+INFO:app:access method=GET path=/js/store.js status=200 mode=web
+INFO:app:access method=GET path=/js/tree.js status=200 mode=web
+[2026-07-30 21:04:25,557] INFO in app: access method=GET path=/js/chip.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 2
+INFO:app:access method=GET path=/js/chip.js status=200 mode=web
+[2026-07-30 21:04:25,560] INFO in app: access method=GET path=/js/detail.js status=200 mode=web
+INFO:app:access method=GET path=/js/detail.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+[2026-07-30 21:04:25,562] INFO in app: access method=GET path=/js/wizard.js status=200 mode=web
+INFO:app:access method=GET path=/js/wizard.js status=200 mode=web
+[2026-07-30 21:04:25,563] INFO in app: access method=GET path=/js/search.js status=200 mode=web
+INFO:app:access method=GET path=/js/search.js status=200 mode=web
+[2026-07-30 21:04:25,564] INFO in app: access method=GET path=/js/app.js status=200 mode=web
+INFO:app:access method=GET path=/js/app.js status=200 mode=web
+[2026-07-30 21:04:25,568] INFO in app: access method=GET path=/api/config status=200 mode=web
+INFO:app:access method=GET path=/api/config status=200 mode=web
+[2026-07-30 21:04:25,573] INFO in app: access method=GET path=/api/device/TMS320F28034 status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034 status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+[2026-07-30 21:04:25,580] INFO in app: access method=GET path=/api/device/TMS320F28034/pinmux status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/pinmux status=200 mode=web
+[2026-07-30 21:04:25,580] INFO in app: access method=GET path=/api/device/TMS320F28034/constraints status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/constraints status=200 mode=web
+[2026-07-30 21:04:25,583] INFO in app: access method=GET path=/api/device/TMS320F28034/index status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/index status=200 mode=web
+[2026-07-30 21:04:25,584] INFO in app: access method=GET path=/api/device/TMS320F28034/wizards status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/wizards status=200 mode=web
+[2026-07-30 21:04:25,585] INFO in app: access method=GET path=/api/device/TMS320F28034/package/pnt80 status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/package/pnt80 status=200 mode=web
+[2026-07-30 21:04:25,597] INFO in app: access method=POST path=/api/preview status=200 mode=web
+INFO:app:access method=POST path=/api/preview status=200 mode=web
+[2026-07-30 21:04:26,569] INFO in app: access method=GET path=/ status=200 mode=web
+INFO:app:access method=GET path=/ status=200 mode=web
+[2026-07-30 21:04:26,576] INFO in app: access method=GET path=/css/style.css status=200 mode=web
+INFO:app:access method=GET path=/css/style.css status=200 mode=web
+[2026-07-30 21:04:26,577] INFO in app: access method=GET path=/js/store.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+WARNING:waitress.queue:Task queue depth is 2
+[2026-07-30 21:04:26,578] INFO in app: access method=GET path=/js/tree.js status=200 mode=web
+INFO:app:access method=GET path=/js/store.js status=200 mode=web
+INFO:app:access method=GET path=/js/tree.js status=200 mode=web
+[2026-07-30 21:04:26,579] INFO in app: access method=GET path=/js/chip.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 2
+INFO:app:access method=GET path=/js/chip.js status=200 mode=web
+[2026-07-30 21:04:26,580] INFO in app: access method=GET path=/js/detail.js status=200 mode=web
+INFO:app:access method=GET path=/js/detail.js status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 3
+[2026-07-30 21:04:26,582] INFO in app: access method=GET path=/js/search.js status=200 mode=web
+INFO:app:access method=GET path=/js/search.js status=200 mode=web
+[2026-07-30 21:04:26,582] INFO in app: access method=GET path=/js/wizard.js status=200 mode=web
+INFO:app:access method=GET path=/js/wizard.js status=200 mode=web
+[2026-07-30 21:04:26,583] INFO in app: access method=GET path=/js/app.js status=200 mode=web
+INFO:app:access method=GET path=/js/app.js status=200 mode=web
+[2026-07-30 21:04:26,588] INFO in app: access method=GET path=/api/config status=200 mode=web
+INFO:app:access method=GET path=/api/config status=200 mode=web
+[2026-07-30 21:04:26,591] INFO in app: access method=GET path=/api/device/TMS320F28034 status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034 status=200 mode=web
+WARNING:waitress.queue:Task queue depth is 1
+[2026-07-30 21:04:26,596] INFO in app: access method=GET path=/api/device/TMS320F28034/pinmux status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/pinmux status=200 mode=web
+[2026-07-30 21:04:26,597] INFO in app: access method=GET path=/api/device/TMS320F28034/constraints status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/constraints status=200 mode=web
+[2026-07-30 21:04:26,599] INFO in app: access method=GET path=/api/device/TMS320F28034/index status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/index status=200 mode=web
+[2026-07-30 21:04:26,599] INFO in app: access method=GET path=/api/device/TMS320F28034/wizards status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/wizards status=200 mode=web
+[2026-07-30 21:04:26,601] INFO in app: access method=GET path=/api/device/TMS320F28034/package/pnt80 status=200 mode=web
+INFO:app:access method=GET path=/api/device/TMS320F28034/package/pnt80 status=200 mode=web
+[2026-07-30 21:04:26,613] INFO in app: access method=POST path=/api/preview status=200 mode=web
+INFO:app:access method=POST path=/api/preview status=200 mode=web
+[2026-07-30 21:04:27,440] INFO in app: access method=POST path=/api/preview status=200 mode=web
+INFO:app:access method=POST path=/api/preview status=200 mode=web
+[2026-07-30 21:04:27,657] INFO in app: access method=POST path=/api/validate status=200 mode=web
+INFO:app:access method=POST path=/api/validate status=200 mode=web
+[2026-07-30 21:04:27,809] INFO in app: access method=POST path=/api/export.zip status=200 mode=web
+INFO:app:access method=POST path=/api/export.zip status=200 mode=web

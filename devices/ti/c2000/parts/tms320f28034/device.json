@@ -1,0 +1,30 @@
+{
+  "device": "TMS320F28034",
+  "part_number": "TMS320F28034PNT",
+  "family": "f2803x",
+  "status": "SUPPORTED",
+  "source_datasheet": "SPRS584Q",
+  "source_verified": true,
+  "last_verified": "2026-07-30",
+  "packages": [
+    "PNT80"
+  ],
+  "default_package": "PNT80",
+  "max_sysclk_mhz": 60,
+  "flash_kb": 128,
+  "ram_kb": 20,
+  "epwm_count": 7,
+  "adc_channels_total": 16,
+  "comparators": 3,
+  "device_header_path": "D:\\CCS21_workspace\\LLC_100W_F28034\\device",
+  "include_path": "D:\\CCS21_workspace\\LLC_100W_F28034\\device\\include",
+  "source_path": "D:\\CCS21_workspace\\LLC_100W_F28034\\device\\source",
+  "safety_rules": {
+    "no_jtag": true,
+    "no_flash_write": true,
+    "no_auto_pwm_enable": true,
+    "no_modify_live_project": true,
+    "pwm_default_clamped": true,
+    "unresolved_marker": "UNRESOLVED"
+  }
+}

@@ -1,0 +1,9 @@
+generator/staging
+generator/instance.json
+**/__pycache__
+**/*.pyc
+docs/e2e
+docs/e2e_r2
+tmp
+cmd_out.txt
+cmd_err.txt
