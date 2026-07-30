@@ -89,6 +89,8 @@ test('every generated source carries the mandatory safety header', () => {
     if (!/\.[ch]$/.test(name)) continue;
     assert.match(content, /LOGIC TEST ONLY/);
     assert.match(content, /NOT APPROVED FOR POWER-STAGE ENABLE/);
+    assert.match(content, /给初学者/);
+    assert.match(content, /禁止据此直接开启功率级/);
   }
 });
 
@@ -114,6 +116,10 @@ test('PWM release verifies trip and follows the safe release sequence', () => {
     assert.ok(index > previous, `${token} is out of order`);
     previous = index;
   }
+  assert.match(code, /TBCLK 驱动 TBCTR 计数/);
+  assert.match(release, /第 1 步：先读硬件 Trip 输入/);
+  assert.match(release, /第 6 步：先恢复时间基准/);
+  assert.match(release, /0 表示已成功放开钳位/);
 });
 
 test('clock generation includes PLLLOCKPRD, MCLK checks and timeout without ESTOP0', () => {
@@ -125,6 +131,8 @@ test('clock generation includes PLLLOCKPRD, MCLK checks and timeout without ESTO
   assert.ok((code.match(/MCLKSTS/g) || []).length >= 3);
   assert.match(code, /lock_wait < 1000000UL/);
   assert.doesNotMatch(code, /ESTOP0/);
+  assert.match(code, /等待 PLL 锁定/);
+  assert.match(code, /返回值：0=成功/);
 });
 
 test('timer uses safe TSS/TRB/TIE ordering and never changes global interrupt state', () => {
@@ -136,6 +144,24 @@ test('timer uses safe TSS/TRB/TIE ordering and never changes global interrupt st
   assert.ok(code.indexOf('PRD.all') < code.indexOf('TRB = 1U'));
   assert.ok(code.indexOf('TIE = 1U') < code.lastIndexOf('TSS = 0U'));
   assert.doesNotMatch(code, /\b(DINT|EINT|ERTM)\b/);
+  assert.match(code, /先停止计数器并关闭其中断/);
+  assert.match(code, /必须应答 PIE 第 1 组/);
+});
+
+test('ADC comments explain SOC, trigger and sample window to beginners', () => {
+  const project = Project.createEmptyProject();
+  project.adc = {
+    soc: 0,
+    channel: 'ADCINA0',
+    trigger: 'SOFTWARE',
+    acqps: 14,
+  };
+  const result = Codegen.generateProject(project, { pinmux, family });
+  const code = result.files['adc_init.c'];
+  assert.match(code, /SOC（Start Of Conversion/);
+  assert.match(code, /SOC0 采样 ADCINA0/);
+  assert.match(code, /由 SOFTWARE 启动转换/);
+  assert.match(code, /采样窗口为 15 个 ADC 时钟周期/);
 });
 
 test('SCLA pinmux-only project does not generate ADC code', () => {
@@ -155,7 +181,9 @@ test('SCLA pinmux-only project does not generate ADC code', () => {
     generator_profile: option.generator_profile,
   };
   const result = Codegen.generateProject(project, { pinmux, family, activeModule: 'SCLA' });
-  assert.match(result.files['pinmux_init.c'], /Pin3 .* -> SCLA/);
+  assert.match(result.files['pinmux_init.c'], /Pin3：GPIO33 切换为 SCLA/);
+  assert.match(result.files['pinmux_init.c'], /MUX 决定/);
+  assert.match(result.files['pinmux_init.c'], /PUD=1 是禁用内部上拉/);
   assert.equal(result.files['adc_init.c'], undefined);
   assert.ok(result.findings.some(item => item.rule === 'PINMUX_ONLY'));
 });
