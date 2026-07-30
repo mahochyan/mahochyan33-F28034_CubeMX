@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C2000 Config Studio R3.2 Static — F28034</title>
+<link rel="stylesheet" href="./assets/app.css">
+</head>
+<body>
+
+<header id="topbar">
+  <div class="brand">
+    <span class="logo">C2000</span>
+    <span class="title">Config Studio · F28034</span>
+    <span class="chip-badge" id="chipBadge">TMS320F28034 · PNT80</span>
+  </div>
+
+  <div class="search-wrap">
+    <input id="globalSearch" type="text" autocomplete="off" spellcheck="false"
+           placeholder="全局搜索：引脚 / 功能 / 寄存器 / 向导…（如 ePWM1A、TZ1、GPACLEAR）">
+    <div id="searchPanel" class="search-panel hidden"></div>
+  </div>
+
+  <div class="project">
+    <label for="deviceSelect">芯片</label>
+    <select id="deviceSelect"></select>
+    <button id="btnValidate" class="btn btn-warn" title="运行约束检查">校验</button>
+    <button id="btnExport" class="btn btn-primary" title="下载内存 ZIP">导出 ZIP</button>
+    <button id="btnClearAll" class="btn" title="清空整个工程">清空工程</button>
+    <button id="btnExportJSON" class="btn" title="导出工程 JSON">导出JSON</button>
+    <label class="btn" title="导入工程 JSON" style="cursor:pointer">导入JSON
+      <input id="importJSON" type="file" accept="application/json" style="display:none">
+    </label>
+  </div>
+</header>
+
+<div id="safetyBanner">
+  R3.2 STATIC · LOGIC TEST ONLY · NOT APPROVED FOR POWER-STAGE ENABLE · PWM 上电保持钳位
+</div>
+
+<main id="layout">
+
+  <!-- ══ 左栏：芯片图 ══ -->
+  <section id="pane-left">
+    <div class="pane-head">
+      <span class="pane-title">芯片引脚图 (PNT80)</span>
+      <div class="chip-tools">
+        <button id="zoomOut" class="tool-btn" title="缩小">−</button>
+        <button id="zoomReset" class="tool-btn" title="复位">⟳</button>
+        <button id="zoomIn" class="tool-btn" title="放大">＋</button>
+      </div>
+    </div>
+    <div id="chipMount" class="chip-mount">
+      <div class="chip-loading">正在加载芯片图…</div>
+    </div>
+    <div id="legend" class="legend">
+      <span><i class="sw sw-avail"></i>可选</span>
+      <span><i class="sw sw-sel"></i>已选择</span>
+      <span><i class="sw sw-occ"></i>已占用</span>
+      <span><i class="sw sw-err"></i>冲突</span>
+      <span><i class="sw sw-fixed"></i>电源/地/固定</span>
+    </div>
+  </section>
+
+  <!-- ══ 中栏：功能树内嵌向导 / 已配置 ══ -->
+  <section id="pane-mid">
+    <div class="tabs" id="midTabs">
+      <button class="tab active" data-tab="tree">功能树</button>
+      <button class="tab" data-tab="assigned">已配置引脚</button>
+    </div>
+
+    <div class="tab-page active" id="tab-tree">
+      <div class="hint hint-actions">
+        <span>点功能 → 芯片图高亮可用引脚；点引脚 → 此处只显示该脚可选功能。</span>
+        <button id="btnClearPinFilter" class="btn btn-sm" type="button">显示全部功能</button>
+      </div>
+      <div id="funcTree" class="func-tree"></div>
+    </div>
+
+    <div class="tab-page" id="tab-assigned">
+      <div id="assignedPanel" class="assigned-panel">
+        <div class="empty-state dim">尚未配置任何引脚。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 右栏：详情 / 寄存器 / 代码 / 校验 ══ -->
+  <section id="pane-right">
+    <div class="tabs" id="rightTabs">
+      <button class="tab active" data-tab="detail">引脚详情</button>
+      <button class="tab" data-tab="regs">寄存器</button>
+      <button class="tab" data-tab="code">代码</button>
+      <button class="tab" data-tab="check">校验</button>
+    </div>
+
+    <div class="tab-page active" id="tab-detail">
+      <div id="detailPanel"><div class="empty-state dim">点击左侧芯片图上的一个引脚查看详情。</div></div>
+    </div>
+
+    <div class="tab-page" id="tab-regs">
+      <div id="regsPanel"><div class="empty-state dim">选择引脚后显示相关寄存器与位域映射。</div></div>
+    </div>
+
+    <div class="tab-page" id="tab-code">
+      <div class="code-actions">
+        <strong id="currentCodeFile">无文件</strong>
+        <button id="btnCopyCode" class="btn btn-sm">复制</button>
+      </div>
+      <div id="codeFiles" class="code-files"></div>
+      <pre id="codePanel" class="code-panel"><code>// 选择引脚并完成功能配置后，这里显示最小初始化代码（C）。</code></pre>
+      <section id="usageGuidePanel" class="usage-guide" aria-label="初学者管脚使用说明">
+        <div class="usage-guide-head">
+          <strong>初学者使用说明</strong>
+          <span>独立说明，不属于生成代码，也不会写入导出文件。</span>
+        </div>
+        <div class="empty-state dim">完成管脚配置后，这里会解释接线关系、调用顺序和安全检查。</div>
+      </section>
+    </div>
+
+    <div class="tab-page" id="tab-check">
+      <div id="checkPanel"><div class="empty-state dim">点击顶部「校验」运行约束检查。</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="statusbar">
+  <span id="statusText">就绪</span>
+  <span class="spacer"></span>
+  <span id="dataSource" class="dim"></span>
+</footer>
+
+<script src="./src/core/deterministic_json.js"></script>
+<script src="./src/core/project_config.js"></script>
+<script src="./src/core/constraint_checker.js"></script>
+<script src="./src/core/codegen.js"></script>
+<script src="./src/core/export_zip.js"></script>
+<script src="./src/devices/TMS320F28034/device_bundle.js"></script>
+<script src="./src/core/device_loader.js"></script>
+<script src="./src/store.js"></script>
+<script src="./src/chip.js"></script>
+<script src="./src/tree.js"></script>
+<script src="./src/detail.js"></script>
+<script src="./src/wizard.js"></script>
+<script src="./src/search.js"></script>
+<script src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "device": "TMS320F28034",
+  "rules": [
+    {
+      "id": "PIN_CONFLICT",
+      "severity": "ERROR",
+      "description": "Same physical pin assigned to multiple functions"
+    },
+    {
+      "id": "MUX_INVALID",
+      "severity": "ERROR",
+      "description": "MUX value not in device pinmux table"
+    },
+    {
+      "id": "POWER_PIN_GPIO",
+      "severity": "ERROR",
+      "description": "Power/ground/fixed pin cannot generate GPIO code"
+    },
+    {
+      "id": "PWM_NO_TRIP",
+      "severity": "WARNING",
+      "description": "ePWM enabled without Trip Zone OST — no hardware protection"
+    },
+    {
+      "id": "PWM_DEADBAND_ZERO",
+      "severity": "ERROR",
+      "description": "Complementary ePWM with zero dead band — shoot-through risk"
+    },
+    {
+      "id": "PWM_TBPRD_OVERFLOW",
+      "severity": "ERROR",
+      "description": "TBPRD value exceeds 0xFFFF for requested frequency/divider"
+    },
+    {
+      "id": "PWM_DBRED_OVERFLOW",
+      "severity": "ERROR",
+      "description": "DBRED/DBFED value exceeds 10-bit limit (1023)"
+    },
+    {
+      "id": "ADC_CHANNEL_MISMATCH",
+      "severity": "ERROR",
+      "description": "SOC CHSEL does not match physical ADCIN pin"
+    },
+    {
+      "id": "ADC_SOC_CONFLICT",
+      "severity": "ERROR",
+      "description": "Same SOC number used by more than one channel"
+    },
+    {
+      "id": "ADC_AIO_CONFLICT",
+      "severity": "ERROR",
+      "description": "AIO pin used as digital GPIO while also mapped to ADC"
+    },
+    {
+      "id": "ADC_ACQPS_TOO_SHORT",
+      "severity": "WARNING",
+      "description": "ADC acquisition window < 7 cycles — may cause inaccurate results"
+    },
+    {
+      "id": "PLL_ILLEGAL",
+      "severity": "ERROR",
+      "description": "PLL DIV/DIVSEL combination exceeds 60 MHz SYSCLK limit"
+    },
+    {
+      "id": "IRQ_VECTOR_CONFLICT",
+      "severity": "ERROR",
+      "description": "Same PIE interrupt vector assigned to multiple sources"
+    },
+    {
+      "id": "TBCLKSYNC_NOT_RESTORED",
+      "severity": "WARNING",
+      "description": "TBCLKSYNC cleared but never re-enabled — all ePWM counters frozen"
+    },
+    {
+      "id": "UNRESOLVED_PARAM",
+      "severity": "ERROR",
+      "description": "Configuration parameter still UNRESOLVED — cannot export"
+    },
+    {
+      "id": "PWM_RELEASE_ORDER",
+      "severity": "ERROR",
+      "description": "PWM output released before Trip Zone, AQ, and Dead Band configured"
+    }
+  ]
+}

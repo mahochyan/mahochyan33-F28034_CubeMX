@@ -1,0 +1,594 @@
+{
+  "package": "PNT80",
+  "description": "80-pin LQFP",
+  "total_pins": 80,
+  "pin_spacing_mm": 0.5,
+  "body_mm": "12x12",
+  "source": "SPRS584Q Figure 5-3",
+  "view": "top",
+  "pin_1_marker": "top-left",
+  "geometry": {
+    "canvas": 1280,
+    "body": {
+      "x": 405,
+      "y": 405,
+      "width": 470,
+      "height": 470
+    },
+    "pin_length": 72,
+    "pin_width": 15,
+    "outer_label_gap": 8
+  },
+  "sides": {
+    "left": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "bottom": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "right": [
+      60,
+      59,
+      58,
+      57,
+      56,
+      55,
+      54,
+      53,
+      52,
+      51,
+      50,
+      49,
+      48,
+      47,
+      46,
+      45,
+      44,
+      43,
+      42,
+      41
+    ],
+    "top": [
+      80,
+      79,
+      78,
+      77,
+      76,
+      75,
+      74,
+      73,
+      72,
+      71,
+      70,
+      69,
+      68,
+      67,
+      66,
+      65,
+      64,
+      63,
+      62,
+      61
+    ]
+  },
+  "pins": [
+    {
+      "pin": 1,
+      "signal": "GPIO22",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 2,
+      "signal": "GPIO32",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 3,
+      "signal": "GPIO33",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 4,
+      "signal": "GPIO23",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 5,
+      "signal": "GPIO42",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 6,
+      "signal": "GPIO43",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 7,
+      "signal": "VDD",
+      "group": "Power",
+      "notes": "Core supply"
+    },
+    {
+      "pin": 8,
+      "signal": "VSS",
+      "group": "Ground",
+      "notes": "Digital ground"
+    },
+    {
+      "pin": 9,
+      "signal": "XRSn",
+      "group": "Reset",
+      "notes": "Active-low device reset; TI figure labels XRS with an overbar"
+    },
+    {
+      "pin": 10,
+      "signal": "TRST",
+      "group": "JTAG",
+      "notes": "JTAG test reset; active high with internal pulldown"
+    },
+    {
+      "pin": 11,
+      "signal": "ADCINA7",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 12,
+      "signal": "ADCINA6",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 13,
+      "signal": "ADCINA5",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 14,
+      "signal": "ADCINA4",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 15,
+      "signal": "ADCINA3",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 16,
+      "signal": "ADCINA2",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 17,
+      "signal": "ADCINA1",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 18,
+      "signal": "ADCINA0",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 19,
+      "signal": "VREFHI",
+      "group": "Analog reference",
+      "notes": "ADC high reference"
+    },
+    {
+      "pin": 20,
+      "signal": "VDDA",
+      "group": "Power",
+      "notes": "Analog supply"
+    },
+    {
+      "pin": 21,
+      "signal": "VSSA",
+      "group": "Ground",
+      "notes": "Analog ground"
+    },
+    {
+      "pin": 22,
+      "signal": "VREFLO",
+      "group": "Analog reference",
+      "notes": "ADC low reference"
+    },
+    {
+      "pin": 23,
+      "signal": "ADCINB0",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 24,
+      "signal": "ADCINB1",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 25,
+      "signal": "ADCINB2",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 26,
+      "signal": "ADCINB3",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 27,
+      "signal": "ADCINB4",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 28,
+      "signal": "ADCINB5",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 29,
+      "signal": "ADCINB6",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 30,
+      "signal": "ADCINB7",
+      "group": "Analog input",
+      "notes": ""
+    },
+    {
+      "pin": 31,
+      "signal": "GPIO27",
+      "group": "Digital I/O",
+      "notes": "SPISTEB is active low"
+    },
+    {
+      "pin": 32,
+      "signal": "GPIO31",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 33,
+      "signal": "GPIO30",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 34,
+      "signal": "GPIO29",
+      "group": "Digital I/O",
+      "notes": "TZ3 is active low"
+    },
+    {
+      "pin": 35,
+      "signal": "VSS",
+      "group": "Ground",
+      "notes": "Digital ground"
+    },
+    {
+      "pin": 36,
+      "signal": "VDDIO",
+      "group": "Power",
+      "notes": "I/O supply"
+    },
+    {
+      "pin": 37,
+      "signal": "GPIO26",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 38,
+      "signal": "TEST2",
+      "group": "Reserved",
+      "notes": "TI test pin; leave unconnected"
+    },
+    {
+      "pin": 39,
+      "signal": "GPIO9",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 40,
+      "signal": "GPIO28",
+      "group": "Digital I/O",
+      "notes": "TZ2 is active low"
+    },
+    {
+      "pin": 41,
+      "signal": "GPIO18",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 42,
+      "signal": "GPIO17",
+      "group": "Digital I/O",
+      "notes": "TZ3 is active low"
+    },
+    {
+      "pin": 43,
+      "signal": "GPIO8",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 44,
+      "signal": "GPIO25",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 45,
+      "signal": "GPIO44",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 46,
+      "signal": "GPIO16",
+      "group": "Digital I/O",
+      "notes": "TZ2 is active low"
+    },
+    {
+      "pin": 47,
+      "signal": "GPIO12",
+      "group": "Digital I/O",
+      "notes": "TZ1 is active low"
+    },
+    {
+      "pin": 48,
+      "signal": "GPIO41",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 49,
+      "signal": "GPIO7",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 50,
+      "signal": "GPIO6",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 51,
+      "signal": "X2",
+      "group": "Clock",
+      "notes": "Crystal oscillator output"
+    },
+    {
+      "pin": 52,
+      "signal": "X1",
+      "group": "Clock",
+      "notes": "Crystal oscillator input"
+    },
+    {
+      "pin": 53,
+      "signal": "VSS",
+      "group": "Ground",
+      "notes": "Digital ground"
+    },
+    {
+      "pin": 54,
+      "signal": "VDD",
+      "group": "Power",
+      "notes": "Core supply"
+    },
+    {
+      "pin": 55,
+      "signal": "GPIO19",
+      "group": "Digital I/O",
+      "notes": "SPISTEA is active low"
+    },
+    {
+      "pin": 56,
+      "signal": "GPIO39",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 57,
+      "signal": "GPIO38",
+      "group": "Digital I/O/JTAG",
+      "notes": ""
+    },
+    {
+      "pin": 58,
+      "signal": "GPIO37",
+      "group": "Digital I/O/JTAG",
+      "notes": ""
+    },
+    {
+      "pin": 59,
+      "signal": "GPIO35",
+      "group": "Digital I/O/JTAG",
+      "notes": ""
+    },
+    {
+      "pin": 60,
+      "signal": "GPIO36",
+      "group": "Digital I/O/JTAG",
+      "notes": ""
+    },
+    {
+      "pin": 61,
+      "signal": "GPIO11",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 62,
+      "signal": "GPIO5",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 63,
+      "signal": "GPIO4",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 64,
+      "signal": "GPIO40",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 65,
+      "signal": "GPIO10",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 66,
+      "signal": "GPIO3",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 67,
+      "signal": "GPIO2",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 68,
+      "signal": "GPIO1",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 69,
+      "signal": "GPIO0",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 70,
+      "signal": "VDDIO",
+      "group": "Power",
+      "notes": "I/O supply"
+    },
+    {
+      "pin": 71,
+      "signal": "VSS",
+      "group": "Ground",
+      "notes": "Digital ground"
+    },
+    {
+      "pin": 72,
+      "signal": "VDD",
+      "group": "Power",
+      "notes": "Core supply"
+    },
+    {
+      "pin": 73,
+      "signal": "VREGENZ",
+      "group": "Power control",
+      "notes": "Internal voltage-regulator enable control"
+    },
+    {
+      "pin": 74,
+      "signal": "GPIO34",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 75,
+      "signal": "GPIO15",
+      "group": "Digital I/O",
+      "notes": "TZ1 and SPISTEB are active low"
+    },
+    {
+      "pin": 76,
+      "signal": "GPIO13",
+      "group": "Digital I/O",
+      "notes": "TZ2 is active low"
+    },
+    {
+      "pin": 77,
+      "signal": "GPIO14",
+      "group": "Digital I/O",
+      "notes": "TZ3 is active low"
+    },
+    {
+      "pin": 78,
+      "signal": "GPIO20",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 79,
+      "signal": "GPIO21",
+      "group": "Digital I/O",
+      "notes": ""
+    },
+    {
+      "pin": 80,
+      "signal": "GPIO24",
+      "group": "Digital I/O",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 1180" id="chip-svg" font-family="Consolas,Menlo,monospace">
+<style>
+  .pin { cursor:pointer; }
+  .pin.fixed { cursor:default; }
+  .pin .pad { stroke:#0d1117; stroke-width:1; transition:fill .12s, stroke .12s; }
+  .pin .lbl { fill:#c9d1d9; font:600 11px Consolas,Menlo,monospace;
+               pointer-events:none; }
+  .pin .num { fill:#8b949e; font:10px Consolas,Menlo,monospace;
+               pointer-events:none; }
+  .pin .alt { fill:#6e7681; font:9px Consolas,Menlo,monospace;
+               pointer-events:none; }
+  .pin .pad     { fill:#3a4150; }
+  .pin.fixed .pad { fill:#262a31; }
+  .pin.st-avail .pad { fill:#2f6fde; stroke:#7fb0ff; }
+  .pin.st-sel   .pad { fill:#2ea44f;   stroke:#7fe0a0; }
+  .pin.st-occ   .pad { fill:#d4a017;   stroke:#ffd970; }
+  .pin.st-err   .pad { fill:#d43a3a;   stroke:#ff8080; }
+  .pin:not(.fixed):hover .pad { stroke:#ffffff; stroke-width:1.6; }
+</style>
+<rect x="355" y="355" width="470" height="470" rx="16" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<circle cx="381" cy="381" r="9" fill="none" stroke="#8b949e" stroke-width="2"/>
+<text x="590" y="582" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="700">TMS320F28034</text>
+<text x="590" y="610" text-anchor="middle" fill="#8b949e" font-size="15">PNT 80-pin LQFP  |  SPRS584Q</text>
+<g class="pin" data-pin="1" data-type="digital_gpio" data-gpio="22" data-signal="GPIO22" data-configurable="1">
+  <rect class="pad" x="309.0" y="360.2" width="46" height="13" rx="2" transform="rotate(0 309.0 366.8)"/>
+  <text class="num" x="303.0" y="369.8" text-anchor="end" transform="rotate(0 303.0 369.8)">1</text>
+  <text class="lbl" x="351.0" y="370.2" text-anchor="end">GPIO22</text>
+  <text class="alt" x="351.0" y="381.2" text-anchor="end">EQEP1S / LINTXA</text>
+</g>
+<g class="pin" data-pin="2" data-type="digital_gpio" data-gpio="32" data-signal="GPIO32" data-configurable="1">
+  <rect class="pad" x="309.0" y="383.8" width="46" height="13" rx="2" transform="rotate(0 309.0 390.2)"/>
+  <text class="num" x="303.0" y="393.2" text-anchor="end" transform="rotate(0 303.0 393.2)">2</text>
+  <text class="lbl" x="351.0" y="393.8" text-anchor="end">GPIO32</text>
+  <text class="alt" x="351.0" y="404.8" text-anchor="end">SDAA / EPWMSYNCI / ADCSOCAO</text>
+</g>
+<g class="pin" data-pin="3" data-type="digital_gpio" data-gpio="33" data-signal="GPIO33" data-configurable="1">
+  <rect class="pad" x="309.0" y="407.2" width="46" height="13" rx="2" transform="rotate(0 309.0 413.8)"/>
+  <text class="num" x="303.0" y="416.8" text-anchor="end" transform="rotate(0 303.0 416.8)">3</text>
+  <text class="lbl" x="351.0" y="417.2" text-anchor="end">GPIO33</text>
+  <text class="alt" x="351.0" y="428.2" text-anchor="end">SCLA / EPWMSYNCO / ADCSOCBO</text>
+</g>
+<g class="pin" data-pin="4" data-type="digital_gpio" data-gpio="23" data-signal="GPIO23" data-configurable="1">
+  <rect class="pad" x="309.0" y="430.8" width="46" height="13" rx="2" transform="rotate(0 309.0 437.2)"/>
+  <text class="num" x="303.0" y="440.2" text-anchor="end" transform="rotate(0 303.0 440.2)">4</text>
+  <text class="lbl" x="351.0" y="440.8" text-anchor="end">GPIO23</text>
+  <text class="alt" x="351.0" y="451.8" text-anchor="end">EQEP1I / LINRXA</text>
+</g>
+<g class="pin" data-pin="5" data-type="digital_gpio" data-gpio="42" data-signal="GPIO42" data-configurable="1">
+  <rect class="pad" x="309.0" y="454.2" width="46" height="13" rx="2" transform="rotate(0 309.0 460.8)"/>
+  <text class="num" x="303.0" y="463.8" text-anchor="end" transform="rotate(0 303.0 463.8)">5</text>
+  <text class="lbl" x="351.0" y="464.2" text-anchor="end">GPIO42</text>
+  <text class="alt" x="351.0" y="475.2" text-anchor="end">COMP1OUT</text>
+</g>
+<g class="pin" data-pin="6" data-type="digital_gpio" data-gpio="43" data-signal="GPIO43" data-configurable="1">
+  <rect class="pad" x="309.0" y="477.8" width="46" height="13" rx="2" transform="rotate(0 309.0 484.2)"/>
+  <text class="num" x="303.0" y="487.2" text-anchor="end" transform="rotate(0 303.0 487.2)">6</text>
+  <text class="lbl" x="351.0" y="487.8" text-anchor="end">GPIO43</text>
+  <text class="alt" x="351.0" y="498.8" text-anchor="end">COMP2OUT</text>
+</g>
+<g class="pin fixed" data-pin="7" data-type="power" data-gpio="" data-signal="VDD" data-configurable="0">
+  <rect class="pad" x="309.0" y="501.2" width="46" height="13" rx="2" transform="rotate(0 309.0 507.8)"/>
+  <text class="num" x="303.0" y="510.8" text-anchor="end" transform="rotate(0 303.0 510.8)">7</text>
+  <text class="lbl" x="351.0" y="511.2" text-anchor="end">VDD</text>
+</g>
+<g class="pin fixed" data-pin="8" data-type="ground" data-gpio="" data-signal="VSS" data-configurable="0">
+  <rect class="pad" x="309.0" y="524.8" width="46" height="13" rx="2" transform="rotate(0 309.0 531.2)"/>
+  <text class="num" x="303.0" y="534.2" text-anchor="end" transform="rotate(0 303.0 534.2)">8</text>
+  <text class="lbl" x="351.0" y="534.8" text-anchor="end">VSS</text>
+</g>
+<g class="pin fixed" data-pin="9" data-type="reset" data-gpio="" data-signal="XRSn" data-configurable="0">
+  <rect class="pad" x="309.0" y="548.2" width="46" height="13" rx="2" transform="rotate(0 309.0 554.8)"/>
+  <text class="num" x="303.0" y="557.8" text-anchor="end" transform="rotate(0 303.0 557.8)">9</text>
+  <text class="lbl" x="351.0" y="558.2" text-anchor="end">XRSn</text>
+</g>
+<g class="pin fixed" data-pin="10" data-type="jtag" data-gpio="" data-signal="TRST" data-configurable="0">
+  <rect class="pad" x="309.0" y="571.8" width="46" height="13" rx="2" transform="rotate(0 309.0 578.2)"/>
+  <text class="num" x="303.0" y="581.2" text-anchor="end" transform="rotate(0 303.0 581.2)">10</text>
+  <text class="lbl" x="351.0" y="581.8" text-anchor="end">TRST</text>
+</g>
+<g class="pin" data-pin="11" data-type="analog_gpio" data-gpio="" data-signal="ADCINA7" data-configurable="1">
+  <rect class="pad" x="309.0" y="595.2" width="46" height="13" rx="2" transform="rotate(0 309.0 601.8)"/>
+  <text class="num" x="303.0" y="604.8" text-anchor="end" transform="rotate(0 303.0 604.8)">11</text>
+  <text class="lbl" x="351.0" y="605.2" text-anchor="end">ADCINA7</text>
+</g>
+<g class="pin" data-pin="12" data-type="analog_gpio" data-gpio="" data-signal="ADCINA6" data-configurable="1">
+  <rect class="pad" x="309.0" y="618.8" width="46" height="13" rx="2" transform="rotate(0 309.0 625.2)"/>
+  <text class="num" x="303.0" y="628.2" text-anchor="end" transform="rotate(0 303.0 628.2)">12</text>
+  <text class="lbl" x="351.0" y="628.8" text-anchor="end">ADCINA6</text>
+</g>
+<g class="pin" data-pin="13" data-type="analog_gpio" data-gpio="" data-signal="ADCINA5" data-configurable="1">
+  <rect class="pad" x="309.0" y="642.2" width="46" height="13" rx="2" transform="rotate(0 309.0 648.8)"/>
+  <text class="num" x="303.0" y="651.8" text-anchor="end" transform="rotate(0 303.0 651.8)">13</text>
+  <text class="lbl" x="351.0" y="652.2" text-anchor="end">ADCINA5</text>
+</g>
+<g class="pin" data-pin="14" data-type="analog_gpio" data-gpio="" data-signal="ADCINA4" data-configurable="1">
+  <rect class="pad" x="309.0" y="665.8" width="46" height="13" rx="2" transform="rotate(0 309.0 672.2)"/>
+  <text class="num" x="303.0" y="675.2" text-anchor="end" transform="rotate(0 303.0 675.2)">14</text>
+  <text class="lbl" x="351.0" y="675.8" text-anchor="end">ADCINA4</text>
+</g>
+<g class="pin" data-pin="15" data-type="analog_gpio" data-gpio="" data-signal="ADCINA3" data-configurable="1">
+  <rect class="pad" x="309.0" y="689.2" width="46" height="13" rx="2" transform="rotate(0 309.0 695.8)"/>
+  <text class="num" x="303.0" y="698.8" text-anchor="end" transform="rotate(0 303.0 698.8)">15</text>
+  <text class="lbl" x="351.0" y="699.2" text-anchor="end">ADCINA3</text>
+</g>
+<g class="pin" data-pin="16" data-type="analog_gpio" data-gpio="" data-signal="ADCINA2" data-configurable="1">
+  <rect class="pad" x="309.0" y="712.8" width="46" height="13" rx="2" transform="rotate(0 309.0 719.2)"/>
+  <text class="num" x="303.0" y="722.2" text-anchor="end" transform="rotate(0 303.0 722.2)">16</text>
+  <text class="lbl" x="351.0" y="722.8" text-anchor="end">ADCINA2</text>
+</g>
+<g class="pin" data-pin="17" data-type="analog_gpio" data-gpio="" data-signal="ADCINA1" data-configurable="1">
+  <rect class="pad" x="309.0" y="736.2" width="46" height="13" rx="2" transform="rotate(0 309.0 742.8)"/>
+  <text class="num" x="303.0" y="745.8" text-anchor="end" transform="rotate(0 303.0 745.8)">17</text>
+  <text class="lbl" x="351.0" y="746.2" text-anchor="end">ADCINA1</text>
+</g>
+<g class="pin" data-pin="18" data-type="analog_gpio" data-gpio="" data-signal="ADCINA0" data-configurable="1">
+  <rect class="pad" x="309.0" y="759.8" width="46" height="13" rx="2" transform="rotate(0 309.0 766.2)"/>
+  <text class="num" x="303.0" y="769.2" text-anchor="end" transform="rotate(0 303.0 769.2)">18</text>
+  <text class="lbl" x="351.0" y="769.8" text-anchor="end">ADCINA0</text>
+</g>
+<g class="pin fixed" data-pin="19" data-type="analog_ref" data-gpio="" data-signal="VREFHI" data-configurable="0">
+  <rect class="pad" x="309.0" y="783.2" width="46" height="13" rx="2" transform="rotate(0 309.0 789.8)"/>
+  <text class="num" x="303.0" y="792.8" text-anchor="end" transform="rotate(0 303.0 792.8)">19</text>
+  <text class="lbl" x="351.0" y="793.2" text-anchor="end">VREFHI</text>
+</g>
+<g class="pin fixed" data-pin="20" data-type="power" data-gpio="" data-signal="VDDA" data-configurable="0">
+  <rect class="pad" x="309.0" y="806.8" width="46" height="13" rx="2" transform="rotate(0 309.0 813.2)"/>
+  <text class="num" x="303.0" y="816.2" text-anchor="end" transform="rotate(0 303.0 816.2)">20</text>
+  <text class="lbl" x="351.0" y="816.8" text-anchor="end">VDDA</text>
+</g>
+<g class="pin fixed" data-pin="21" data-type="ground" data-gpio="" data-signal="VSSA" data-configurable="0">
+  <rect class="pad" x="366.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 366.8 871.0)"/>
+  <text class="num" x="366.8" y="929.0" text-anchor="start" transform="rotate(-90 366.8 929.0)">21</text>
+  <text class="lbl" x="366.8" y="913.0" text-anchor="start" transform="rotate(-90 366.8 913.0)">VSSA</text>
+</g>
+<g class="pin fixed" data-pin="22" data-type="analog_ref" data-gpio="" data-signal="VREFLO" data-configurable="0">
+  <rect class="pad" x="390.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 390.2 871.0)"/>
+  <text class="num" x="390.2" y="929.0" text-anchor="start" transform="rotate(-90 390.2 929.0)">22</text>
+  <text class="lbl" x="390.2" y="913.0" text-anchor="start" transform="rotate(-90 390.2 913.0)">VREFLO</text>
+</g>
+<g class="pin" data-pin="23" data-type="analog_gpio" data-gpio="" data-signal="ADCINB0" data-configurable="1">
+  <rect class="pad" x="413.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 413.8 871.0)"/>
+  <text class="num" x="413.8" y="929.0" text-anchor="start" transform="rotate(-90 413.8 929.0)">23</text>
+  <text class="lbl" x="413.8" y="913.0" text-anchor="start" transform="rotate(-90 413.8 913.0)">ADCINB0</text>
+</g>
+<g class="pin" data-pin="24" data-type="analog_gpio" data-gpio="" data-signal="ADCINB1" data-configurable="1">
+  <rect class="pad" x="437.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 437.2 871.0)"/>
+  <text class="num" x="437.2" y="929.0" text-anchor="start" transform="rotate(-90 437.2 929.0)">24</text>
+  <text class="lbl" x="437.2" y="913.0" text-anchor="start" transform="rotate(-90 437.2 913.0)">ADCINB1</text>
+</g>
+<g class="pin" data-pin="25" data-type="analog_gpio" data-gpio="" data-signal="ADCINB2" data-configurable="1">
+  <rect class="pad" x="460.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 460.8 871.0)"/>
+  <text class="num" x="460.8" y="929.0" text-anchor="start" transform="rotate(-90 460.8 929.0)">25</text>
+  <text class="lbl" x="460.8" y="913.0" text-anchor="start" transform="rotate(-90 460.8 913.0)">ADCINB2</text>
+</g>
+<g class="pin" data-pin="26" data-type="analog_gpio" data-gpio="" data-signal="ADCINB3" data-configurable="1">
+  <rect class="pad" x="484.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 484.2 871.0)"/>
+  <text class="num" x="484.2" y="929.0" text-anchor="start" transform="rotate(-90 484.2 929.0)">26</text>
+  <text class="lbl" x="484.2" y="913.0" text-anchor="start" transform="rotate(-90 484.2 913.0)">ADCINB3</text>
+</g>
+<g class="pin" data-pin="27" data-type="analog_gpio" data-gpio="" data-signal="ADCINB4" data-configurable="1">
+  <rect class="pad" x="507.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 507.8 871.0)"/>
+  <text class="num" x="507.8" y="929.0" text-anchor="start" transform="rotate(-90 507.8 929.0)">27</text>
+  <text class="lbl" x="507.8" y="913.0" text-anchor="start" transform="rotate(-90 507.8 913.0)">ADCINB4</text>
+</g>
+<g class="pin" data-pin="28" data-type="analog_gpio" data-gpio="" data-signal="ADCINB5" data-configurable="1">
+  <rect class="pad" x="531.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 531.2 871.0)"/>
+  <text class="num" x="531.2" y="929.0" text-anchor="start" transform="rotate(-90 531.2 929.0)">28</text>
+  <text class="lbl" x="531.2" y="913.0" text-anchor="start" transform="rotate(-90 531.2 913.0)">ADCINB5</text>
+</g>
+<g class="pin" data-pin="29" data-type="analog_gpio" data-gpio="" data-signal="ADCINB6" data-configurable="1">
+  <rect class="pad" x="554.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 554.8 871.0)"/>
+  <text class="num" x="554.8" y="929.0" text-anchor="start" transform="rotate(-90 554.8 929.0)">29</text>
+  <text class="lbl" x="554.8" y="913.0" text-anchor="start" transform="rotate(-90 554.8 913.0)">ADCINB6</text>
+</g>
+<g class="pin" data-pin="30" data-type="analog_gpio" data-gpio="" data-signal="ADCINB7" data-configurable="1">
+  <rect class="pad" x="578.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 578.2 871.0)"/>
+  <text class="num" x="578.2" y="929.0" text-anchor="start" transform="rotate(-90 578.2 929.0)">30</text>
+  <text class="lbl" x="578.2" y="913.0" text-anchor="start" transform="rotate(-90 578.2 913.0)">ADCINB7</text>
+</g>
+<g class="pin" data-pin="31" data-type="digital_gpio" data-gpio="27" data-signal="GPIO27" data-configurable="1">
+  <rect class="pad" x="601.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 601.8 871.0)"/>
+  <text class="num" x="601.8" y="929.0" text-anchor="start" transform="rotate(-90 601.8 929.0)">31</text>
+  <text class="lbl" x="601.8" y="913.0" text-anchor="start" transform="rotate(-90 601.8 913.0)">GPIO27</text>
+</g>
+<g class="pin" data-pin="32" data-type="digital_gpio" data-gpio="31" data-signal="GPIO31" data-configurable="1">
+  <rect class="pad" x="625.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 625.2 871.0)"/>
+  <text class="num" x="625.2" y="929.0" text-anchor="start" transform="rotate(-90 625.2 929.0)">32</text>
+  <text class="lbl" x="625.2" y="913.0" text-anchor="start" transform="rotate(-90 625.2 913.0)">GPIO31</text>
+</g>
+<g class="pin" data-pin="33" data-type="digital_gpio" data-gpio="30" data-signal="GPIO30" data-configurable="1">
+  <rect class="pad" x="648.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 648.8 871.0)"/>
+  <text class="num" x="648.8" y="929.0" text-anchor="start" transform="rotate(-90 648.8 929.0)">33</text>
+  <text class="lbl" x="648.8" y="913.0" text-anchor="start" transform="rotate(-90 648.8 913.0)">GPIO30</text>
+</g>
+<g class="pin" data-pin="34" data-type="digital_gpio" data-gpio="29" data-signal="GPIO29" data-configurable="1">
+  <rect class="pad" x="672.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 672.2 871.0)"/>
+  <text class="num" x="672.2" y="929.0" text-anchor="start" transform="rotate(-90 672.2 929.0)">34</text>
+  <text class="lbl" x="672.2" y="913.0" text-anchor="start" transform="rotate(-90 672.2 913.0)">GPIO29</text>
+</g>
+<g class="pin fixed" data-pin="35" data-type="ground" data-gpio="" data-signal="VSS" data-configurable="0">
+  <rect class="pad" x="695.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 695.8 871.0)"/>
+  <text class="num" x="695.8" y="929.0" text-anchor="start" transform="rotate(-90 695.8 929.0)">35</text>
+  <text class="lbl" x="695.8" y="913.0" text-anchor="start" transform="rotate(-90 695.8 913.0)">VSS</text>
+</g>
+<g class="pin fixed" data-pin="36" data-type="power" data-gpio="" data-signal="VDDIO" data-configurable="0">
+  <rect class="pad" x="719.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 719.2 871.0)"/>
+  <text class="num" x="719.2" y="929.0" text-anchor="start" transform="rotate(-90 719.2 929.0)">36</text>
+  <text class="lbl" x="719.2" y="913.0" text-anchor="start" transform="rotate(-90 719.2 913.0)">VDDIO</text>
+</g>
+<g class="pin" data-pin="37" data-type="digital_gpio" data-gpio="26" data-signal="GPIO26" data-configurable="1">
+  <rect class="pad" x="742.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 742.8 871.0)"/>
+  <text class="num" x="742.8" y="929.0" text-anchor="start" transform="rotate(-90 742.8 929.0)">37</text>
+  <text class="lbl" x="742.8" y="913.0" text-anchor="start" transform="rotate(-90 742.8 913.0)">GPIO26</text>
+</g>
+<g class="pin fixed" data-pin="38" data-type="reserved" data-gpio="" data-signal="TEST2" data-configurable="0">
+  <rect class="pad" x="766.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 766.2 871.0)"/>
+  <text class="num" x="766.2" y="929.0" text-anchor="start" transform="rotate(-90 766.2 929.0)">38</text>
+  <text class="lbl" x="766.2" y="913.0" text-anchor="start" transform="rotate(-90 766.2 913.0)">TEST2</text>
+</g>
+<g class="pin" data-pin="39" data-type="digital_gpio" data-gpio="9" data-signal="GPIO9" data-configurable="1">
+  <rect class="pad" x="789.8" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 789.8 871.0)"/>
+  <text class="num" x="789.8" y="929.0" text-anchor="start" transform="rotate(-90 789.8 929.0)">39</text>
+  <text class="lbl" x="789.8" y="913.0" text-anchor="start" transform="rotate(-90 789.8 913.0)">GPIO9</text>
+</g>
+<g class="pin" data-pin="40" data-type="digital_gpio" data-gpio="28" data-signal="GPIO28" data-configurable="1">
+  <rect class="pad" x="813.2" y="864.5" width="46" height="13" rx="2" transform="rotate(-90 813.2 871.0)"/>
+  <text class="num" x="813.2" y="929.0" text-anchor="start" transform="rotate(-90 813.2 929.0)">40</text>
+  <text class="lbl" x="813.2" y="913.0" text-anchor="start" transform="rotate(-90 813.2 913.0)">GPIO28</text>
+</g>
+<g class="pin" data-pin="41" data-type="digital_gpio" data-gpio="18" data-signal="GPIO18" data-configurable="1">
+  <rect class="pad" x="871.0" y="806.8" width="46" height="13" rx="2" transform="rotate(0 871.0 813.2)"/>
+  <text class="num" x="923.0" y="816.2" text-anchor="start" transform="rotate(0 923.0 816.2)">41</text>
+  <text class="lbl" x="875.0" y="816.8" text-anchor="start">GPIO18</text>
+  <text class="alt" x="875.0" y="827.8" text-anchor="start">SPICLKA / LINTXA / XCLKOUT</text>
+</g>
+<g class="pin" data-pin="42" data-type="digital_gpio" data-gpio="17" data-signal="GPIO17" data-configurable="1">
+  <rect class="pad" x="871.0" y="783.2" width="46" height="13" rx="2" transform="rotate(0 871.0 789.8)"/>
+  <text class="num" x="923.0" y="792.8" text-anchor="start" transform="rotate(0 923.0 792.8)">42</text>
+  <text class="lbl" x="875.0" y="793.2" text-anchor="start">GPIO17</text>
+  <text class="alt" x="875.0" y="804.2" text-anchor="start">SPISOMIA / TZ3n</text>
+</g>
+<g class="pin" data-pin="43" data-type="digital_gpio" data-gpio="8" data-signal="GPIO8" data-configurable="1">
+  <rect class="pad" x="871.0" y="759.8" width="46" height="13" rx="2" transform="rotate(0 871.0 766.2)"/>
+  <text class="num" x="923.0" y="769.2" text-anchor="start" transform="rotate(0 923.0 769.2)">43</text>
+  <text class="lbl" x="875.0" y="769.8" text-anchor="start">GPIO8</text>
+  <text class="alt" x="875.0" y="780.8" text-anchor="start">EPWM5A / ADCSOCAO</text>
+</g>
+<g class="pin" data-pin="44" data-type="digital_gpio" data-gpio="25" data-signal="GPIO25" data-configurable="1">
+  <rect class="pad" x="871.0" y="736.2" width="46" height="13" rx="2" transform="rotate(0 871.0 742.8)"/>
+  <text class="num" x="923.0" y="745.8" text-anchor="start" transform="rotate(0 923.0 745.8)">44</text>
+  <text class="lbl" x="875.0" y="746.2" text-anchor="start">GPIO25</text>
+  <text class="alt" x="875.0" y="757.2" text-anchor="start">SPISOMIB</text>
+</g>
+<g class="pin" data-pin="45" data-type="digital_gpio" data-gpio="44" data-signal="GPIO44" data-configurable="1">
+  <rect class="pad" x="871.0" y="712.8" width="46" height="13" rx="2" transform="rotate(0 871.0 719.2)"/>
+  <text class="num" x="923.0" y="722.2" text-anchor="start" transform="rotate(0 923.0 722.2)">45</text>
+  <text class="lbl" x="875.0" y="722.8" text-anchor="start">GPIO44</text>
+</g>
+<g class="pin" data-pin="46" data-type="digital_gpio" data-gpio="16" data-signal="GPIO16" data-configurable="1">
+  <rect class="pad" x="871.0" y="689.2" width="46" height="13" rx="2" transform="rotate(0 871.0 695.8)"/>
+  <text class="num" x="923.0" y="698.8" text-anchor="start" transform="rotate(0 923.0 698.8)">46</text>
+  <text class="lbl" x="875.0" y="699.2" text-anchor="start">GPIO16</text>
+  <text class="alt" x="875.0" y="710.2" text-anchor="start">SPISIMOA / TZ2n</text>
+</g>
+<g class="pin" data-pin="47" data-type="digital_gpio" data-gpio="12" data-signal="GPIO12" data-configurable="1">
+  <rect class="pad" x="871.0" y="665.8" width="46" height="13" rx="2" transform="rotate(0 871.0 672.2)"/>
+  <text class="num" x="923.0" y="675.2" text-anchor="start" transform="rotate(0 923.0 675.2)">47</text>
+  <text class="lbl" x="875.0" y="675.8" text-anchor="start">GPIO12</text>
+  <text class="alt" x="875.0" y="686.8" text-anchor="start">TZ1n / SCITXDA / SPISIMOB</text>
+</g>
+<g class="pin" data-pin="48" data-type="digital_gpio" data-gpio="41" data-signal="GPIO41" data-configurable="1">
+  <rect class="pad" x="871.0" y="642.2" width="46" height="13" rx="2" transform="rotate(0 871.0 648.8)"/>
+  <text class="num" x="923.0" y="651.8" text-anchor="start" transform="rotate(0 923.0 651.8)">48</text>
+  <text class="lbl" x="875.0" y="652.2" text-anchor="start">GPIO41</text>
+  <text class="alt" x="875.0" y="663.2" text-anchor="start">EPWM7B</text>
+</g>
+<g class="pin" data-pin="49" data-type="digital_gpio" data-gpio="7" data-signal="GPIO7" data-configurable="1">
+  <rect class="pad" x="871.0" y="618.8" width="46" height="13" rx="2" transform="rotate(0 871.0 625.2)"/>
+  <text class="num" x="923.0" y="628.2" text-anchor="start" transform="rotate(0 923.0 628.2)">49</text>
+  <text class="lbl" x="875.0" y="628.8" text-anchor="start">GPIO7</text>
+  <text class="alt" x="875.0" y="639.8" text-anchor="start">EPWM4B / SCIRXDA</text>
+</g>
+<g class="pin" data-pin="50" data-type="digital_gpio" data-gpio="6" data-signal="GPIO6" data-configurable="1">
+  <rect class="pad" x="871.0" y="595.2" width="46" height="13" rx="2" transform="rotate(0 871.0 601.8)"/>
+  <text class="num" x="923.0" y="604.8" text-anchor="start" transform="rotate(0 923.0 604.8)">50</text>
+  <text class="lbl" x="875.0" y="605.2" text-anchor="start">GPIO6</text>
+  <text class="alt" x="875.0" y="616.2" text-anchor="start">EPWM4A / EPWMSYNCI / EPWMSYNCO</text>
+</g>
+<g class="pin fixed" data-pin="51" data-type="crystal" data-gpio="" data-signal="X2" data-configurable="0">
+  <rect class="pad" x="871.0" y="571.8" width="46" height="13" rx="2" transform="rotate(0 871.0 578.2)"/>
+  <text class="num" x="923.0" y="581.2" text-anchor="start" transform="rotate(0 923.0 581.2)">51</text>
+  <text class="lbl" x="875.0" y="581.8" text-anchor="start">X2</text>
+</g>
+<g class="pin fixed" data-pin="52" data-type="crystal" data-gpio="" data-signal="X1" data-configurable="0">
+  <rect class="pad" x="871.0" y="548.2" width="46" height="13" rx="2" transform="rotate(0 871.0 554.8)"/>
+  <text class="num" x="923.0" y="557.8" text-anchor="start" transform="rotate(0 923.0 557.8)">52</text>
+  <text class="lbl" x="875.0" y="558.2" text-anchor="start">X1</text>
+</g>
+<g class="pin fixed" data-pin="53" data-type="ground" data-gpio="" data-signal="VSS" data-configurable="0">
+  <rect class="pad" x="871.0" y="524.8" width="46" height="13" rx="2" transform="rotate(0 871.0 531.2)"/>
+  <text class="num" x="923.0" y="534.2" text-anchor="start" transform="rotate(0 923.0 534.2)">53</text>
+  <text class="lbl" x="875.0" y="534.8" text-anchor="start">VSS</text>
+</g>
+<g class="pin fixed" data-pin="54" data-type="power" data-gpio="" data-signal="VDD" data-configurable="0">
+  <rect class="pad" x="871.0" y="501.2" width="46" height="13" rx="2" transform="rotate(0 871.0 507.8)"/>
+  <text class="num" x="923.0" y="510.8" text-anchor="start" transform="rotate(0 923.0 510.8)">54</text>
+  <text class="lbl" x="875.0" y="511.2" text-anchor="start">VDD</text>
+</g>
+<g class="pin" data-pin="55" data-type="digital_gpio" data-gpio="19" data-signal="GPIO19" data-configurable="1">
+  <rect class="pad" x="871.0" y="477.8" width="46" height="13" rx="2" transform="rotate(0 871.0 484.2)"/>
+  <text class="num" x="923.0" y="487.2" text-anchor="start" transform="rotate(0 923.0 487.2)">55</text>
+  <text class="lbl" x="875.0" y="487.8" text-anchor="start">GPIO19</text>
+  <text class="alt" x="875.0" y="498.8" text-anchor="start">SPISTEAn / LINRXA / ECAP1</text>
+</g>
+<g class="pin" data-pin="56" data-type="digital_gpio" data-gpio="39" data-signal="GPIO39" data-configurable="1">
+  <rect class="pad" x="871.0" y="454.2" width="46" height="13" rx="2" transform="rotate(0 871.0 460.8)"/>
+  <text class="num" x="923.0" y="463.8" text-anchor="start" transform="rotate(0 923.0 463.8)">56</text>
+  <text class="lbl" x="875.0" y="464.2" text-anchor="start">GPIO39</text>
+</g>
+<g class="pin" data-pin="57" data-type="digital_gpio" data-gpio="38" data-signal="GPIO38" data-configurable="1">
+  <rect class="pad" x="871.0" y="430.8" width="46" height="13" rx="2" transform="rotate(0 871.0 437.2)"/>
+  <text class="num" x="923.0" y="440.2" text-anchor="start" transform="rotate(0 923.0 440.2)">57</text>
+  <text class="lbl" x="875.0" y="440.8" text-anchor="start">GPIO38</text>
+  <text class="alt" x="875.0" y="451.8" text-anchor="start">TCK</text>
+</g>
+<g class="pin" data-pin="58" data-type="digital_gpio" data-gpio="37" data-signal="GPIO37" data-configurable="1">
+  <rect class="pad" x="871.0" y="407.2" width="46" height="13" rx="2" transform="rotate(0 871.0 413.8)"/>
+  <text class="num" x="923.0" y="416.8" text-anchor="start" transform="rotate(0 923.0 416.8)">58</text>
+  <text class="lbl" x="875.0" y="417.2" text-anchor="start">GPIO37</text>
+  <text class="alt" x="875.0" y="428.2" text-anchor="start">TDO</text>
+</g>
+<g class="pin" data-pin="59" data-type="digital_gpio" data-gpio="35" data-signal="GPIO35" data-configurable="1">
+  <rect class="pad" x="871.0" y="383.8" width="46" height="13" rx="2" transform="rotate(0 871.0 390.2)"/>
+  <text class="num" x="923.0" y="393.2" text-anchor="start" transform="rotate(0 923.0 393.2)">59</text>
+  <text class="lbl" x="875.0" y="393.8" text-anchor="start">GPIO35</text>
+  <text class="alt" x="875.0" y="404.8" text-anchor="start">TDI</text>
+</g>
+<g class="pin" data-pin="60" data-type="digital_gpio" data-gpio="36" data-signal="GPIO36" data-configurable="1">
+  <rect class="pad" x="871.0" y="360.2" width="46" height="13" rx="2" transform="rotate(0 871.0 366.8)"/>
+  <text class="num" x="923.0" y="369.8" text-anchor="start" transform="rotate(0 923.0 369.8)">60</text>
+  <text class="lbl" x="875.0" y="370.2" text-anchor="start">GPIO36</text>
+  <text class="alt" x="875.0" y="381.2" text-anchor="start">TMS</text>
+</g>
+<g class="pin" data-pin="61" data-type="digital_gpio" data-gpio="11" data-signal="GPIO11" data-configurable="1">
+  <rect class="pad" x="813.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 813.2 309.0)"/>
+  <text class="num" x="813.2" y="301.0" text-anchor="end" transform="rotate(-90 813.2 301.0)">61</text>
+  <text class="lbl" x="813.2" y="305.0" text-anchor="end" transform="rotate(-90 813.2 305.0)">GPIO11</text>
+</g>
+<g class="pin" data-pin="62" data-type="digital_gpio" data-gpio="5" data-signal="GPIO5" data-configurable="1">
+  <rect class="pad" x="789.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 789.8 309.0)"/>
+  <text class="num" x="789.8" y="301.0" text-anchor="end" transform="rotate(-90 789.8 301.0)">62</text>
+  <text class="lbl" x="789.8" y="305.0" text-anchor="end" transform="rotate(-90 789.8 305.0)">GPIO5</text>
+</g>
+<g class="pin" data-pin="63" data-type="digital_gpio" data-gpio="4" data-signal="GPIO4" data-configurable="1">
+  <rect class="pad" x="766.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 766.2 309.0)"/>
+  <text class="num" x="766.2" y="301.0" text-anchor="end" transform="rotate(-90 766.2 301.0)">63</text>
+  <text class="lbl" x="766.2" y="305.0" text-anchor="end" transform="rotate(-90 766.2 305.0)">GPIO4</text>
+</g>
+<g class="pin" data-pin="64" data-type="digital_gpio" data-gpio="40" data-signal="GPIO40" data-configurable="1">
+  <rect class="pad" x="742.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 742.8 309.0)"/>
+  <text class="num" x="742.8" y="301.0" text-anchor="end" transform="rotate(-90 742.8 301.0)">64</text>
+  <text class="lbl" x="742.8" y="305.0" text-anchor="end" transform="rotate(-90 742.8 305.0)">GPIO40</text>
+</g>
+<g class="pin" data-pin="65" data-type="digital_gpio" data-gpio="10" data-signal="GPIO10" data-configurable="1">
+  <rect class="pad" x="719.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 719.2 309.0)"/>
+  <text class="num" x="719.2" y="301.0" text-anchor="end" transform="rotate(-90 719.2 301.0)">65</text>
+  <text class="lbl" x="719.2" y="305.0" text-anchor="end" transform="rotate(-90 719.2 305.0)">GPIO10</text>
+</g>
+<g class="pin" data-pin="66" data-type="digital_gpio" data-gpio="3" data-signal="GPIO3" data-configurable="1">
+  <rect class="pad" x="695.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 695.8 309.0)"/>
+  <text class="num" x="695.8" y="301.0" text-anchor="end" transform="rotate(-90 695.8 301.0)">66</text>
+  <text class="lbl" x="695.8" y="305.0" text-anchor="end" transform="rotate(-90 695.8 305.0)">GPIO3</text>
+</g>
+<g class="pin" data-pin="67" data-type="digital_gpio" data-gpio="2" data-signal="GPIO2" data-configurable="1">
+  <rect class="pad" x="672.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 672.2 309.0)"/>
+  <text class="num" x="672.2" y="301.0" text-anchor="end" transform="rotate(-90 672.2 301.0)">67</text>
+  <text class="lbl" x="672.2" y="305.0" text-anchor="end" transform="rotate(-90 672.2 305.0)">GPIO2</text>
+</g>
+<g class="pin" data-pin="68" data-type="digital_gpio" data-gpio="1" data-signal="GPIO1" data-configurable="1">
+  <rect class="pad" x="648.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 648.8 309.0)"/>
+  <text class="num" x="648.8" y="301.0" text-anchor="end" transform="rotate(-90 648.8 301.0)">68</text>
+  <text class="lbl" x="648.8" y="305.0" text-anchor="end" transform="rotate(-90 648.8 305.0)">GPIO1</text>
+</g>
+<g class="pin" data-pin="69" data-type="digital_gpio" data-gpio="0" data-signal="GPIO0" data-configurable="1">
+  <rect class="pad" x="625.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 625.2 309.0)"/>
+  <text class="num" x="625.2" y="301.0" text-anchor="end" transform="rotate(-90 625.2 301.0)">69</text>
+  <text class="lbl" x="625.2" y="305.0" text-anchor="end" transform="rotate(-90 625.2 305.0)">GPIO0</text>
+</g>
+<g class="pin fixed" data-pin="70" data-type="power" data-gpio="" data-signal="VDDIO" data-configurable="0">
+  <rect class="pad" x="601.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 601.8 309.0)"/>
+  <text class="num" x="601.8" y="301.0" text-anchor="end" transform="rotate(-90 601.8 301.0)">70</text>
+  <text class="lbl" x="601.8" y="305.0" text-anchor="end" transform="rotate(-90 601.8 305.0)">VDDIO</text>
+</g>
+<g class="pin fixed" data-pin="71" data-type="ground" data-gpio="" data-signal="VSS" data-configurable="0">
+  <rect class="pad" x="578.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 578.2 309.0)"/>
+  <text class="num" x="578.2" y="301.0" text-anchor="end" transform="rotate(-90 578.2 301.0)">71</text>
+  <text class="lbl" x="578.2" y="305.0" text-anchor="end" transform="rotate(-90 578.2 305.0)">VSS</text>
+</g>
+<g class="pin fixed" data-pin="72" data-type="power" data-gpio="" data-signal="VDD" data-configurable="0">
+  <rect class="pad" x="554.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 554.8 309.0)"/>
+  <text class="num" x="554.8" y="301.0" text-anchor="end" transform="rotate(-90 554.8 301.0)">72</text>
+  <text class="lbl" x="554.8" y="305.0" text-anchor="end" transform="rotate(-90 554.8 305.0)">VDD</text>
+</g>
+<g class="pin fixed" data-pin="73" data-type="power_ctrl" data-gpio="" data-signal="VREGENZ" data-configurable="0">
+  <rect class="pad" x="531.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 531.2 309.0)"/>
+  <text class="num" x="531.2" y="301.0" text-anchor="end" transform="rotate(-90 531.2 301.0)">73</text>
+  <text class="lbl" x="531.2" y="305.0" text-anchor="end" transform="rotate(-90 531.2 305.0)">VREGENZ</text>
+</g>
+<g class="pin" data-pin="74" data-type="digital_gpio" data-gpio="34" data-signal="GPIO34" data-configurable="1">
+  <rect class="pad" x="507.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 507.8 309.0)"/>
+  <text class="num" x="507.8" y="301.0" text-anchor="end" transform="rotate(-90 507.8 301.0)">74</text>
+  <text class="lbl" x="507.8" y="305.0" text-anchor="end" transform="rotate(-90 507.8 305.0)">GPIO34</text>
+</g>
+<g class="pin" data-pin="75" data-type="digital_gpio" data-gpio="15" data-signal="GPIO15" data-configurable="1">
+  <rect class="pad" x="484.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 484.2 309.0)"/>
+  <text class="num" x="484.2" y="301.0" text-anchor="end" transform="rotate(-90 484.2 301.0)">75</text>
+  <text class="lbl" x="484.2" y="305.0" text-anchor="end" transform="rotate(-90 484.2 305.0)">GPIO15</text>
+</g>
+<g class="pin" data-pin="76" data-type="digital_gpio" data-gpio="13" data-signal="GPIO13" data-configurable="1">
+  <rect class="pad" x="460.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 460.8 309.0)"/>
+  <text class="num" x="460.8" y="301.0" text-anchor="end" transform="rotate(-90 460.8 301.0)">76</text>
+  <text class="lbl" x="460.8" y="305.0" text-anchor="end" transform="rotate(-90 460.8 305.0)">GPIO13</text>
+</g>
+<g class="pin" data-pin="77" data-type="digital_gpio" data-gpio="14" data-signal="GPIO14" data-configurable="1">
+  <rect class="pad" x="437.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 437.2 309.0)"/>
+  <text class="num" x="437.2" y="301.0" text-anchor="end" transform="rotate(-90 437.2 301.0)">77</text>
+  <text class="lbl" x="437.2" y="305.0" text-anchor="end" transform="rotate(-90 437.2 305.0)">GPIO14</text>
+</g>
+<g class="pin" data-pin="78" data-type="digital_gpio" data-gpio="20" data-signal="GPIO20" data-configurable="1">
+  <rect class="pad" x="413.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 413.8 309.0)"/>
+  <text class="num" x="413.8" y="301.0" text-anchor="end" transform="rotate(-90 413.8 301.0)">78</text>
+  <text class="lbl" x="413.8" y="305.0" text-anchor="end" transform="rotate(-90 413.8 305.0)">GPIO20</text>
+</g>
+<g class="pin" data-pin="79" data-type="digital_gpio" data-gpio="21" data-signal="GPIO21" data-configurable="1">
+  <rect class="pad" x="390.2" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 390.2 309.0)"/>
+  <text class="num" x="390.2" y="301.0" text-anchor="end" transform="rotate(-90 390.2 301.0)">79</text>
+  <text class="lbl" x="390.2" y="305.0" text-anchor="end" transform="rotate(-90 390.2 305.0)">GPIO21</text>
+</g>
+<g class="pin" data-pin="80" data-type="digital_gpio" data-gpio="24" data-signal="GPIO24" data-configurable="1">
+  <rect class="pad" x="366.8" y="302.5" width="46" height="13" rx="2" transform="rotate(-90 366.8 309.0)"/>
+  <text class="num" x="366.8" y="301.0" text-anchor="end" transform="rotate(-90 366.8 301.0)">80</text>
+  <text class="lbl" x="366.8" y="305.0" text-anchor="end" transform="rotate(-90 366.8 305.0)">GPIO24</text>
+</g>
+</svg>
