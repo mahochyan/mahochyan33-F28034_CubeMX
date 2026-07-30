@@ -102,6 +102,9 @@ test('Pin69 EPWM1A user flow commits A/B/Trip, persists and exports preview-iden
     await page.locator('#rightTabs [data-tab="code"]').click();
     await expect(page.locator('#codePanel')).toContainText('NOT APPROVED FOR POWER-STAGE ENABLE');
     await expect(page.locator('#codePanel')).toContainText('EPWM1_ReleaseClamp');
+    await expect(page.locator('#codePanel')).toContainText('给初学者');
+    await expect(page.locator('#codePanel')).toContainText('第 1 步');
+    await expect(page.locator('#codePanel')).toContainText('第 6 步');
 
     const preview = await page.evaluate(() => ConfigStudioApp.getLatestPreview().files);
     const downloadPromise = page.waitForEvent('download');
