@@ -209,6 +209,68 @@
     }
   }
 
+  function validateAnalogRoutes(project, pinmux, findings) {
+    if (project?.adc) {
+      let pin = Number(project.adc.physical_pin);
+      let def = Number.isInteger(pin) ? pinmux?.pins?.[String(pin)] : null;
+      if (!def) {
+        def = Object.values(pinmux?.pins || {}).find(item =>
+          (item.analog_paths || []).some(route =>
+            route.type === 'adc_input' &&
+            String(route.function).toUpperCase() ===
+              String(project.adc.channel).toUpperCase()));
+        pin = Number(def?.physical_pin);
+      }
+      const present = (def?.analog_paths || []).some(route =>
+        route.type === 'adc_input' &&
+        String(route.function).toUpperCase() ===
+          String(project.adc.channel).toUpperCase());
+      if (!present) {
+        findings.push(finding(
+          'ERROR', 'ADC_PHYSICAL_ROUTE_MISMATCH',
+          `Pin${pin} 不提供 ${project.adc.channel} 官方模拟路径`,
+        ));
+      }
+      if (project?.aio?.[String(pin)]) {
+        findings.push(finding(
+          'ERROR', 'ANALOG_AIO_CONFLICT',
+          `Pin${pin} 不能同时选择 ADC 模拟模式和数字 AIO`,
+        ));
+      }
+    }
+    for (const [name, route] of Object.entries(project?.comparator_inputs || {})) {
+      const pin = Number(route.physical_pin);
+      const def = pinmux?.pins?.[String(pin)];
+      const present = (def?.analog_paths || []).some(item =>
+        item.type === 'comparator_input' &&
+        String(item.function).toUpperCase() === String(name).toUpperCase());
+      if (!present) {
+        findings.push(finding(
+          'ERROR', 'COMPARATOR_PHYSICAL_ROUTE_MISMATCH',
+          `Pin${pin} 不提供 ${name} 官方比较器输入路径`,
+        ));
+      }
+      if (project?.aio?.[String(pin)]) {
+        findings.push(finding(
+          'ERROR', 'ANALOG_AIO_CONFLICT',
+          `Pin${pin} 不能同时选择 Comparator 模拟模式和数字 AIO`,
+        ));
+      }
+    }
+    for (const [key, aio] of Object.entries(project?.aio || {})) {
+      const pin = Number(aio.physical_pin ?? key);
+      const def = pinmux?.pins?.[String(pin)];
+      if (!def?.aio_function ||
+          String(def.aio_function.function).toUpperCase() !==
+            String(aio.function).toUpperCase()) {
+        findings.push(finding(
+          'ERROR', 'AIO_PHYSICAL_ROUTE_MISMATCH',
+          `Pin${pin} 不提供 ${aio.function} 官方 AIO 路径`,
+        ));
+      }
+    }
+  }
+
   function validateProject(project, pinmux, family) {
     const findings = [];
     if (!project || Number(project.schema_version) !== 1) {
@@ -231,6 +293,7 @@
     validatePwm(project || {}, sysclk, findings);
     validateTimers(project || {}, sysclk, findings);
     validateAdc(project || {}, findings);
+    validateAnalogRoutes(project || {}, pinmux || {}, findings);
     if (project?.unresolved) {
       findings.push(finding('ERROR', 'UNRESOLVED_PARAM',
         'ProjectConfig 仍包含 unresolved 标记'));

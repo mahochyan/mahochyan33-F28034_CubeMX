@@ -1,4 +1,4 @@
-/* R3.2 static application coordinator. All validation/generation stays in-browser. */
+/* R3.2.2 static application coordinator. All validation/generation stays in-browser. */
 (function () {
   'use strict';
 
@@ -6,11 +6,11 @@
   let latestPreview = null;
 
   async function boot() {
-    setStatus('正在加载 R3.2 静态器件数据…');
+    setStatus('正在加载 R3.2.2 官方器件数据…');
     try {
       const data = await DeviceLoader.loadDeviceData('TMS320F28034');
       Store.setConfig({
-        build_id: 'R3.2-STATIC',
+        build_id: 'R3.2.2-OFFICIAL-STATIC',
         default_device: data.device,
         devices: [{ device: data.device, status: 'golden' }],
       });
@@ -32,8 +32,8 @@
       Search.init();
       refreshPreview();
       document.getElementById('dataSource').textContent =
-        'SPRS584Q · MUX golden 127/127 · STATIC';
-      setStatus(`R3.2 静态版已就绪 · ${Chip.count()} 个 PNT80 pad`);
+        'SPRS584Q · PN80 80/80 · MUX 127/127 · ANALOG 28/28 · STATIC';
+      setStatus(`R3.2.2 官方数据版已就绪 · ${Chip.count()} 个 PNT80 pad`);
       document.documentElement.dataset.appReady = 'true';
     } catch (error) {
       setStatus(`启动失败：${error.message}`, true);

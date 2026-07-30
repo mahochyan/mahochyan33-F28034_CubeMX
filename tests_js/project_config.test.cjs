@@ -125,7 +125,7 @@ test('editing TZ1 to TZ2 removes old trip pin and assigns a TZ2 pin', () => {
   const next = Core.applyAtomically(configured, changed);
   assert.equal(next.pins['47'], undefined);
   assert.equal(next.pwm_modules.EPWM1.trip.source, 'TZ2');
-  assert.equal(next.pins[String(next.pwm_modules.EPWM1.trip.pin)].function, 'TZ2N');
+  assert.equal(next.pins[String(next.pwm_modules.EPWM1.trip.pin)].function, 'TZ2');
 });
 
 test('stale plan is rejected atomically', () => {

@@ -1,10 +1,22 @@
 {
   "package": "PNT80",
-  "description": "80-pin LQFP",
+  "description": "80-pin PN LQFP",
   "total_pins": 80,
   "pin_spacing_mm": 0.5,
   "body_mm": "12x12",
-  "source": "SPRS584Q Figure 5-3",
+  "source": {
+    "document": "SPRS584Q",
+    "revision": "Q",
+    "revised": "January 2024",
+    "url": "https://www.ti.com/lit/ds/sprs584q/sprs584q.pdf",
+    "sections": {
+      "physical_package": "Figure 5-3",
+      "signal_descriptions": "Table 5-1",
+      "gpioa_mux": "Table 7-40",
+      "gpiob_mux": "Table 7-41",
+      "analog_mux": "Table 7-42"
+    }
+  },
   "view": "top",
   "pin_1_marker": "top-left",
   "geometry": {
@@ -112,481 +124,981 @@
   "pins": [
     {
       "pin": 1,
-      "signal": "GPIO22",
+      "identity": "GPIO22",
+      "signal": "GPIO22 / EQEP1S / LINTXA",
+      "official_functions": [
+        "GPIO22",
+        "EQEP1S",
+        "LINTXA"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 2,
-      "signal": "GPIO32",
+      "identity": "GPIO32",
+      "signal": "GPIO32 / SDAA / EPWMSYNCI / ADCSOCAO",
+      "official_functions": [
+        "GPIO32",
+        "SDAA",
+        "EPWMSYNCI",
+        "ADCSOCAO"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 3,
-      "signal": "GPIO33",
+      "identity": "GPIO33",
+      "signal": "GPIO33 / SCLA / EPWMSYNCO / ADCSOCBO",
+      "official_functions": [
+        "GPIO33",
+        "SCLA",
+        "EPWMSYNCO",
+        "ADCSOCBO"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 4,
-      "signal": "GPIO23",
+      "identity": "GPIO23",
+      "signal": "GPIO23 / EQEP1I / LINRXA",
+      "official_functions": [
+        "GPIO23",
+        "EQEP1I",
+        "LINRXA"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 5,
-      "signal": "GPIO42",
+      "identity": "GPIO42",
+      "signal": "GPIO42 / COMP1OUT",
+      "official_functions": [
+        "GPIO42",
+        "COMP1OUT"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 6,
-      "signal": "GPIO43",
+      "identity": "GPIO43",
+      "signal": "GPIO43 / COMP2OUT",
+      "official_functions": [
+        "GPIO43",
+        "COMP2OUT"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 7,
+      "identity": "VDD",
       "signal": "VDD",
-      "group": "Power",
-      "notes": "Core supply"
+      "official_functions": [
+        "VDD"
+      ],
+      "fixed": true,
+      "group": "power",
+      "notes": "核心/逻辑数字电源"
     },
     {
       "pin": 8,
+      "identity": "VSS",
       "signal": "VSS",
-      "group": "Ground",
-      "notes": "Digital ground"
+      "official_functions": [
+        "VSS"
+      ],
+      "fixed": true,
+      "group": "ground",
+      "notes": "数字地"
     },
     {
       "pin": 9,
-      "signal": "XRSn",
-      "group": "Reset",
-      "notes": "Active-low device reset; TI figure labels XRS with an overbar"
+      "identity": "XRS",
+      "signal": "XRS",
+      "official_functions": [
+        "XRS"
+      ],
+      "fixed": true,
+      "group": "reset",
+      "notes": "开漏复位输入/看门狗复位输出，内部上拉"
     },
     {
       "pin": 10,
+      "identity": "TRST",
       "signal": "TRST",
-      "group": "JTAG",
-      "notes": "JTAG test reset; active high with internal pulldown"
+      "official_functions": [
+        "TRST"
+      ],
+      "fixed": true,
+      "group": "jtag_reset",
+      "notes": "JTAG 测试复位，必须外部下拉"
     },
     {
       "pin": 11,
+      "identity": "ADCINA7",
       "signal": "ADCINA7",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINA7"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 12,
-      "signal": "ADCINA6",
-      "group": "Analog input",
+      "identity": "ADCINA6",
+      "signal": "ADCINA6 / COMP3A / AIO6",
+      "official_functions": [
+        "ADCINA6",
+        "COMP3A",
+        "AIO6"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 13,
+      "identity": "ADCINA5",
       "signal": "ADCINA5",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINA5"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 14,
-      "signal": "ADCINA4",
-      "group": "Analog input",
+      "identity": "ADCINA4",
+      "signal": "ADCINA4 / COMP2A / AIO4",
+      "official_functions": [
+        "ADCINA4",
+        "COMP2A",
+        "AIO4"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 15,
+      "identity": "ADCINA3",
       "signal": "ADCINA3",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINA3"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 16,
-      "signal": "ADCINA2",
-      "group": "Analog input",
+      "identity": "ADCINA2",
+      "signal": "ADCINA2 / COMP1A / AIO2",
+      "official_functions": [
+        "ADCINA2",
+        "COMP1A",
+        "AIO2"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 17,
+      "identity": "ADCINA1",
       "signal": "ADCINA1",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINA1"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 18,
+      "identity": "ADCINA0",
       "signal": "ADCINA0",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINA0"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 19,
+      "identity": "VREFHI",
       "signal": "VREFHI",
-      "group": "Analog reference",
-      "notes": "ADC high reference"
+      "official_functions": [
+        "VREFHI"
+      ],
+      "fixed": true,
+      "group": "reference",
+      "notes": "PN80 专用 ADC 外部参考高"
     },
     {
       "pin": 20,
+      "identity": "VDDA",
       "signal": "VDDA",
-      "group": "Power",
-      "notes": "Analog supply"
+      "official_functions": [
+        "VDDA"
+      ],
+      "fixed": true,
+      "group": "power",
+      "notes": "模拟电源"
     },
     {
       "pin": 21,
+      "identity": "VSSA",
       "signal": "VSSA",
-      "group": "Ground",
-      "notes": "Analog ground"
+      "official_functions": [
+        "VSSA"
+      ],
+      "fixed": true,
+      "group": "ground",
+      "notes": "模拟地"
     },
     {
       "pin": 22,
+      "identity": "VREFLO",
       "signal": "VREFLO",
-      "group": "Analog reference",
-      "notes": "ADC low reference"
+      "official_functions": [
+        "VREFLO"
+      ],
+      "fixed": true,
+      "group": "reference",
+      "notes": "PN80 专用 ADC 外部参考低"
     },
     {
       "pin": 23,
+      "identity": "ADCINB0",
       "signal": "ADCINB0",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINB0"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 24,
+      "identity": "ADCINB1",
       "signal": "ADCINB1",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINB1"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 25,
-      "signal": "ADCINB2",
-      "group": "Analog input",
+      "identity": "ADCINB2",
+      "signal": "ADCINB2 / COMP1B / AIO10",
+      "official_functions": [
+        "ADCINB2",
+        "COMP1B",
+        "AIO10"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 26,
+      "identity": "ADCINB3",
       "signal": "ADCINB3",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINB3"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 27,
-      "signal": "ADCINB4",
-      "group": "Analog input",
+      "identity": "ADCINB4",
+      "signal": "ADCINB4 / COMP2B / AIO12",
+      "official_functions": [
+        "ADCINB4",
+        "COMP2B",
+        "AIO12"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 28,
+      "identity": "ADCINB5",
       "signal": "ADCINB5",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINB5"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 29,
-      "signal": "ADCINB6",
-      "group": "Analog input",
+      "identity": "ADCINB6",
+      "signal": "ADCINB6 / COMP3B / AIO14",
+      "official_functions": [
+        "ADCINB6",
+        "COMP3B",
+        "AIO14"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 30,
+      "identity": "ADCINB7",
       "signal": "ADCINB7",
-      "group": "Analog input",
+      "official_functions": [
+        "ADCINB7"
+      ],
+      "fixed": false,
+      "group": "Analog I/O",
       "notes": ""
     },
     {
       "pin": 31,
-      "signal": "GPIO27",
+      "identity": "GPIO27",
+      "signal": "GPIO27 / HRCAP2 / SPISTEB",
+      "official_functions": [
+        "GPIO27",
+        "HRCAP2",
+        "SPISTEB"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "SPISTEB is active low"
+      "notes": ""
     },
     {
       "pin": 32,
-      "signal": "GPIO31",
+      "identity": "GPIO31",
+      "signal": "GPIO31 / CANTXA",
+      "official_functions": [
+        "GPIO31",
+        "CANTXA"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 33,
-      "signal": "GPIO30",
+      "identity": "GPIO30",
+      "signal": "GPIO30 / CANRXA",
+      "official_functions": [
+        "GPIO30",
+        "CANRXA"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 34,
-      "signal": "GPIO29",
+      "identity": "GPIO29",
+      "signal": "GPIO29 / SCITXDA / SCLA / TZ3",
+      "official_functions": [
+        "GPIO29",
+        "SCITXDA",
+        "SCLA",
+        "TZ3"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "TZ3 is active low"
+      "notes": ""
     },
     {
       "pin": 35,
+      "identity": "VSS",
       "signal": "VSS",
-      "group": "Ground",
-      "notes": "Digital ground"
+      "official_functions": [
+        "VSS"
+      ],
+      "fixed": true,
+      "group": "ground",
+      "notes": "数字地"
     },
     {
       "pin": 36,
+      "identity": "VDDIO",
       "signal": "VDDIO",
-      "group": "Power",
-      "notes": "I/O supply"
+      "official_functions": [
+        "VDDIO"
+      ],
+      "fixed": true,
+      "group": "power",
+      "notes": "数字 I/O 与 Flash 电源"
     },
     {
       "pin": 37,
-      "signal": "GPIO26",
+      "identity": "GPIO26",
+      "signal": "GPIO26 / HRCAP1 / SPICLKB",
+      "official_functions": [
+        "GPIO26",
+        "HRCAP1",
+        "SPICLKB"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 38,
+      "identity": "TEST2",
       "signal": "TEST2",
-      "group": "Reserved",
-      "notes": "TI test pin; leave unconnected"
+      "official_functions": [
+        "TEST2"
+      ],
+      "fixed": true,
+      "group": "test",
+      "notes": "TI 保留测试脚，必须悬空"
     },
     {
       "pin": 39,
-      "signal": "GPIO9",
+      "identity": "GPIO9",
+      "signal": "GPIO9 / EPWM5B / LINTXA / HRCAP1",
+      "official_functions": [
+        "GPIO9",
+        "EPWM5B",
+        "LINTXA",
+        "HRCAP1"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 40,
-      "signal": "GPIO28",
+      "identity": "GPIO28",
+      "signal": "GPIO28 / SCIRXDA / SDAA / TZ2",
+      "official_functions": [
+        "GPIO28",
+        "SCIRXDA",
+        "SDAA",
+        "TZ2"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "TZ2 is active low"
+      "notes": ""
     },
     {
       "pin": 41,
-      "signal": "GPIO18",
+      "identity": "GPIO18",
+      "signal": "GPIO18 / SPICLKA / LINTXA / XCLKOUT",
+      "official_functions": [
+        "GPIO18",
+        "SPICLKA",
+        "LINTXA",
+        "XCLKOUT"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 42,
-      "signal": "GPIO17",
+      "identity": "GPIO17",
+      "signal": "GPIO17 / SPISOMIA / TZ3",
+      "official_functions": [
+        "GPIO17",
+        "SPISOMIA",
+        "TZ3"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "TZ3 is active low"
+      "notes": ""
     },
     {
       "pin": 43,
-      "signal": "GPIO8",
+      "identity": "GPIO8",
+      "signal": "GPIO8 / EPWM5A / ADCSOCAO",
+      "official_functions": [
+        "GPIO8",
+        "EPWM5A",
+        "ADCSOCAO"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 44,
-      "signal": "GPIO25",
+      "identity": "GPIO25",
+      "signal": "GPIO25 / SPISOMIB",
+      "official_functions": [
+        "GPIO25",
+        "SPISOMIB"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 45,
+      "identity": "GPIO44",
       "signal": "GPIO44",
+      "official_functions": [
+        "GPIO44"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 46,
-      "signal": "GPIO16",
+      "identity": "GPIO16",
+      "signal": "GPIO16 / SPISIMOA / TZ2",
+      "official_functions": [
+        "GPIO16",
+        "SPISIMOA",
+        "TZ2"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "TZ2 is active low"
+      "notes": ""
     },
     {
       "pin": 47,
-      "signal": "GPIO12",
+      "identity": "GPIO12",
+      "signal": "GPIO12 / TZ1 / SCITXDA / SPISIMOB",
+      "official_functions": [
+        "GPIO12",
+        "TZ1",
+        "SCITXDA",
+        "SPISIMOB"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "TZ1 is active low"
+      "notes": ""
     },
     {
       "pin": 48,
-      "signal": "GPIO41",
+      "identity": "GPIO41",
+      "signal": "GPIO41 / EPWM7B",
+      "official_functions": [
+        "GPIO41",
+        "EPWM7B"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 49,
-      "signal": "GPIO7",
+      "identity": "GPIO7",
+      "signal": "GPIO7 / EPWM4B / SCIRXDA",
+      "official_functions": [
+        "GPIO7",
+        "EPWM4B",
+        "SCIRXDA"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 50,
-      "signal": "GPIO6",
+      "identity": "GPIO6",
+      "signal": "GPIO6 / EPWM4A / EPWMSYNCI / EPWMSYNCO",
+      "official_functions": [
+        "GPIO6",
+        "EPWM4A",
+        "EPWMSYNCI",
+        "EPWMSYNCO"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 51,
+      "identity": "X2",
       "signal": "X2",
-      "group": "Clock",
-      "notes": "Crystal oscillator output"
+      "official_functions": [
+        "X2"
+      ],
+      "fixed": true,
+      "group": "crystal",
+      "notes": "晶振输出；不用时悬空"
     },
     {
       "pin": 52,
+      "identity": "X1",
       "signal": "X1",
-      "group": "Clock",
-      "notes": "Crystal oscillator input"
+      "official_functions": [
+        "X1"
+      ],
+      "fixed": true,
+      "group": "crystal",
+      "notes": "晶振输入；不用时接地"
     },
     {
       "pin": 53,
+      "identity": "VSS",
       "signal": "VSS",
-      "group": "Ground",
-      "notes": "Digital ground"
+      "official_functions": [
+        "VSS"
+      ],
+      "fixed": true,
+      "group": "ground",
+      "notes": "数字地"
     },
     {
       "pin": 54,
+      "identity": "VDD",
       "signal": "VDD",
-      "group": "Power",
-      "notes": "Core supply"
+      "official_functions": [
+        "VDD"
+      ],
+      "fixed": true,
+      "group": "power",
+      "notes": "核心/逻辑数字电源"
     },
     {
       "pin": 55,
-      "signal": "GPIO19",
+      "identity": "GPIO19",
+      "signal": "GPIO19 / XCLKIN / SPISTEA / LINRXA / ECAP1",
+      "official_functions": [
+        "GPIO19",
+        "XCLKIN",
+        "SPISTEA",
+        "LINRXA",
+        "ECAP1"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "SPISTEA is active low"
+      "notes": ""
     },
     {
       "pin": 56,
+      "identity": "GPIO39",
       "signal": "GPIO39",
+      "official_functions": [
+        "GPIO39"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 57,
-      "signal": "GPIO38",
-      "group": "Digital I/O/JTAG",
+      "identity": "GPIO38",
+      "signal": "GPIO38 / TCK / XCLKIN",
+      "official_functions": [
+        "GPIO38",
+        "TCK",
+        "XCLKIN"
+      ],
+      "fixed": false,
+      "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 58,
-      "signal": "GPIO37",
-      "group": "Digital I/O/JTAG",
+      "identity": "GPIO37",
+      "signal": "GPIO37 / TDO",
+      "official_functions": [
+        "GPIO37",
+        "TDO"
+      ],
+      "fixed": false,
+      "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 59,
-      "signal": "GPIO35",
-      "group": "Digital I/O/JTAG",
+      "identity": "GPIO35",
+      "signal": "GPIO35 / TDI",
+      "official_functions": [
+        "GPIO35",
+        "TDI"
+      ],
+      "fixed": false,
+      "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 60,
-      "signal": "GPIO36",
-      "group": "Digital I/O/JTAG",
+      "identity": "GPIO36",
+      "signal": "GPIO36 / TMS",
+      "official_functions": [
+        "GPIO36",
+        "TMS"
+      ],
+      "fixed": false,
+      "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 61,
-      "signal": "GPIO11",
+      "identity": "GPIO11",
+      "signal": "GPIO11 / EPWM6B / LINRXA / HRCAP2",
+      "official_functions": [
+        "GPIO11",
+        "EPWM6B",
+        "LINRXA",
+        "HRCAP2"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 62,
-      "signal": "GPIO5",
+      "identity": "GPIO5",
+      "signal": "GPIO5 / EPWM3B / SPISIMOA / ECAP1",
+      "official_functions": [
+        "GPIO5",
+        "EPWM3B",
+        "SPISIMOA",
+        "ECAP1"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 63,
-      "signal": "GPIO4",
+      "identity": "GPIO4",
+      "signal": "GPIO4 / EPWM3A",
+      "official_functions": [
+        "GPIO4",
+        "EPWM3A"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 64,
-      "signal": "GPIO40",
+      "identity": "GPIO40",
+      "signal": "GPIO40 / EPWM7A",
+      "official_functions": [
+        "GPIO40",
+        "EPWM7A"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 65,
-      "signal": "GPIO10",
+      "identity": "GPIO10",
+      "signal": "GPIO10 / EPWM6A / ADCSOCBO",
+      "official_functions": [
+        "GPIO10",
+        "EPWM6A",
+        "ADCSOCBO"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 66,
-      "signal": "GPIO3",
+      "identity": "GPIO3",
+      "signal": "GPIO3 / EPWM2B / SPISOMIA / COMP2OUT",
+      "official_functions": [
+        "GPIO3",
+        "EPWM2B",
+        "SPISOMIA",
+        "COMP2OUT"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 67,
-      "signal": "GPIO2",
+      "identity": "GPIO2",
+      "signal": "GPIO2 / EPWM2A",
+      "official_functions": [
+        "GPIO2",
+        "EPWM2A"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 68,
-      "signal": "GPIO1",
+      "identity": "GPIO1",
+      "signal": "GPIO1 / EPWM1B / COMP1OUT",
+      "official_functions": [
+        "GPIO1",
+        "EPWM1B",
+        "COMP1OUT"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 69,
-      "signal": "GPIO0",
+      "identity": "GPIO0",
+      "signal": "GPIO0 / EPWM1A",
+      "official_functions": [
+        "GPIO0",
+        "EPWM1A"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 70,
+      "identity": "VDDIO",
       "signal": "VDDIO",
-      "group": "Power",
-      "notes": "I/O supply"
+      "official_functions": [
+        "VDDIO"
+      ],
+      "fixed": true,
+      "group": "power",
+      "notes": "数字 I/O 与 Flash 电源"
     },
     {
       "pin": 71,
+      "identity": "VSS",
       "signal": "VSS",
-      "group": "Ground",
-      "notes": "Digital ground"
+      "official_functions": [
+        "VSS"
+      ],
+      "fixed": true,
+      "group": "ground",
+      "notes": "数字地"
     },
     {
       "pin": 72,
+      "identity": "VDD",
       "signal": "VDD",
-      "group": "Power",
-      "notes": "Core supply"
+      "official_functions": [
+        "VDD"
+      ],
+      "fixed": true,
+      "group": "power",
+      "notes": "核心/逻辑数字电源"
     },
     {
       "pin": 73,
+      "identity": "VREGENZ",
       "signal": "VREGENZ",
-      "group": "Power control",
-      "notes": "Internal voltage-regulator enable control"
+      "official_functions": [
+        "VREGENZ"
+      ],
+      "fixed": true,
+      "group": "power_control",
+      "notes": "低=内部 1.8V 稳压，高=外部 1.8V"
     },
     {
       "pin": 74,
-      "signal": "GPIO34",
+      "identity": "GPIO34",
+      "signal": "GPIO34 / COMP2OUT / COMP3OUT",
+      "official_functions": [
+        "GPIO34",
+        "COMP2OUT",
+        "COMP3OUT"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 75,
-      "signal": "GPIO15",
+      "identity": "GPIO15",
+      "signal": "GPIO15 / TZ1 / LINRXA / SPISTEB",
+      "official_functions": [
+        "GPIO15",
+        "TZ1",
+        "LINRXA",
+        "SPISTEB"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "TZ1 and SPISTEB are active low"
+      "notes": ""
     },
     {
       "pin": 76,
-      "signal": "GPIO13",
+      "identity": "GPIO13",
+      "signal": "GPIO13 / TZ2 / SPISOMIB",
+      "official_functions": [
+        "GPIO13",
+        "TZ2",
+        "SPISOMIB"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "TZ2 is active low"
+      "notes": ""
     },
     {
       "pin": 77,
-      "signal": "GPIO14",
+      "identity": "GPIO14",
+      "signal": "GPIO14 / TZ3 / LINTXA / SPICLKB",
+      "official_functions": [
+        "GPIO14",
+        "TZ3",
+        "LINTXA",
+        "SPICLKB"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
-      "notes": "TZ3 is active low"
+      "notes": ""
     },
     {
       "pin": 78,
-      "signal": "GPIO20",
+      "identity": "GPIO20",
+      "signal": "GPIO20 / EQEP1A / COMP1OUT",
+      "official_functions": [
+        "GPIO20",
+        "EQEP1A",
+        "COMP1OUT"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 79,
-      "signal": "GPIO21",
+      "identity": "GPIO21",
+      "signal": "GPIO21 / EQEP1B / COMP2OUT",
+      "official_functions": [
+        "GPIO21",
+        "EQEP1B",
+        "COMP2OUT"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     },
     {
       "pin": 80,
-      "signal": "GPIO24",
+      "identity": "GPIO24",
+      "signal": "GPIO24 / ECAP1 / SPISIMOB",
+      "official_functions": [
+        "GPIO24",
+        "ECAP1",
+        "SPISIMOB"
+      ],
+      "fixed": false,
       "group": "Digital I/O",
       "notes": ""
     }

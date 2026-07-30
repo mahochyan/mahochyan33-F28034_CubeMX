@@ -23,7 +23,7 @@ DATA_REGS = {"GPASET", "GPACLEAR", "GPATOGGLE", "GPADAT",
              "GPBSET", "GPBCLEAR", "GPBTOGGLE", "GPBDAT"}
 VALID_AIO = {"AIO2", "AIO4", "AIO6", "AIO10", "AIO12", "AIO14"}
 FIXED_SIGNALS = {"VDD", "VSS", "VDDIO", "VDDA", "VSSA", "VREFHI", "VREFLO",
-                 "XRSn", "TRST", "X1", "X2", "VREGENZ", "TEST2"}
+                 "XRS", "TRST", "X1", "X2", "VREGENZ", "TEST2"}
 
 
 def pins():
@@ -31,7 +31,7 @@ def pins():
 
 
 def gpio_pins():
-    return [p for p in pins().values() if "gpio_num" in p]
+    return [p for p in pins().values() if p.get("gpio_num") is not None]
 
 
 class TestPinTable(unittest.TestCase):
@@ -116,17 +116,17 @@ class TestFixedPins(unittest.TestCase):
             if p["primary_signal"] in FIXED_SIGNALS:
                 self.assertFalse(p["configurable"],
                                  f"{p['primary_signal']} pin {p['physical_pin']} must not be configurable")
-                self.assertNotIn("mux_options", p)
+                self.assertEqual(p.get("mux_options", []), [])
 
     def test_power_ground_counts(self):
         from collections import Counter
-        c = Counter(p["pin_type"] for p in pins().values())
+        c = Counter(p["pin_group"] for p in pins().values())
         self.assertEqual(c["power"], 6)    # VDD x3 + VDDIO x2 + VDDA x1
         self.assertEqual(c["ground"], 5)   # VSS x4 + VSSA x1
 
     def test_expected_fixed_pins(self):
         fixed = {p["primary_signal"] for p in pins().values() if not p["configurable"]}
-        for sig in ("XRSn", "TRST", "X1", "X2", "VREGENZ", "TEST2",
+        for sig in ("XRS", "TRST", "X1", "X2", "VREGENZ", "TEST2",
                     "VREFHI", "VREFLO", "VDDA", "VSSA"):
             self.assertIn(sig, fixed)
 
@@ -139,7 +139,7 @@ class TestAioAndAnalog(unittest.TestCase):
                               f"{p['aio']} is not a real digital AIO")
 
     def test_analog_channels_present(self):
-        adc = [p for p in pins().values() if p["pin_type"] == "analog_gpio"]
+        adc = [p for p in pins().values() if p["pin_type"] == "analog"]
         self.assertEqual(len(adc), 16)
         names = {p["primary_signal"] for p in adc}
         for n in ("ADCINA0", "ADCINA7", "ADCINB0", "ADCINB7"):
@@ -153,13 +153,16 @@ class TestGpio19NonMux(unittest.TestCase):
         mux_fns = [m["function"] for m in p55["mux_options"]]
         self.assertNotIn("XCLKIN", mux_fns, "XCLKIN must NOT occupy a GPAMUX slot")
         self.assertIn("ECAP1", mux_fns, "ECAP1 must be kept inside MUX slots")
-        nm = [a["function"] for a in p55.get("alt_non_mux", [])]
+        nm = [a["function"] for a in p55.get("special_routes", [])]
         self.assertIn("XCLKIN", nm)
 
     def test_xclkin_selector_symbol(self):
         p55 = pins()["55"]
-        sel = p55["alt_non_mux"][0]["selector"]
-        self.assertEqual(sel, "SysCtrlRegs.XCLK.bit.XCLKINSEL")
+        sel = next(
+            item["controlled_by"] for item in p55["special_routes"]
+            if item["function"] == "XCLKIN"
+        )
+        self.assertEqual(sel, "XCLKINSEL")
 
 
 class TestReverseIndexWorthiness(unittest.TestCase):
@@ -180,7 +183,7 @@ class TestReverseIndexWorthiness(unittest.TestCase):
         self.assertEqual(self._find("EPWM1B"), [(68, 1, 1)])
 
     def test_tz1_two_pins(self):
-        got = sorted(self._find("TZ1n"))
+        got = sorted(self._find("TZ1"))
         self.assertEqual(got, [(47, 12, 1), (75, 15, 1)])
 
     def test_ecap1_reachable(self):
@@ -212,7 +215,10 @@ class TestConstraintsTable(unittest.TestCase):
 
 class TestDeviceInfo(unittest.TestCase):
     def test_supported_and_offline(self):
-        self.assertEqual(DEVICE["status"], "SUPPORTED")
+        self.assertEqual(
+            DEVICE["status"],
+            "CONFIG_STUDIO_R3.2.2_OFFICIAL_PIN_DATABASE_INTERNAL_PASS",
+        )
         self.assertEqual(DEVICE["max_sysclk_mhz"], 60)
         sr = DEVICE["safety_rules"]
         self.assertTrue(sr["no_jtag"])

@@ -1,14 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const fs = require('node:fs');
 
-const MUX3_FIXES = [
-  [1, 'COMP1OUT'], [8, 'ADCSOCAO'], [10, 'ADCSOCBO'], [13, 'SPISOMIB'],
-  [16, 'TZ2N'], [17, 'TZ3N'], [20, 'COMP1OUT'], [21, 'COMP2OUT'],
-  [22, 'LINTXA'], [23, 'LINRXA'], [24, 'SPISIMOB'], [25, 'SPISOMIB'],
-  [26, 'SPICLKB'], [27, 'SPISTEB'], [34, 'COMP3OUT'],
-  [42, 'COMP1OUT'], [43, 'COMP2OUT'],
-];
-
 function parseStoredZip(bytes) {
   const decoder = new TextDecoder();
   const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
@@ -68,7 +60,8 @@ test('subpath boot uses only static assets and renders package-driven PNT80', as
 
   await waitReady(page);
   await expect(page.locator('#chip-svg .pin')).toHaveCount(80);
-  await expect(page.locator('#dataSource')).toContainText('MUX golden 127/127');
+  await expect(page.locator('#dataSource')).toContainText('PN80 80/80');
+  await expect(page.locator('#dataSource')).toContainText('MUX 127/127');
   expect(errors).toEqual([]);
   expect(requests.length).toBeGreaterThan(10);
   for (const url of requests) {
@@ -92,11 +85,12 @@ test('pin click shows only its functions and Show All clears the selected pin',
     await page.locator('#chip-svg .pin[data-pin="69"] .hit').click();
     await expect.poll(() => page.evaluate(() => Store.selectedPin)).toBe(69);
     await expect(page.locator('#chip-svg .pin[data-pin="69"]')).toHaveClass(/cur/);
-    await expect(page.locator('.function-group:visible')).toHaveCount(2);
     const visibleFunctions = await page.locator('.function-node:visible')
       .evaluateAll(nodes => nodes.map(node => node.dataset.function).sort());
-    expect(visibleFunctions).toEqual(['EPWM1A', 'GPIO0']);
-    await expect(page.locator('.function-group:visible .count')).toHaveText(['1', '1']);
+    expect(visibleFunctions).toEqual([
+      'EPWM1A', 'GPIO0', 'HALT_WAKE', 'HRPWM1A', 'PARALLEL_BOOT',
+      'STANDBY_WAKE', 'XINT1', 'XINT2', 'XINT3',
+    ]);
 
     await page.locator('#btnClearPinFilter').click();
     await expect.poll(() => page.evaluate(() => Store.selectedPin)).toBe(null);
@@ -137,7 +131,7 @@ test('Pin69 EPWM1A user flow commits A/B/Trip, persists and exports preview-iden
     await expect(usageGuide).toContainText('独立说明，不属于生成代码');
     await expect(usageGuide).toContainText('Pin69 → EPWM1A');
     await expect(usageGuide).toContainText('Pin68 → EPWM1B');
-    await expect(usageGuide).toContainText('Pin47 → TZ1N');
+    await expect(usageGuide).toContainText('Pin47 → TZ1');
     await expect(usageGuide).toContainText('Generated_InitAll()');
     await expect(usageGuide).toContainText('EPWM1_ReleaseClamp()');
 
@@ -189,28 +183,25 @@ test('SCLA pinmux-only user flow produces no ADC file and JSON import restores p
       .toBe('SCLA');
   });
 
-test('browser-loaded golden data contains all 17 MUX3 corrections and no JTAG candidates',
+test('browser-loaded official database has 127 numeric MUX routes and no JTAG MUX candidates',
   async ({ page }) => {
     await waitReady(page);
-    const result = await page.evaluate(fixes => {
-      const missing = [];
-      for (const [gpio, expected] of fixes) {
-        const def = Object.values(Store.pinmux.pins)
-          .find(item => Number(item.gpio_num) === gpio);
-        const normalize = value => String(value).toUpperCase().replace(/N$/, '');
-        const option = (def?.mux_options || []).find(item =>
-          normalize(item.function) === normalize(expected));
-        if (!option || Number(option.mux) !== 3) {
-          missing.push({ gpio, expected, actual: option?.mux });
-        }
-      }
+    const result = await page.evaluate(() => {
+      const options = Object.values(Store.pinmux.pins).flatMap(def =>
+        (def.mux_options || []).map(option => ({
+          gpio: def.gpio_num,
+          mux: option.mux,
+          function: option.function,
+        })));
       const jtag = Object.values(Store.pinmux.pins).flatMap(def =>
         (def.mux_options || [])
           .filter(option => ['TDI', 'TMS', 'TDO', 'TCK'].includes(option.function))
           .map(option => ({ gpio: def.gpio_num, function: option.function })));
-      return { missing, jtag };
-    }, MUX3_FIXES);
-    expect(result.missing).toEqual([]);
+      return { options, jtag };
+    });
+    expect(result.options).toHaveLength(127);
+    expect(new Set(result.options.map(item => `${item.gpio}:${item.mux}`)).size)
+      .toBe(127);
     expect(result.jtag).toEqual([]);
   });
 

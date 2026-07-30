@@ -38,13 +38,13 @@ class TestR32MuxGolden(unittest.TestCase):
         for gpio, slots in self.golden["gpio_slots"].items():
             self.assertEqual({"0", "1", "2", "3"}, set(slots), gpio)
 
-    def test_known_mux3_corrections(self):
+    def test_official_mux3_spot_checks(self):
         required = {
             (1, "COMP1OUT"), (8, "ADCSOCAO"), (10, "ADCSOCBO"),
-            (13, "SPISOMIB"), (16, "TZ2n"), (17, "TZ3n"),
+            (13, "SPISOMIB"), (16, "TZ2"), (17, "TZ3"),
             (20, "COMP1OUT"), (21, "COMP2OUT"), (22, "LINTXA"),
             (23, "LINRXA"), (24, "SPISIMOB"), (25, "SPISOMIB"),
-            (26, "SPICLKB"), (27, "SPISTEBn"), (34, "COMP3OUT"),
+            (26, "SPICLKB"), (27, "SPISTEB"), (34, "COMP3OUT"),
             (42, "COMP1OUT"), (43, "COMP2OUT"),
         }
         actual = self.effective()

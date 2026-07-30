@@ -20,6 +20,8 @@
       pins: {},
       pwm_modules: {},
       adc: null,
+      comparator_inputs: {},
+      aio: {},
       timers: {},
       protection: null,
     };
@@ -36,6 +38,11 @@
     project.pwm_modules = source.pwm_modules && typeof source.pwm_modules === 'object'
       ? clone(source.pwm_modules) : {};
     project.adc = source.adc || null;
+    project.comparator_inputs =
+      source.comparator_inputs && typeof source.comparator_inputs === 'object'
+        ? clone(source.comparator_inputs) : {};
+    project.aio = source.aio && typeof source.aio === 'object'
+      ? clone(source.aio) : {};
     project.timers = source.timers && typeof source.timers === 'object'
       ? clone(source.timers) : {};
     project.protection = source.protection || null;
@@ -68,6 +75,15 @@
     if (!option.signal_verified) errors.push(`${label} 的信号归属没有 golden 证据`);
     if (!option.mux_value_verified) errors.push(`${label} 的 MUX 数值没有 golden 证据`);
     if (!option.pin_config_supported) errors.push(`${label} 尚不支持生成引脚配置`);
+    return errors;
+  }
+
+  function routeErrors(candidate, label) {
+    const errors = [];
+    if (!candidate) return [`${label} 不存在于 official golden 数据库`];
+    if (!candidate.signal_verified) errors.push(`${label} 的信号归属没有 golden 证据`);
+    if (!candidate.pin_config_supported) errors.push(`${label} 只读，不能写入 ProjectConfig`);
+    if (candidate.read_only_special_role) errors.push(`${label} 是只读特殊角色`);
     return errors;
   }
 
@@ -184,7 +200,7 @@
 
     const tripEnabled = draft.trip_enabled !== false;
     const tripSource = String(draft.trip_source || 'TZ1').toUpperCase().replace(/N$/, '');
-    const tripFn = `${tripSource}N`;
+    const tripFn = tripSource;
     let tripCandidate = null;
     if (tripEnabled) {
       tripCandidate = findFreeCandidate(
@@ -279,6 +295,80 @@
     return { errors: [] };
   }
 
+  function buildAdcPlan(nextProject, editor, candidate) {
+    const draft = editor.draft;
+    const selectedPin = Number(candidate.physical_pin);
+    const functionName = String(editor.functionId).toUpperCase();
+    const errors = routeErrors(candidate, `Pin${selectedPin}/${functionName}`);
+    const soc = Number(draft.soc ?? 0);
+    const acqps = Number(draft.acqps ?? 14);
+    if (!Number.isInteger(soc) || soc < 0 || soc > 15) {
+      errors.push('ADC SOC 必须在 0～15');
+    }
+    if (!Number.isInteger(acqps) || acqps < 0 || acqps > 63) {
+      errors.push('ADC ACQPS 必须在 0～63');
+    }
+    if (nextProject.aio[String(selectedPin)]) {
+      errors.push(`Pin${selectedPin} 已启用数字 AIO，不能同时提交模拟 ADC 模式`);
+    }
+    if (errors.length) return { errors };
+    nextProject.adc = {
+      physical_pin: selectedPin,
+      channel: functionName,
+      soc,
+      trigger: String(draft.trigger || 'SOFTWARE').toUpperCase(),
+      acqps,
+      interrupt: String(draft.interrupt || 'ADCINT1').toUpperCase(),
+      route_kind: 'analog',
+      gpio_registers_forbidden: true,
+    };
+    return { errors: [] };
+  }
+
+  function buildComparatorPlan(nextProject, editor, candidate) {
+    const selectedPin = Number(candidate.physical_pin);
+    const functionName = String(editor.functionId).toUpperCase();
+    const errors = routeErrors(candidate, `Pin${selectedPin}/${functionName}`);
+    if (nextProject.aio[String(selectedPin)]) {
+      errors.push(`Pin${selectedPin} 已启用数字 AIO，不能同时提交比较器模拟输入`);
+    }
+    if (errors.length) return { errors };
+    nextProject.comparator_inputs[functionName] = {
+      physical_pin: selectedPin,
+      function: functionName,
+      route_kind: 'analog',
+      always_available: true,
+      generator_boundary: 'pin_path_only',
+      gpio_registers_forbidden: true,
+    };
+    return { errors: [] };
+  }
+
+  function buildAioPlan(nextProject, editor, candidate) {
+    const draft = editor.draft;
+    const selectedPin = Number(candidate.physical_pin);
+    const functionName = String(editor.functionId).toUpperCase();
+    const errors = routeErrors(candidate, `Pin${selectedPin}/${functionName}`);
+    if (nextProject.adc?.physical_pin === selectedPin) {
+      errors.push(`Pin${selectedPin} 已用于 ADC 模拟采样`);
+    }
+    if (Object.values(nextProject.comparator_inputs)
+      .some(item => Number(item.physical_pin) === selectedPin)) {
+      errors.push(`Pin${selectedPin} 已用于 Comparator 模拟输入`);
+    }
+    if (errors.length) return { errors };
+    nextProject.aio[String(selectedPin)] = {
+      physical_pin: selectedPin,
+      function: functionName,
+      route_kind: 'aio',
+      direction: draft.direction || 'output',
+      initial_level: draft.initial_level || 'low',
+      aiomux_value: 0,
+      gpio_registers_forbidden: true,
+    };
+    return { errors: [] };
+  }
+
   function buildCommitPlan({ project, editor, pinmux, reverseIndex }) {
     const errors = validateDraftShape(editor);
     const currentProject = normalizeProject(project);
@@ -290,9 +380,18 @@
     const candidate = candidateForEditor(editor);
     const index = normalizeIndex(reverseIndex);
     const match = PWM_RE.exec(String(editor.functionId || ''));
-    const result = match
-      ? buildPwmPlan(nextProject, editor, candidate, pinmux, index)
-      : buildNonPwmPlan(nextProject, editor, candidate, pinmux);
+    let result;
+    if (match) {
+      result = buildPwmPlan(nextProject, editor, candidate, pinmux, index);
+    } else if (candidate.type === 'adc_input') {
+      result = buildAdcPlan(nextProject, editor, candidate);
+    } else if (candidate.type === 'comparator_input') {
+      result = buildComparatorPlan(nextProject, editor, candidate);
+    } else if (candidate.type === 'aio') {
+      result = buildAioPlan(nextProject, editor, candidate);
+    } else {
+      result = buildNonPwmPlan(nextProject, editor, candidate, pinmux);
+    }
     if (result.errors.length) {
       return { ok: false, errors: result.errors, before, nextProject: null };
     }

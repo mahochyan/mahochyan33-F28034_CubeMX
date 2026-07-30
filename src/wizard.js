@@ -13,6 +13,9 @@
     const entry = Store.activeEditor.candidatePins[0];
     const type = entry?.type || 'generic';
     if (type === 'gpio' || Number(entry?.mux) === 0) return 'gpio';
+    if (type === 'adc_input') return 'adc';
+    if (type === 'comparator_input') return 'comparator_input';
+    if (type === 'aio') return 'aio';
     if (type === 'epwm') return 'epwm';
     if (type === 'i2c') return 'i2c';
     if (type === 'tripzone') return 'tripzone';
@@ -105,10 +108,12 @@
           configured.module !== Store.getPin(draft.editingPin)?.module;
         const verified = candidate.signal_verified &&
           candidate.mux_value_verified && candidate.pin_config_supported;
+        const routeLabel = candidate.mux == null
+          ? candidate.route_kind : `MUX${candidate.mux}`;
         return `<option value="${candidate.physical_pin}"
           ${Number(value) === Number(candidate.physical_pin) ? 'selected' : ''}
           ${occupied || !verified ? 'disabled' : ''}>
-          Pin${candidate.physical_pin} / ${esc(def?.primary_signal)} / MUX${candidate.mux}${
+          Pin${candidate.physical_pin} / ${esc(def?.primary_signal)} / ${esc(routeLabel)}${
           occupied ? '（已占用）' : (!verified ? '（证据或生成支持不完整）' : '')}
         </option>`;
       }).join('');

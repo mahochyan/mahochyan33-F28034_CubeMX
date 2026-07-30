@@ -77,4 +77,4 @@ const html = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 if (/(?:src|href)=["']\/(?!\/)/i.test(html)) {
   throw new Error('index.html contains a root-relative asset URL');
 }
-console.log(`R3.2 static build: ${productionFiles.length} files -> ${dist}`);
+console.log(`R3.2.2 official static build: ${productionFiles.length} files -> ${dist}`);

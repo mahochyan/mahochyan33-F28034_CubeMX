@@ -29,15 +29,35 @@
       return;
     }
     const configured = Store.getPin(pin);
-    const options = (def.mux_options || []).map(option => `
+    const supportTags = route => {
+      const tags = ['SIGNAL_PRESENT'];
+      if (route.pin_config_supported) tags.push('PIN_ROUTE_SUPPORTED');
+      if (route.peripheral_init_supported) {
+        tags.push('PERIPHERAL_INIT_SUPPORTED');
+      }
+      if (route.read_only_special_role) tags.push('READ_ONLY_SPECIAL_ROLE');
+      if (route.support?.fixed_pin) tags.push('FIXED_PIN');
+      return tags.map(tag =>
+        `<span class="state-tag">${esc(tag)}</span>`).join(' ');
+    };
+    const routeRows = routes => (routes || []).map(route => `
       <div class="mux-opt">
-        <span class="muxno">MUX${option.mux}</span>
-        <span class="fname">${esc(option.function)}</span>
-        <span class="ftype">${esc(option.type)}</span>
-        ${option.peripheral_init_supported
-          ? '<span class="state-tag t-sel">完整 ePWM 初始化</span>'
-          : '<span class="unverified">pinmux-only</span>'}
+        <span class="muxno">${route.mux == null
+          ? esc(route.route_kind) : `MUX${route.mux}`}</span>
+        <span class="fname">${esc(route.function)}</span>
+        <span class="ftype">${esc(route.type)}</span>
+        <span class="route-tags">${supportTags(route)}</span>
+        ${route.warning ? `<span class="route-warning">${esc(route.warning)}</span>` : ''}
       </div>`).join('');
+    const options = routeRows(def.mux_options);
+    const analog = routeRows(def.analog_paths);
+    const aio = routeRows(def.aio_function ? [def.aio_function] : []);
+    const specials = routeRows([
+      ...(def.special_routes || []),
+      ...(def.capabilities || []),
+      ...(def.boot_roles || []),
+    ]);
+    const fixed = routeRows(def.fixed_function ? [def.fixed_function] : []);
     root.innerHTML = `
       <dl class="kv">
         <dt>物理脚号</dt><dd>Pin${def.physical_pin}</dd>
@@ -46,7 +66,15 @@
         ${def.gpio_num != null ? `<dt>GPIO</dt><dd>GPIO${def.gpio_num}</dd>` : ''}
         <dt>可配置</dt><dd>${def.configurable ? '是' : '否（固定功能脚）'}</dd>
       </dl>
-      ${def.configurable ? `<div class="sec-title">Golden MUX 选项</div>${options}` : ''}
+      ${options ? `<div class="sec-title">GPIO 数值 MUX（Table 7-40/7-41）</div>${options}` : ''}
+      ${analog ? `<div class="sec-title">并行模拟路径（不是普通 GPIO MUX 二选一）</div>
+        <div class="route-explain">ADC 与 Comparator 输入路径可并行存在，不生成 GPAMUX/GPADIR。</div>
+        ${analog}` : ''}
+      ${aio ? `<div class="sec-title">独立 AIO 数字缓冲维度</div>
+        <div class="route-explain">AIO 使用 AIOMUX1/AIODIR/AIO 数据寄存器；模拟采样时应保持数字 AIO 关闭。</div>
+        ${aio}` : ''}
+      ${specials ? `<div class="sec-title">特殊路径与只读角色</div>${specials}` : ''}
+      ${fixed ? `<div class="sec-title">固定脚规则</div>${fixed}` : ''}
       ${configured ? `<div class="sec-title">Committed ProjectConfig</div>
         <pre class="config-json">${esc(JSON.stringify(configured, null, 2))}</pre>` :
         '<div class="empty-state dim">尚未配置。</div>'}`;
@@ -62,6 +90,17 @@
     const def = Store.pinDef(pin);
     if (!def?.configurable) {
       root.innerHTML = '<div class="empty-state dim">该脚没有可配置 GPIO 位域。</div>';
+      return;
+    }
+    if (def.pin_type === 'analog') {
+      const aio = def.aio_function;
+      root.innerHTML = `
+        <div class="route-explain">模拟 ADC/Comparator 路径不使用 GPAMUX、GPADIR 或 GPAPUD。</div>
+        ${aio ? `<table class="reg-table"><tbody>
+          <tr><td>AIO MUX</td><td class="field">${esc(aio.aiomux_field)}</td></tr>
+          <tr><td>AIO 方向</td><td class="field">${esc(aio.dir_field)}</td></tr>
+          <tr><td>AIO 数据</td><td class="field">${esc(aio.dat_field)}</td></tr>
+        </tbody></table>` : ''}`;
       return;
     }
     root.innerHTML = `<table class="reg-table"><tbody>

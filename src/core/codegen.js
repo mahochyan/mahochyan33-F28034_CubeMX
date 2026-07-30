@@ -96,7 +96,7 @@
       const name = pin.direction === 'input' ? 'gpio_input' : 'gpio_output';
       return [name, PROFILES[name]];
     }
-    if (/^TZ[1-3]N$/.test(fn)) return ['trip_async_input', PROFILES.trip_async_input];
+    if (/^TZ[1-3]N?$/.test(fn)) return ['trip_async_input', PROFILES.trip_async_input];
     if (fn.includes('SDA')) return ['i2c_sdaa', PROFILES.i2c_sdaa];
     if (fn.includes('SCL')) return ['i2c_scla', PROFILES.i2c_scla];
     if (fn.includes('RX')) return ['sci_rx', PROFILES.sci_rx];
@@ -180,6 +180,31 @@
       }
       emitted += 1;
     }
+    for (const [key, aio] of Object.entries(config.aio || {})
+      .sort((a, b) => Number(a[0]) - Number(b[0]))) {
+      const physicalPin = Number(aio.physical_pin ?? key);
+      const def = pdef(pinmux, physicalPin);
+      const route = def?.aio_function;
+      const fn = String(aio.function || '').toUpperCase();
+      if (!route || String(route.function).toUpperCase() !== fn) {
+        throw new Error(`Pin${physicalPin} does not provide ${fn} AIO route`);
+      }
+      const direction = aio.direction || 'output';
+      const level = aio.initial_level || 'low';
+      lines.push(
+        `    // Pin${physicalPin} ${fn} 使用 AIO 专用寄存器；绝不能写 GPAMUX/GPADIR。`,
+        `    ${route.aiomux_field} = 0U;   // 0,x 选择数字 AIO 缓冲；模拟采样时应改回模拟模式`,
+      );
+      if (direction === 'output') {
+        lines.push(
+          `    ${level === 'high' ? route.set_field : route.clear_field} = 1U;   // 先预置${level === 'high' ? '高' : '低'}电平，避免输出毛刺`,
+        );
+      }
+      lines.push(
+        `    ${route.dir_field} = ${direction === 'output' ? 1 : 0}U;   // AIODIR：1=输出，0=输入`,
+      );
+      emitted += 1;
+    }
     if (!emitted) lines.push('    // 当前工程没有需要在这里配置的非 ePWM 引脚。');
     lines.push(
       '    EDIS;   // 重新禁止写受保护寄存器',
@@ -192,7 +217,7 @@
         '#ifndef PINMUX_INIT_H',
         '#define PINMUX_INIT_H',
         '',
-        '// 配置 ProjectConfig 中选定的非 ePWM 引脚复用和 GPIO 电气属性。',
+        '// 配置 ProjectConfig 中选定的非 ePWM GPIO MUX 与数字 AIO。',
         'void Generated_PinMux_Init(void);',
         '',
         '#endif',
@@ -522,6 +547,11 @@
         `    AdcRegs.ADCSOC${soc}CTL.bit.CHSEL = ${ADC_CHANNELS[channel]}U;   // SOC${soc} 采样 ${channel}`,
         `    AdcRegs.ADCSOC${soc}CTL.bit.TRIGSEL = ${ADC_TRIGGERS[trigger]}U; // 由 ${trigger} 启动转换`,
         `    AdcRegs.ADCSOC${soc}CTL.bit.ACQPS = ${acqps}U;    // 采样窗口为 ${acqps + 1} 个 ADC 时钟周期`,
+        '    // 第三步：让 ADCINT1 在这个 SOC 转换完成后置位，主程序可据此读取结果。',
+        `    AdcRegs.INTSEL1N2.bit.INT1SEL = ${soc}U;   // EOC${soc} 作为 ADCINT1 的来源`,
+        '    AdcRegs.INTSEL1N2.bit.INT1CONT = 0U;      // 非连续模式：软件需清标志后才能再次响应',
+        '    AdcRegs.ADCINTFLGCLR.bit.ADCINT1 = 1U;    // 先清除可能残留的 ADCINT1 标志',
+        '    AdcRegs.INTSEL1N2.bit.INT1E = 1U;         // 允许 ADCINT1 在转换完成时置位',
         '    EDIS;   // 恢复受保护寄存器的写保护',
         '}',
       ]),

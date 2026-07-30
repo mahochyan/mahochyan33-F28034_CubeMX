@@ -1,4 +1,4 @@
-name: R3.2 Static Pages
+name: R3.2.2 Official Static Pages
 
 on:
   push:
@@ -36,8 +36,11 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Verify MUX golden
-        run: python -m unittest tests.test_r32_mux_golden -v
+      - name: Build official pin golden database
+        run: python tools/build_official_pin_golden.py
+
+      - name: Verify Python regressions
+        run: python -m unittest discover -s tests -p "test_*.py" -v
 
       - name: Browser-core unit tests
         run: npm run test:unit
