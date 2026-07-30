@@ -144,8 +144,12 @@
     document.getElementById('zoomOut').addEventListener('click', Chip.zoomOut);
     document.getElementById('zoomReset').addEventListener('click', Chip.reset);
     document.getElementById('btnClearPinFilter').addEventListener('click', () => {
+      const selectedPin = Store.selectedPin;
       Tree.clearPinFilter();
-      setStatus('已显示全部功能');
+      Store.clearPinSelection();
+      setStatus(selectedPin == null
+        ? '已显示全部功能，可自由选择'
+        : `已取消 Pin${selectedPin} 选择并显示全部功能`);
     });
     document.getElementById('btnValidate').addEventListener('click', () => {
       const result = refreshPreview();
@@ -190,6 +194,9 @@
 
   function wireEvents() {
     Bus.on('pin:selected', pin => {
+      if (pin != null) {
+        activateTab(document.getElementById('pane-mid'), 'tree');
+      }
       Detail.renderPin(pin);
       Detail.renderRegs(pin);
       Chip.repaint();

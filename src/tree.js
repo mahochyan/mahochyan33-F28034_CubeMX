@@ -65,6 +65,11 @@
       });
       root.appendChild(group);
     });
+    const empty = document.createElement('div');
+    empty.className = 'pin-filter-empty empty-state dim';
+    empty.textContent = '这个物理脚没有可选择的 MUX 功能。';
+    empty.hidden = true;
+    root.appendChild(empty);
     repaint();
   }
 
@@ -107,6 +112,18 @@
         node.classList.remove('pin-filter-hidden');
       }
     });
+    let visibleTotal = 0;
+    rootEl?.querySelectorAll('.function-group').forEach(group => {
+      const nodes = [...group.querySelectorAll(':scope > .function-node')];
+      const visibleCount = nodes.filter(node =>
+        !node.classList.contains('pin-filter-hidden')).length;
+      visibleTotal += visibleCount;
+      group.hidden = !!pinFilter && visibleCount === 0;
+      const count = group.querySelector(':scope > summary .count');
+      if (count) count.textContent = pinFilter ? visibleCount : nodes.length;
+    });
+    const empty = rootEl?.querySelector('.pin-filter-empty');
+    if (empty) empty.hidden = !pinFilter || visibleTotal !== 0;
   }
 
   function reveal(functionName) {
@@ -118,13 +135,17 @@
   }
 
   function showFunctionsForPin(payload) {
-    pinFilter = payload;
+    pinFilter = {
+      pin: Number(payload.pin),
+      functions: [...new Set(payload.functions || [])]
+        .filter(name => itemByFunction.has(name)),
+    };
     repaint();
-    payload.functions.forEach(name => {
+    pinFilter.functions.forEach(name => {
       const group = itemByFunction.get(name)?.closest('details');
       if (group) group.open = true;
     });
-    const first = payload.functions.find(name => itemByFunction.has(name));
+    const first = pinFilter.functions[0];
     if (first) reveal(first);
   }
 

@@ -81,6 +81,34 @@ test('subpath boot uses only static assets and renders package-driven PNT80', as
     .toBe(true);
 });
 
+test('pin click shows only its functions and Show All clears the selected pin',
+  async ({ page }) => {
+    await waitReady(page);
+    const allFunctionCount = await page.locator('.function-node').count();
+    const allGroupCount = await page.locator('.function-group').count();
+    expect(allFunctionCount).toBeGreaterThan(40);
+    expect(allGroupCount).toBeGreaterThan(10);
+
+    await page.locator('#chip-svg .pin[data-pin="69"] .hit').click();
+    await expect.poll(() => page.evaluate(() => Store.selectedPin)).toBe(69);
+    await expect(page.locator('#chip-svg .pin[data-pin="69"]')).toHaveClass(/cur/);
+    await expect(page.locator('.function-group:visible')).toHaveCount(2);
+    const visibleFunctions = await page.locator('.function-node:visible')
+      .evaluateAll(nodes => nodes.map(node => node.dataset.function).sort());
+    expect(visibleFunctions).toEqual(['EPWM1A', 'GPIO0']);
+    await expect(page.locator('.function-group:visible .count')).toHaveText(['1', '1']);
+
+    await page.locator('#btnClearPinFilter').click();
+    await expect.poll(() => page.evaluate(() => Store.selectedPin)).toBe(null);
+    await expect(page.locator('#chip-svg .pin.cur')).toHaveCount(0);
+    await expect(page.locator('.function-node')).toHaveCount(allFunctionCount);
+    await expect(page.locator('.function-node.pin-filter-hidden')).toHaveCount(0);
+    await expect(page.locator('.function-group[hidden]')).toHaveCount(0);
+    await expect(page.locator('.function-group:visible')).toHaveCount(allGroupCount);
+    await expect(page.locator('#detailPanel')).toContainText('点击左侧芯片图');
+    await expect(page.locator('#statusText')).toContainText('已取消 Pin69 选择');
+  });
+
 test('Pin69 EPWM1A user flow commits A/B/Trip, persists and exports preview-identical ZIP',
   async ({ page }) => {
     await waitReady(page);

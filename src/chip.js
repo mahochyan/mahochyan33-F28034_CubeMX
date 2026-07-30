@@ -196,6 +196,7 @@
       });
       setStatus(`Pin${pin} ${def.primary_signal}：请在功能树选择功能`);
     } else {
+      Bus.emit('chip:functions', { pin, functions: [] });
       setStatus(`Pin${pin} ${def?.primary_signal || ''}：固定脚，只显示详情`);
     }
   }

@@ -18,6 +18,11 @@
 
   function renderPin(pin) {
     const root = document.getElementById('detailPanel');
+    if (pin == null) {
+      root.innerHTML =
+        '<div class="empty-state dim">点击左侧芯片图上的一个引脚查看详情。</div>';
+      return;
+    }
     const def = Store.pinDef(pin);
     if (!def) {
       root.innerHTML = '<div class="empty-state dim">未知引脚。</div>';
@@ -49,6 +54,11 @@
 
   function renderRegs(pin) {
     const root = document.getElementById('regsPanel');
+    if (pin == null) {
+      root.innerHTML =
+        '<div class="empty-state dim">选择引脚后显示相关寄存器与位域映射。</div>';
+      return;
+    }
     const def = Store.pinDef(pin);
     if (!def?.configurable) {
       root.innerHTML = '<div class="empty-state dim">该脚没有可配置 GPIO 位域。</div>';

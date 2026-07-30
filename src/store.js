@@ -66,6 +66,10 @@
       this.selectedPin = Number(pin);
       Bus.emit('pin:selected', this.selectedPin);
     },
+    clearPinSelection() {
+      this.selectedPin = null;
+      Bus.emit('pin:selected', null);
+    },
     setActiveFunction(name) {
       this.activeFunction = name;
       Bus.emit('function:active', name);
