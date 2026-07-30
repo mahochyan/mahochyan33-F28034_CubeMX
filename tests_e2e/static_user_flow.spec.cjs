@@ -105,8 +105,17 @@ test('Pin69 EPWM1A user flow commits A/B/Trip, persists and exports preview-iden
     await expect(page.locator('#codePanel')).toContainText('给初学者');
     await expect(page.locator('#codePanel')).toContainText('第 1 步');
     await expect(page.locator('#codePanel')).toContainText('第 6 步');
+    const usageGuide = page.locator('#usageGuidePanel');
+    await expect(usageGuide).toContainText('独立说明，不属于生成代码');
+    await expect(usageGuide).toContainText('Pin69 → EPWM1A');
+    await expect(usageGuide).toContainText('Pin68 → EPWM1B');
+    await expect(usageGuide).toContainText('Pin47 → TZ1N');
+    await expect(usageGuide).toContainText('Generated_InitAll()');
+    await expect(usageGuide).toContainText('EPWM1_ReleaseClamp()');
 
     const preview = await page.evaluate(() => ConfigStudioApp.getLatestPreview().files);
+    expect(await page.locator('#codePanel').textContent()).toBe(preview['pwm_init.c']);
+    expect(preview['pwm_init.c']).not.toContain('初学者使用说明');
     const downloadPromise = page.waitForEvent('download');
     await page.locator('#btnExport').click();
     const download = await downloadPromise;
