@@ -6,19 +6,51 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
+  function routeEntries(def) {
+    const result = [];
+    (def?.mux_options || []).forEach(route => result.push(route));
+    (def?.analog_paths || []).forEach(route => result.push(route));
+    if (def?.aio_function) result.push(def.aio_function);
+    (def?.special_routes || []).forEach(route => result.push(route));
+    (def?.capabilities || []).forEach(route => result.push(route));
+    (def?.boot_roles || []).forEach(route => result.push(route));
+    if (def?.fixed_function) result.push(def.fixed_function);
+    return result;
+  }
+
   function buildReverseIndex(pinmux) {
     const result = {};
     Object.values(pinmux?.pins || {}).forEach(def => {
-      (def.mux_options || []).forEach(option => {
-        (result[option.function] = result[option.function] || []).push({
+      routeEntries(def).forEach(option => {
+        const entries = result[option.function] = result[option.function] || [];
+        const existing = entries.find(item =>
+          Number(item.physical_pin) === Number(def.physical_pin));
+        if (existing) {
+          existing.related_routes.push(option.route_kind);
+          existing.pin_config_supported ||= !!option.pin_config_supported;
+          existing.peripheral_init_supported ||=
+            !!option.peripheral_init_supported;
+          existing.read_only_special_role &&=
+            !!option.read_only_special_role;
+          return;
+        }
+        entries.push({
+          function: option.function,
           physical_pin: Number(def.physical_pin),
-          mux: Number(option.mux),
+          mux: option.mux == null ? null : Number(option.mux),
           type: option.type,
+          route_kind: option.route_kind || 'gpio_mux',
           signal_verified: !!option.signal_verified,
-          mux_value_verified: !!option.mux_value_verified,
+          mux_value_verified: option.mux == null
+            ? true : !!option.mux_value_verified,
           pin_config_supported: !!option.pin_config_supported,
           peripheral_init_supported: !!option.peripheral_init_supported,
+          read_only_special_role: !!option.read_only_special_role,
+          fixed_pin: !!option.support?.fixed_pin,
+          support: option.support || {},
+          warning: option.warning || null,
           generator_profile: option.generator_profile || null,
+          related_routes: [option.route_kind || 'gpio_mux'],
         });
       });
     });
@@ -86,5 +118,5 @@
     };
   }
 
-  return { buildReverseIndex, loadDeviceData };
+  return { routeEntries, buildReverseIndex, loadDeviceData };
 });

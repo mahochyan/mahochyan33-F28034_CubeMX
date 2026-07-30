@@ -1,11 +1,33 @@
 /* R3 function tree with one inline accordion editor. */
 (function () {
   const GROUPS = [
-    ['epwm', 'ePWM'], ['tripzone', 'Trip Zone'], ['i2c', 'I²C'],
-    ['gpio', 'GPIO'], ['adc', 'ADC'], ['spi', 'SPI'], ['sci', 'SCI'],
-    ['eqep', 'eQEP'], ['ecap', 'eCAP'], ['clock', '时钟 / 同步'],
-    ['comparator', '比较器'], ['lin', 'LIN'], ['can', 'eCAN'],
-    ['hrcap', 'HRCAP'], ['non_mux', '非 MUX'], ['other', '其他'],
+    ['gpio', 'GPIO'],
+    ['adc_input', 'ADC'],
+    ['aio', 'AIO'],
+    ['comparator_input', 'Comparator input'],
+    ['comparator_output', 'Comparator output'],
+    ['epwm', 'ePWM'],
+    ['hrpwm', 'HRPWM'],
+    ['epwm_sync', 'EPWM sync'],
+    ['tripzone', 'Trip Zone'],
+    ['adc_soc_output', 'ADC SOC output'],
+    ['ecap', 'eCAP'],
+    ['hrcap', 'HRCAP'],
+    ['eqep', 'eQEP'],
+    ['sci', 'SCI'],
+    ['spi_a', 'SPI-A'],
+    ['spi_b', 'SPI-B'],
+    ['i2c', 'I²C'],
+    ['lin', 'LIN'],
+    ['can', 'eCAN'],
+    ['clock_input', 'Clock input'],
+    ['clock_output', 'Clock output'],
+    ['jtag_special', 'JTAG special'],
+    ['external_interrupt', 'External interrupt'],
+    ['low_power_wake', 'Low-power wake'],
+    ['boot_role', 'Boot role'],
+    ['fixed', 'Fixed power/reference/reset/crystal/test'],
+    ['other', '其他'],
   ];
   const itemByFunction = new Map();
   let rootEl = null;
@@ -25,6 +47,20 @@
       if (module) return `已配置 · Pin${[module.pin_a, module.pin_b].filter(x => x != null).join('/')}`;
     }
     return `已配置 · Pin${pins.map(pin => pin.physical_pin).join('/')}`;
+  }
+
+  function supportText(entries) {
+    if (entries.every(item => item.fixed_pin)) return 'FIXED_PIN';
+    if (entries.every(item => item.read_only_special_role)) {
+      return 'READ_ONLY_SPECIAL_ROLE';
+    }
+    if (entries.some(item => item.peripheral_init_supported)) {
+      return 'PERIPHERAL_INIT_SUPPORTED';
+    }
+    if (entries.some(item => item.pin_config_supported)) {
+      return 'PIN_ROUTE_SUPPORTED';
+    }
+    return 'SIGNAL_PRESENT';
   }
 
   function build(root) {
@@ -49,10 +85,14 @@
         const node = document.createElement('div');
         node.className = 'function-node';
         node.dataset.function = item.name;
+        node.dataset.routeType = item.entries[0]?.type || 'other';
+        node.dataset.readOnly = item.entries.every(entry =>
+          entry.read_only_special_role) ? '1' : '0';
         node.innerHTML = `
           <button type="button" class="function-row">
             <span class="fname">${esc(item.name)}</span>
             <span class="npins">${item.entries.length}脚</span>
+            <span class="route-support">${esc(supportText(item.entries))}</span>
             <span class="configured-badge"></span>
           </button>
           <div class="inline-editor" hidden></div>`;
@@ -76,6 +116,19 @@
   function open(functionName, source, selectedPin = null) {
     const node = itemByFunction.get(functionName);
     if (!node) return;
+    const entries = Store.pinsForFunction(functionName);
+    if (entries.every(entry => entry.read_only_special_role)) {
+      const candidate = entries.find(entry =>
+        Number(entry.physical_pin) === Number(selectedPin)) || entries[0];
+      if (candidate) {
+        Store.selectPin(candidate.physical_pin);
+        Chip.focusPin(candidate.physical_pin);
+      }
+      setStatus(
+        `${functionName} 是只读特殊角色：可查看官方路径，但不会进入普通 PinMux 向导`,
+      );
+      return;
+    }
     const ok = Store.beginDraft({ source, functionId: functionName, selectedPin });
     if (!ok) return;
     reveal(functionName);

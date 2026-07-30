@@ -22,6 +22,42 @@
         {"id": "summary", "label": "配置摘要", "control": "summary"}
       ]
     },
+    "adc": {
+      "title": "ADC 模拟输入配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择 ADC 物理脚", "control": "candidate_pin"},
+        {"id": "soc", "label": "SOC 任务槽 (0~15)", "control": "number",
+         "default": 0, "min": 0, "max": 15},
+        {"id": "trigger", "label": "转换触发源", "control": "choice", "default": "SOFTWARE",
+         "choices": [{"value": "SOFTWARE", "label": "软件触发"},
+                     {"value": "EPWM1_SOCA", "label": "ePWM1 SOCA"},
+                     {"value": "CPUTIMER0", "label": "CPU Timer0"}]},
+        {"id": "acqps", "label": "采样窗口 ACQPS (实际周期数=N+1)", "control": "number",
+         "default": 14, "min": 0, "max": 63},
+        {"id": "interrupt", "label": "ADC 中断", "control": "choice", "default": "ADCINT1",
+         "choices": [{"value": "ADCINT1", "label": "ADCINT1"}]},
+        {"id": "summary", "label": "ADC 配置摘要", "control": "summary"}
+      ]
+    },
+    "comparator_input": {
+      "title": "Comparator 模拟输入路径",
+      "steps": [
+        {"id": "selectedPin", "label": "选择比较器模拟输入脚", "control": "candidate_pin"},
+        {"id": "summary", "label": "路径摘要（pin path only）", "control": "summary"}
+      ]
+    },
+    "aio": {
+      "title": "数字 AIO 配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择 AIO 物理脚", "control": "candidate_pin"},
+        {"id": "direction", "label": "AIO 输入 / 输出", "control": "choice", "default": "output",
+         "choices": [{"value": "output", "label": "输出"}, {"value": "input", "label": "输入"}]},
+        {"id": "initial_level", "label": "输出初始电平", "control": "choice", "default": "low",
+         "visible_if": {"direction": "output"},
+         "choices": [{"value": "low", "label": "低（安全）"}, {"value": "high", "label": "高"}]},
+        {"id": "summary", "label": "AIO 配置摘要", "control": "summary"}
+      ]
+    },
     "epwm": {
       "title": "ePWM 配置",
       "steps": [

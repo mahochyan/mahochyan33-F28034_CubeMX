@@ -19,6 +19,7 @@ docs/r3_web_*.log
 node_modules/
 test-results/
 playwright-report/
+tmp/
 
 .DS_Store
 Thumbs.db

@@ -11,11 +11,16 @@
     return node;
   }
 
-  function functionsFor(def) {
-    const values = (def?.mux_options || []).filter(item => Number(item.mux) !== 0)
-      .map(item => item.function);
-    (def?.alt_non_mux || []).forEach(item => values.push(item.function));
-    return values;
+  function visibleFunctionsFor(def) {
+    return [...new Set(
+      def?.official_functions || [def?.primary_signal].filter(Boolean),
+    )];
+  }
+
+  function allFunctionsFor(def) {
+    return [...new Set(
+      DeviceLoader.routeEntries(def).map(item => item.function),
+    )];
   }
 
   function layout() {
@@ -131,13 +136,15 @@
         'data-side': geo.side, 'data-signal': def.primary_signal,
         'data-configurable': fixed ? '0' : '1',
       });
-      const allFunctions = functionsFor(def);
-      const shortFunctions = allFunctions.length <= 3
-        ? allFunctions.join(' / ')
-        : `${allFunctions.slice(0, 3).join(' / ')} +${allFunctions.length - 3}`;
+      const visibleFunctions = visibleFunctionsFor(def);
+      const allFunctions = allFunctionsFor(def);
+      group.setAttribute('data-function-count', allFunctions.length);
+      const shortFunctions = visibleFunctions.length <= 3
+        ? visibleFunctions.join(' / ')
+        : `${visibleFunctions.slice(0, 3).join(' / ')} +${visibleFunctions.length - 3}`;
       const tooltip = svgNode('title');
       tooltip.textContent = `Pin${pin} ${def.primary_signal}` +
-        (allFunctions.length ? `\n${allFunctions.join(' / ')}` : '');
+        (visibleFunctions.length ? `\n${visibleFunctions.join(' / ')}` : '');
       group.appendChild(tooltip);
       group.appendChild(svgNode('rect', {
         class: 'pad', rx: 2, ...geo.rect,
@@ -190,13 +197,18 @@
   function onPinClick(pin) {
     const def = Store.pinDef(pin);
     Store.selectPin(pin);
+    const functions = allFunctionsFor(def);
+    Bus.emit('chip:functions', { pin, functions });
     if (def?.configurable) {
-      Bus.emit('chip:functions', {
-        pin, functions: (def.mux_options || []).map(item => item.function),
-      });
+      if (!functions.length) {
+        setStatus(
+          `P0：Pin${pin} 标记为 configurable=true，但功能列表为空`,
+          true,
+        );
+        return;
+      }
       setStatus(`Pin${pin} ${def.primary_signal}：请在功能树选择功能`);
     } else {
-      Bus.emit('chip:functions', { pin, functions: [] });
       setStatus(`Pin${pin} ${def?.primary_signal || ''}：固定脚，只显示详情`);
     }
   }

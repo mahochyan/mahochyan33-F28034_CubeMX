@@ -167,7 +167,12 @@ body{
 .mux-opt .muxno{font:700 11px var(--mono); color:var(--faint); min-width:44px}
 .mux-opt .fname{font:600 13px var(--mono)}
 .mux-opt .ftype{margin-left:auto; font-size:10.5px; color:var(--faint)}
-.mux-opt .state-tag{font-size:10.5px; padding:1px 6px; border-radius:8px}
+.mux-opt .state-tag{display:inline-block;font-size:9px;padding:1px 5px;border-radius:8px;
+  border:1px solid var(--line);color:var(--dim);margin:1px}
+.route-tags{display:flex;flex-wrap:wrap;max-width:230px}
+.route-warning{flex-basis:100%;font-size:10.5px;color:var(--warn);margin-left:54px}
+.route-explain{font-size:11.5px;color:var(--dim);padding:7px 9px;margin-bottom:7px;
+  border-left:3px solid var(--accent);background:var(--bg2)}
 .state-tag.t-sel{background:var(--sel); color:#04160a}
 .state-tag.t-occ{background:var(--occ); color:#241a02}
 .state-tag.t-err{background:var(--err); color:#fff}
@@ -319,10 +324,12 @@ body{
 
 /* R3 inline transaction editor */
 .function-node{border-bottom:1px solid var(--line)}
-.function-row{width:100%;display:grid;grid-template-columns:1fr auto auto;gap:8px;
+.function-row{width:100%;display:grid;grid-template-columns:minmax(70px,1fr) auto auto auto;gap:8px;
   align-items:center;padding:8px 10px;border:0;color:var(--text);background:transparent;
   text-align:left;cursor:pointer}
 .function-row:hover,.function-node.editing>.function-row{background:#1f2937}
+.route-support{font:9px var(--mono);color:var(--faint);max-width:150px;
+  overflow:hidden;text-overflow:ellipsis}
 .configured-badge{color:#7ee787;font-size:11px}
 .configured-badge:not(.visible){display:none}
 .pin-filter-hidden{display:none}
