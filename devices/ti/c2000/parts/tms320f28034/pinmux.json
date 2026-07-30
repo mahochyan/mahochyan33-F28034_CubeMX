@@ -1,0 +1,5006 @@
+{
+  "device": "TMS320F28034PNT",
+  "package": "PN80",
+  "source": "SPRS584Q Table 5-1",
+  "pins": {
+    "1": {
+      "physical_pin": 1,
+      "primary_signal": "GPIO22",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 22,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO22",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EQEP1S",
+          "type": "eqep",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "eqep_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "LINTXA",
+          "type": "lin",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 22,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO22",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO22",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO22",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO22",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO22",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO22",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO22",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO22"
+    },
+    "2": {
+      "physical_pin": 2,
+      "primary_signal": "GPIO32",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 32,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO32",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SDAA",
+          "type": "i2c",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "i2c_sda",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "EPWMSYNCI",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 342,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPBMUX1.bit.GPIO32 = 2;   //Configures GPIO32 for EPWMSYNCI"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "ADCSOCAO",
+          "type": "adc",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 0,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO32",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO32",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO32",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO32",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO32",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO32",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO32",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO32"
+    },
+    "3": {
+      "physical_pin": 3,
+      "primary_signal": "GPIO33",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 33,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO33",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SCLA",
+          "type": "i2c",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "i2c_scla",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "EPWMSYNCO",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 358,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPBMUX1.bit.GPIO33 = 2;  //Configures GPIO33 for EPWMSYNCO"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "ADCSOCBO",
+          "type": "adc",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 1,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO33",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO33",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO33",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO33",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO33",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO33",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO33",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO33"
+    },
+    "4": {
+      "physical_pin": 4,
+      "primary_signal": "GPIO23",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 23,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO23",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EQEP1I",
+          "type": "eqep",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "eqep_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "LINRXA",
+          "type": "lin",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 23,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO23",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO23",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO23",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO23",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO23",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO23",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO23",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO23"
+    },
+    "5": {
+      "physical_pin": 5,
+      "primary_signal": "GPIO42",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 42,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO42",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "COMP1OUT",
+          "type": "comparator",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 10,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO42",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO42",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO42",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO42",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO42",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO42",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO42",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO42"
+    },
+    "6": {
+      "physical_pin": 6,
+      "primary_signal": "GPIO43",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 43,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO43",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "COMP2OUT",
+          "type": "comparator",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 11,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO43",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO43",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO43",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO43",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO43",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO43",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO43",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO43"
+    },
+    "7": {
+      "physical_pin": 7,
+      "primary_signal": "VDD",
+      "pin_type": "power",
+      "pin_group": "Power",
+      "notes": "Core supply",
+      "configurable": false
+    },
+    "8": {
+      "physical_pin": 8,
+      "primary_signal": "VSS",
+      "pin_type": "ground",
+      "pin_group": "Ground",
+      "notes": "Digital ground",
+      "configurable": false
+    },
+    "9": {
+      "physical_pin": 9,
+      "primary_signal": "XRSn",
+      "pin_type": "reset",
+      "pin_group": "Reset",
+      "notes": "Active-low device reset; TI figure labels XRS with an overbar",
+      "configurable": false
+    },
+    "10": {
+      "physical_pin": 10,
+      "primary_signal": "TRST",
+      "pin_type": "jtag",
+      "pin_group": "JTAG",
+      "notes": "JTAG test reset; active high with internal pulldown",
+      "configurable": false
+    },
+    "11": {
+      "physical_pin": 11,
+      "primary_signal": "ADCINA7",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINA7",
+      "aio": null
+    },
+    "12": {
+      "physical_pin": 12,
+      "primary_signal": "ADCINA6",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINA6",
+      "aio": "AIO6"
+    },
+    "13": {
+      "physical_pin": 13,
+      "primary_signal": "ADCINA5",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINA5",
+      "aio": null
+    },
+    "14": {
+      "physical_pin": 14,
+      "primary_signal": "ADCINA4",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINA4",
+      "aio": "AIO4"
+    },
+    "15": {
+      "physical_pin": 15,
+      "primary_signal": "ADCINA3",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINA3",
+      "aio": null
+    },
+    "16": {
+      "physical_pin": 16,
+      "primary_signal": "ADCINA2",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINA2",
+      "aio": "AIO2"
+    },
+    "17": {
+      "physical_pin": 17,
+      "primary_signal": "ADCINA1",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINA1",
+      "aio": null
+    },
+    "18": {
+      "physical_pin": 18,
+      "primary_signal": "ADCINA0",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINA0",
+      "aio": null
+    },
+    "19": {
+      "physical_pin": 19,
+      "primary_signal": "VREFHI",
+      "pin_type": "analog_ref",
+      "pin_group": "Analog reference",
+      "notes": "ADC high reference",
+      "configurable": false
+    },
+    "20": {
+      "physical_pin": 20,
+      "primary_signal": "VDDA",
+      "pin_type": "power",
+      "pin_group": "Power",
+      "notes": "Analog supply",
+      "configurable": false
+    },
+    "21": {
+      "physical_pin": 21,
+      "primary_signal": "VSSA",
+      "pin_type": "ground",
+      "pin_group": "Ground",
+      "notes": "Analog ground",
+      "configurable": false
+    },
+    "22": {
+      "physical_pin": 22,
+      "primary_signal": "VREFLO",
+      "pin_type": "analog_ref",
+      "pin_group": "Analog reference",
+      "notes": "ADC low reference",
+      "configurable": false
+    },
+    "23": {
+      "physical_pin": 23,
+      "primary_signal": "ADCINB0",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINB0",
+      "aio": null
+    },
+    "24": {
+      "physical_pin": 24,
+      "primary_signal": "ADCINB1",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINB1",
+      "aio": null
+    },
+    "25": {
+      "physical_pin": 25,
+      "primary_signal": "ADCINB2",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINB2",
+      "aio": "AIO10"
+    },
+    "26": {
+      "physical_pin": 26,
+      "primary_signal": "ADCINB3",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINB3",
+      "aio": null
+    },
+    "27": {
+      "physical_pin": 27,
+      "primary_signal": "ADCINB4",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINB4",
+      "aio": "AIO12"
+    },
+    "28": {
+      "physical_pin": 28,
+      "primary_signal": "ADCINB5",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINB5",
+      "aio": null
+    },
+    "29": {
+      "physical_pin": 29,
+      "primary_signal": "ADCINB6",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINB6",
+      "aio": "AIO14"
+    },
+    "30": {
+      "physical_pin": 30,
+      "primary_signal": "ADCINB7",
+      "pin_type": "analog_gpio",
+      "pin_group": "Analog input",
+      "notes": "",
+      "configurable": true,
+      "adc_channel": "ADCINB7",
+      "aio": null
+    },
+    "31": {
+      "physical_pin": 31,
+      "primary_signal": "GPIO27",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "SPISTEB is active low",
+      "configurable": true,
+      "gpio_num": 27,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO27",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "HRCAP2",
+          "type": "hrcap",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SPISTEBn",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_output",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 27,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO27",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO27",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO27",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO27",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO27",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO27",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO27",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO27"
+    },
+    "32": {
+      "physical_pin": 32,
+      "primary_signal": "GPIO31",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 31,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO31",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "CANTXA",
+          "type": "can",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 31,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO31",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO31",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO31",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO31",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO31",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO31",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO31",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO31"
+    },
+    "33": {
+      "physical_pin": 33,
+      "primary_signal": "GPIO30",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 30,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO30",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "CANRXA",
+          "type": "can",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 30,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO30",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO30",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO30",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO30",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO30",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO30",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO30",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO30"
+    },
+    "34": {
+      "physical_pin": 34,
+      "primary_signal": "GPIO29",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "TZ3 is active low",
+      "configurable": true,
+      "gpio_num": 29,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO29",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SCITXDA",
+          "type": "sci",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "sci_tx",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SCLA",
+          "type": "i2c",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "i2c_scla",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "TZ3n",
+          "type": "tripzone",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "trip_async_input",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 417,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "//GpioCtrlRegs.GPAMUX2.bit.GPIO29 = 3;  // Configure GPIO29 as TZ3"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 29,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO29",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO29",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO29",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO29",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO29",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO29",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO29",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO29"
+    },
+    "35": {
+      "physical_pin": 35,
+      "primary_signal": "VSS",
+      "pin_type": "ground",
+      "pin_group": "Ground",
+      "notes": "Digital ground",
+      "configurable": false
+    },
+    "36": {
+      "physical_pin": 36,
+      "primary_signal": "VDDIO",
+      "pin_type": "power",
+      "pin_group": "Power",
+      "notes": "I/O supply",
+      "configurable": false
+    },
+    "37": {
+      "physical_pin": 37,
+      "primary_signal": "GPIO26",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 26,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO26",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "HRCAP1",
+          "type": "hrcap",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SPICLKB",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_output",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 26,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO26",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO26",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO26",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO26",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO26",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO26",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO26",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO26"
+    },
+    "38": {
+      "physical_pin": 38,
+      "primary_signal": "TEST2",
+      "pin_type": "reserved",
+      "pin_group": "Reserved",
+      "notes": "TI test pin; leave unconnected",
+      "configurable": false
+    },
+    "39": {
+      "physical_pin": 39,
+      "primary_signal": "GPIO9",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 9,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO9",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM5B",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 233,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO9 = 1;   // Configure GPIO9 as EPWM5B"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "LINTXA",
+          "type": "lin",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "HRCAP1",
+          "type": "hrcap",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 9,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO9",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO9",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO9",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO9",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO9",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO9",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO9",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO9"
+    },
+    "40": {
+      "physical_pin": 40,
+      "primary_signal": "GPIO28",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "TZ2 is active low",
+      "configurable": true,
+      "gpio_num": 28,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO28",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SCIRXDA",
+          "type": "sci",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "sci_rx",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SDAA",
+          "type": "i2c",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "i2c_sda",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "TZ2n",
+          "type": "tripzone",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "trip_async_input",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 414,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "//GpioCtrlRegs.GPAMUX2.bit.GPIO28 = 3;  // Configure GPIO28 as TZ2"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 28,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO28",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO28",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO28",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO28",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO28",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO28",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO28",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO28"
+    },
+    "41": {
+      "physical_pin": 41,
+      "primary_signal": "GPIO18",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 18,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO18",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SPICLKA",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_output",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "LINTXA",
+          "type": "lin",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "XCLKOUT",
+          "type": "clock",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_SysCtrl.c",
+              "line": 336,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "//GpioCtrlRegs.GPAMUX2.bit.GPIO18 = 3;  // GPIO18 = XCLKOUT"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 18,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO18",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO18",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO18",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO18",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO18",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO18",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO18",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO18"
+    },
+    "42": {
+      "physical_pin": 42,
+      "primary_signal": "GPIO17",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "TZ3 is active low",
+      "configurable": true,
+      "gpio_num": 17,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO17",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SPISOMIA",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "TZ3n",
+          "type": "tripzone",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "trip_async_input",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 17,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO17",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO17",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO17",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO17",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO17",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO17",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO17",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO17"
+    },
+    "43": {
+      "physical_pin": 43,
+      "primary_signal": "GPIO8",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 8,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO8",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM5A",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 232,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO8 = 1;   // Configure GPIO8 as EPWM5A"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "ADCSOCAO",
+          "type": "adc",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 8,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO8",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO8",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO8",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO8",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO8",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO8",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO8",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO8"
+    },
+    "44": {
+      "physical_pin": 44,
+      "primary_signal": "GPIO25",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 25,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO25",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SPISOMIB",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 25,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO25",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO25",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO25",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO25",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO25",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO25",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO25",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO25"
+    },
+    "45": {
+      "physical_pin": 45,
+      "primary_signal": "GPIO44",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 44,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO44",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 12,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO44",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO44",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO44",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO44",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO44",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO44",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO44",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO44"
+    },
+    "46": {
+      "physical_pin": 46,
+      "primary_signal": "GPIO16",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "TZ2 is active low",
+      "configurable": true,
+      "gpio_num": 16,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO16",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SPISIMOA",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "TZ2n",
+          "type": "tripzone",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "trip_async_input",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 16,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO16",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO16",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO16",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO16",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO16",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO16",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO16",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO16"
+    },
+    "47": {
+      "physical_pin": 47,
+      "primary_signal": "GPIO12",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "TZ1 is active low",
+      "configurable": true,
+      "gpio_num": 12,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO12",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "TZ1n",
+          "type": "tripzone",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "trip_async_input",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 410,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO12 = 1;  // Configure GPIO12 as TZ1"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SCITXDA",
+          "type": "sci",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "sci_tx",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "SPISIMOB",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 12,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO12",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO12",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO12",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO12",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO12",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO12",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO12",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO12"
+    },
+    "48": {
+      "physical_pin": 48,
+      "primary_signal": "GPIO41",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 41,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO41",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM7B",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 297,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPBMUX1.bit.GPIO41 = 1;   // Configure GPIO41 as EPWM7B"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 9,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO41",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO41",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO41",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO41",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO41",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO41",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO41",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO41"
+    },
+    "49": {
+      "physical_pin": 49,
+      "primary_signal": "GPIO7",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 7,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO7",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM4B",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 201,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO7 = 1;   // Configure GPIO7 as EPWM4B"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SCIRXDA",
+          "type": "sci",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "sci_rx",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 7,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO7",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO7",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO7",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO7",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO7",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO7",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO7",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO7"
+    },
+    "50": {
+      "physical_pin": 50,
+      "primary_signal": "GPIO6",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 6,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO6",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM4A",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 200,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO6 = 1;   // Configure GPIO6 as EPWM4A"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "EPWMSYNCI",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 341,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "//GpioCtrlRegs.GPAMUX1.bit.GPIO6 = 2;  //Configures GPIO6 for EPWMSYNCI"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "EPWMSYNCO",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 357,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "//GpioCtrlRegs.GPAMUX1.bit.GPIO6 = 3; //Configures GPIO6 for EPWMSYNCO"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 6,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO6",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO6",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO6",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO6",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO6",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO6",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO6",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO6"
+    },
+    "51": {
+      "physical_pin": 51,
+      "primary_signal": "X2",
+      "pin_type": "crystal",
+      "pin_group": "Clock",
+      "notes": "Crystal oscillator output",
+      "configurable": false
+    },
+    "52": {
+      "physical_pin": 52,
+      "primary_signal": "X1",
+      "pin_type": "crystal",
+      "pin_group": "Clock",
+      "notes": "Crystal oscillator input",
+      "configurable": false
+    },
+    "53": {
+      "physical_pin": 53,
+      "primary_signal": "VSS",
+      "pin_type": "ground",
+      "pin_group": "Ground",
+      "notes": "Digital ground",
+      "configurable": false
+    },
+    "54": {
+      "physical_pin": 54,
+      "primary_signal": "VDD",
+      "pin_type": "power",
+      "pin_group": "Power",
+      "notes": "Core supply",
+      "configurable": false
+    },
+    "55": {
+      "physical_pin": 55,
+      "primary_signal": "GPIO19",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "SPISTEA is active low",
+      "configurable": true,
+      "alt_non_mux": [
+        {
+          "function": "XCLKIN",
+          "selector": "SysCtrlRegs.XCLK.bit.XCLKINSEL",
+          "source_verified": false,
+          "source_document": "DSP2803x_SysCtrl.h",
+          "source_section": "XCLK_BITS.XCLKINSEL"
+        }
+      ],
+      "gpio_num": 19,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO19",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "SPISTEAn",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_output",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "LINRXA",
+          "type": "lin",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "ECAP1",
+          "type": "ecap",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 19,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO19",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO19",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO19",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO19",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO19",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO19",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO19",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO19"
+    },
+    "56": {
+      "physical_pin": 56,
+      "primary_signal": "GPIO39",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 39,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO39",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 7,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO39",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO39",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO39",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO39",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO39",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO39",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO39",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO39"
+    },
+    "57": {
+      "physical_pin": 57,
+      "primary_signal": "GPIO38",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O/JTAG",
+      "notes": "",
+      "configurable": true,
+      "alt_non_mux": [
+        {
+          "function": "XCLKIN",
+          "selector": "SysCtrlRegs.XCLK.bit.XCLKINSEL",
+          "source_verified": false,
+          "source_document": "DSP2803x_SysCtrl.h",
+          "source_section": "XCLK_BITS.XCLKINSEL"
+        }
+      ],
+      "gpio_num": 38,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO38",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "TCK",
+          "type": "other",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 6,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO38",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO38",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO38",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO38",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO38",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO38",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO38",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO38"
+    },
+    "58": {
+      "physical_pin": 58,
+      "primary_signal": "GPIO37",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O/JTAG",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 37,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO37",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "TDO",
+          "type": "other",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 5,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO37",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO37",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO37",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO37",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO37",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO37",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO37",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO37"
+    },
+    "59": {
+      "physical_pin": 59,
+      "primary_signal": "GPIO35",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O/JTAG",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 35,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO35",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "TDI",
+          "type": "other",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 3,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO35",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO35",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO35",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO35",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO35",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO35",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO35",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO35"
+    },
+    "60": {
+      "physical_pin": 60,
+      "primary_signal": "GPIO36",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O/JTAG",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 36,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO36",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "TMS",
+          "type": "other",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 4,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO36",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO36",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO36",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO36",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO36",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO36",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO36",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO36"
+    },
+    "61": {
+      "physical_pin": 61,
+      "primary_signal": "GPIO11",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 11,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO11",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM6B",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 265,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO11 = 1;   // Configure GPIO11 as EPWM6B"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "LINRXA",
+          "type": "lin",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "HRCAP2",
+          "type": "hrcap",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 11,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO11",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO11",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO11",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO11",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO11",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO11",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO11",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO11"
+    },
+    "62": {
+      "physical_pin": 62,
+      "primary_signal": "GPIO5",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 5,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO5",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM3B",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 170,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO5 = 1;   // Configure GPIO5 as EPWM3B"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SPISIMOA",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "ECAP1",
+          "type": "ecap",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 5,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO5",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO5",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO5",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO5",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO5",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO5",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO5",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO5"
+    },
+    "63": {
+      "physical_pin": 63,
+      "primary_signal": "GPIO4",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 4,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO4",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM3A",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 169,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO4 = 1;   // Configure GPIO4 as EPWM3A"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 4,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO4",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO4",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO4",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO4",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO4",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO4",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO4",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO4"
+    },
+    "64": {
+      "physical_pin": 64,
+      "primary_signal": "GPIO40",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 40,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO40",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM7A",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 296,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPBMUX1.bit.GPIO40 = 1;   // Configure GPIO40 as EPWM7A"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 8,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO40",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO40",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO40",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO40",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO40",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO40",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO40",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO40"
+    },
+    "65": {
+      "physical_pin": 65,
+      "primary_signal": "GPIO10",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 10,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO10",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM6A",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 264,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO10 = 1;   // Configure GPIO10 as EPWM6A"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "ADCSOCBO",
+          "type": "adc",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 10,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO10",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO10",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO10",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO10",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO10",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO10",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO10",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO10"
+    },
+    "66": {
+      "physical_pin": 66,
+      "primary_signal": "GPIO3",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 3,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO3",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM2B",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 141,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO3 = 1;   // Configure GPIO3 as EPWM2B"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SPISOMIA",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "COMP2OUT",
+          "type": "comparator",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 3,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO3",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO3",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO3",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO3",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO3",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO3",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO3",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO3"
+    },
+    "67": {
+      "physical_pin": 67,
+      "primary_signal": "GPIO2",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 2,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO2",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM2A",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 140,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO2 = 1;   // Configure GPIO2 as EPWM2A"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 2,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO2",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO2",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO2",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO2",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO2",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO2",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO2",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO2"
+    },
+    "68": {
+      "physical_pin": 68,
+      "primary_signal": "GPIO1",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 1,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO1",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM1B",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 111,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO1 = 1;   // Configure GPIO1 as EPWM1B"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "COMP1OUT",
+          "type": "comparator",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 1,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO1",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO1",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO1",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO1",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO1",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO1",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO1",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO1"
+    },
+    "69": {
+      "physical_pin": 69,
+      "primary_signal": "GPIO0",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 0,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO0",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EPWM1A",
+          "type": "epwm",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "epwm_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 110,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO0 = 1;   // Configure GPIO0 as EPWM1A"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 0,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO0",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO0",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO0",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO0",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO0",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO0",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO0",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO0"
+    },
+    "70": {
+      "physical_pin": 70,
+      "primary_signal": "VDDIO",
+      "pin_type": "power",
+      "pin_group": "Power",
+      "notes": "I/O supply",
+      "configurable": false
+    },
+    "71": {
+      "physical_pin": 71,
+      "primary_signal": "VSS",
+      "pin_type": "ground",
+      "pin_group": "Ground",
+      "notes": "Digital ground",
+      "configurable": false
+    },
+    "72": {
+      "physical_pin": 72,
+      "primary_signal": "VDD",
+      "pin_type": "power",
+      "pin_group": "Power",
+      "notes": "Core supply",
+      "configurable": false
+    },
+    "73": {
+      "physical_pin": 73,
+      "primary_signal": "VREGENZ",
+      "pin_type": "power_ctrl",
+      "pin_group": "Power control",
+      "notes": "Internal voltage-regulator enable control",
+      "configurable": false
+    },
+    "74": {
+      "physical_pin": 74,
+      "primary_signal": "GPIO34",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 34,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO34",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "COMP2OUT",
+          "type": "comparator",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "COMP3OUT",
+          "type": "comparator",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "B",
+      "bit_in_port": 2,
+      "mux_reg": "GPBMUX1",
+      "qsel_reg": "GPBQSEL1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "tog_reg": "GPBTOGGLE",
+      "dat_reg": "GPBDAT",
+      "pud_reg": "GPBPUD",
+      "mux_field": "GpioCtrlRegs.GPBMUX1.bit.GPIO34",
+      "qsel_field": "GpioCtrlRegs.GPBQSEL1.bit.GPIO34",
+      "dir_field": "GpioCtrlRegs.GPBDIR.bit.GPIO34",
+      "pud_field": "GpioCtrlRegs.GPBPUD.bit.GPIO34",
+      "set_field": "GpioDataRegs.GPBSET.bit.GPIO34",
+      "clr_field": "GpioDataRegs.GPBCLEAR.bit.GPIO34",
+      "tog_field": "GpioDataRegs.GPBTOGGLE.bit.GPIO34",
+      "dat_field": "GpioDataRegs.GPBDAT.bit.GPIO34"
+    },
+    "75": {
+      "physical_pin": 75,
+      "primary_signal": "GPIO15",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "TZ1 and SPISTEB are active low",
+      "configurable": true,
+      "gpio_num": 15,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO15",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "TZ1n",
+          "type": "tripzone",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "trip_async_input",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 411,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "//GpioCtrlRegs.GPAMUX1.bit.GPIO15 = 1;  // Configure GPIO15 as TZ1"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "LINRXA",
+          "type": "lin",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "SPISTEBn",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_output",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 15,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO15",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO15",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO15",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO15",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO15",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO15",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO15",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO15"
+    },
+    "76": {
+      "physical_pin": 76,
+      "primary_signal": "GPIO13",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "TZ2 is active low",
+      "configurable": true,
+      "gpio_num": 13,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO13",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "TZ2n",
+          "type": "tripzone",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "trip_async_input",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 412,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO13 = 1;  // Configure GPIO13 as TZ2"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SPISOMIB",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 13,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO13",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO13",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO13",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO13",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO13",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO13",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO13",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO13"
+    },
+    "77": {
+      "physical_pin": 77,
+      "primary_signal": "GPIO14",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "TZ3 is active low",
+      "configurable": true,
+      "gpio_num": 14,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO14",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "TZ3n",
+          "type": "tripzone",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "trip_async_input",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            },
+            {
+              "document": "TI F2803x Support Library v2.01",
+              "file": "DSP2803x_EPwm.c",
+              "line": 415,
+              "purpose": "local source numeric mux corroboration",
+              "excerpt": "GpioCtrlRegs.GPAMUX1.bit.GPIO14 = 1;  // Configure GPIO14 as TZ3"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "LINTXA",
+          "type": "lin",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 3,
+          "function": "SPICLKB",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_output",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 14,
+      "mux_reg": "GPAMUX1",
+      "qsel_reg": "GPAQSEL1",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX1.bit.GPIO14",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL1.bit.GPIO14",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO14",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO14",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO14",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO14",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO14",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO14"
+    },
+    "78": {
+      "physical_pin": 78,
+      "primary_signal": "GPIO20",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 20,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO20",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EQEP1A",
+          "type": "eqep",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "eqep_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "COMP1OUT",
+          "type": "comparator",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 20,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO20",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO20",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO20",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO20",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO20",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO20",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO20",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO20"
+    },
+    "79": {
+      "physical_pin": 79,
+      "primary_signal": "GPIO21",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 21,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO21",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "EQEP1B",
+          "type": "eqep",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "eqep_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "COMP2OUT",
+          "type": "comparator",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 21,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO21",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO21",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO21",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO21",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO21",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO21",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO21",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO21"
+    },
+    "80": {
+      "physical_pin": 80,
+      "primary_signal": "GPIO24",
+      "pin_type": "digital_gpio",
+      "pin_group": "Digital I/O",
+      "notes": "",
+      "configurable": true,
+      "gpio_num": 24,
+      "mux_options": [
+        {
+          "mux": 0,
+          "function": "GPIO24",
+          "type": "gpio",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "gpio_output",
+          "generator_supported": true,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 1,
+          "function": "ECAP1",
+          "type": "ecap",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": null,
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        },
+        {
+          "mux": 2,
+          "function": "SPISIMOB",
+          "type": "spi",
+          "source_verified": true,
+          "source_document": "SPRS584Q",
+          "source_section": "Table 5-1",
+          "signal_verified": true,
+          "mux_value_verified": true,
+          "generator_profile": "spi_input",
+          "generator_supported": false,
+          "evidence": [
+            {
+              "document": "SPRS584Q",
+              "section": "Table 5-1",
+              "purpose": "signal availability on physical pin"
+            },
+            {
+              "document": "SPRS584Q",
+              "section": "GPIO mux register bit-field tables (Section 6.1.9)",
+              "purpose": "numeric mux value"
+            }
+          ]
+        }
+      ],
+      "aio": null,
+      "port": "A",
+      "bit_in_port": 24,
+      "mux_reg": "GPAMUX2",
+      "qsel_reg": "GPAQSEL2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "tog_reg": "GPATOGGLE",
+      "dat_reg": "GPADAT",
+      "pud_reg": "GPAPUD",
+      "mux_field": "GpioCtrlRegs.GPAMUX2.bit.GPIO24",
+      "qsel_field": "GpioCtrlRegs.GPAQSEL2.bit.GPIO24",
+      "dir_field": "GpioCtrlRegs.GPADIR.bit.GPIO24",
+      "pud_field": "GpioCtrlRegs.GPAPUD.bit.GPIO24",
+      "set_field": "GpioDataRegs.GPASET.bit.GPIO24",
+      "clr_field": "GpioDataRegs.GPACLEAR.bit.GPIO24",
+      "tog_field": "GpioDataRegs.GPATOGGLE.bit.GPIO24",
+      "dat_field": "GpioDataRegs.GPADAT.bit.GPIO24"
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "family": "f2803x",
+  "vendor": "ti",
+  "product_line": "c2000",
+  "description": "TMS320F2803x Real-Time Microcontrollers",
+  "source_datasheet": "SPRS584Q",
+  "max_sysclk_mhz": 60,
+  "gpio_ports": {
+    "A": {
+      "gpio_range": [
+        0,
+        31
+      ],
+      "mux_reg1": "GPAMUX1",
+      "mux_reg2": "GPAMUX2",
+      "dir_reg": "GPADIR",
+      "set_reg": "GPASET",
+      "clr_reg": "GPACLEAR",
+      "pud_reg": "GPAPUD",
+      "dat_reg": "GPADAT",
+      "qsel_reg1": "GPAQSEL1",
+      "qsel_reg2": "GPAQSEL2"
+    },
+    "B": {
+      "gpio_range": [
+        32,
+        44
+      ],
+      "mux_reg1": "GPBMUX1",
+      "dir_reg": "GPBDIR",
+      "set_reg": "GPBSET",
+      "clr_reg": "GPBCLEAR",
+      "pud_reg": "GPBPUD",
+      "dat_reg": "GPBDAT",
+      "qsel_reg1": "GPBQSEL1"
+    }
+  },
+  "aio_pins": [
+    "AIO2",
+    "AIO4",
+    "AIO6",
+    "AIO10",
+    "AIO12",
+    "AIO14"
+  ],
+  "aio_mux_reg": "AIOMUX1",
+  "adc_channels": {
+    "A": [
+      "ADCINA0",
+      "ADCINA1",
+      "ADCINA2",
+      "ADCINA3",
+      "ADCINA4",
+      "ADCINA5",
+      "ADCINA6",
+      "ADCINA7"
+    ],
+    "B": [
+      "ADCINB0",
+      "ADCINB1",
+      "ADCINB2",
+      "ADCINB3",
+      "ADCINB4",
+      "ADCINB5",
+      "ADCINB6",
+      "ADCINB7"
+    ]
+  },
+  "epwm_modules": [
+    "EPWM1",
+    "EPWM2",
+    "EPWM3",
+    "EPWM4",
+    "EPWM5",
+    "EPWM6",
+    "EPWM7"
+  ],
+  "pclkcr": {
+    "EPWM1": {
+      "reg": "PCLKCR1",
+      "bit": "EPWM1ENCLK"
+    },
+    "EPWM2": {
+      "reg": "PCLKCR1",
+      "bit": "EPWM2ENCLK"
+    },
+    "EPWM3": {
+      "reg": "PCLKCR1",
+      "bit": "EPWM3ENCLK"
+    },
+    "EPWM4": {
+      "reg": "PCLKCR1",
+      "bit": "EPWM4ENCLK"
+    },
+    "EPWM5": {
+      "reg": "PCLKCR1",
+      "bit": "EPWM5ENCLK"
+    },
+    "EPWM6": {
+      "reg": "PCLKCR1",
+      "bit": "EPWM6ENCLK"
+    },
+    "EPWM7": {
+      "reg": "PCLKCR1",
+      "bit": "EPWM7ENCLK"
+    },
+    "ADC": {
+      "reg": "PCLKCR0",
+      "bit": "ADCENCLK"
+    },
+    "SPI_A": {
+      "reg": "PCLKCR0",
+      "bit": "SPIAENCLK"
+    },
+    "SPI_B": {
+      "reg": "PCLKCR0",
+      "bit": "SPIBENCLK"
+    },
+    "SCI_A": {
+      "reg": "PCLKCR0",
+      "bit": "SCIAENCLK"
+    },
+    "I2C_A": {
+      "reg": "PCLKCR0",
+      "bit": "I2CAENCLK"
+    },
+    "HRPWM": {
+      "reg": "PCLKCR0",
+      "bit": "HRPWMENCLK"
+    },
+    "ECAP1": {
+      "reg": "PCLKCR1",
+      "bit": "ECAP1ENCLK"
+    },
+    "EQEP1": {
+      "reg": "PCLKCR1",
+      "bit": "EQEP1ENCLK"
+    },
+    "ECAN_A": {
+      "reg": "PCLKCR0",
+      "bit": "ECANAENCLK"
+    },
+    "COMP1": {
+      "reg": "PCLKCR3",
+      "bit": "COMP1ENCLK"
+    },
+    "COMP2": {
+      "reg": "PCLKCR3",
+      "bit": "COMP2ENCLK"
+    },
+    "COMP3": {
+      "reg": "PCLKCR3",
+      "bit": "COMP3ENCLK"
+    },
+    "TIMER0": {
+      "reg": "PCLKCR3",
+      "bit": "CPUTIMER0ENCLK"
+    },
+    "TIMER1": {
+      "reg": "PCLKCR3",
+      "bit": "CPUTIMER1ENCLK"
+    },
+    "TIMER2": {
+      "reg": "PCLKCR3",
+      "bit": "CPUTIMER2ENCLK"
+    },
+    "CLA1": {
+      "reg": "PCLKCR3",
+      "bit": "CLA1ENCLK"
+    },
+    "LIN_A": {
+      "reg": "PCLKCR0",
+      "bit": "LINAENCLK"
+    },
+    "HRCAP1": {
+      "reg": "PCLKCR2",
+      "bit": "HRCAP1ENCLK"
+    },
+    "HRCAP2": {
+      "reg": "PCLKCR2",
+      "bit": "HRCAP2ENCLK"
+    }
+  },
+  "tbclksync_bit": {
+    "reg": "PCLKCR0",
+    "bit": "TBCLKSYNC"
+  },
+  "header_files": [
+    "DSP2803x_Device.h",
+    "DSP2803x_Gpio.h",
+    "DSP2803x_SysCtrl.h",
+    "DSP2803x_EPwm.h",
+    "DSP2803x_Adc.h",
+    "DSP2803x_CpuTimers.h",
+    "DSP2803x_PieCtrl.h",
+    "DSP2803x_PieVect.h",
+    "DSP28x_Project.h"
+  ]
+}

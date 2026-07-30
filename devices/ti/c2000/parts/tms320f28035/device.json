@@ -1,0 +1,25 @@
+{
+  "device": "TMS320F28035",
+  "part_number": "TMS320F28035PNT",
+  "family": "f2803x",
+  "status": "SKELETON",
+  "source_datasheet": "SPRS585 (TMS320F2803x — 待核实具体版本)",
+  "source_verified": false,
+  "last_verified": null,
+  "packages": ["PN80"],
+  "default_package": "PN80",
+  "max_sysclk_mhz": 60,
+  "flash_kb": 128,
+  "ram_kb": 20,
+  "epwm_count": 7,
+  "note": "骨架插件：device.json 已就位，Registry 会自动发现并在前端芯片下拉中显示。pinmux.json / packages/ / constraints.json 尚未建立 —— 需从 SPRS585 官方数据手册核对引脚与复用后补充。本插件不宣称已验证，禁止用于生成可导出代码。",
+  "safety_rules": {
+    "offline_only": true,
+    "no_jtag": true,
+    "no_flash_write": true,
+    "no_auto_pwm_enable": true,
+    "no_modify_live_project": true,
+    "pwm_default_clamped": true,
+    "unresolved_marker": "UNRESOLVED"
+  }
+}
