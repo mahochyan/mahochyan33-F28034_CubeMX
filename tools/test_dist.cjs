@@ -12,6 +12,7 @@ const required = [
   'src/core/constraint_checker.js',
   'src/core/codegen.js',
   'src/core/export_zip.js',
+  'src/devices/TMS320F28034/device_bundle.js',
   'src/devices/TMS320F28034/pinmux_golden.json',
   'src/devices/TMS320F28034/packages/pnt80.json',
 ];
@@ -19,6 +20,10 @@ for (const relative of required) {
   if (!fs.existsSync(path.join(dist, relative))) {
     throw new Error(`dist is missing ${relative}`);
   }
+}
+const indexHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
+if (!indexHtml.includes('./src/devices/TMS320F28034/device_bundle.js')) {
+  throw new Error('dist index does not preload the embedded device bundle');
 }
 const forbiddenFiles = ['app.py', 'Dockerfile', 'docker-compose.yml', 'requirements.txt'];
 for (const name of forbiddenFiles) {

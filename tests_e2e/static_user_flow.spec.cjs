@@ -76,6 +76,9 @@ test('subpath boot uses only static assets and renders package-driven PNT80', as
     expect(parsed.pathname.startsWith('/test-repo/')).toBe(true);
     expect(parsed.pathname).not.toMatch(/\/api(?:\/|$)/i);
   }
+  expect(requests.filter(url => new URL(url).pathname.endsWith('.json'))).toEqual([]);
+  expect(requests.some(url => new URL(url).pathname.endsWith('/device_bundle.js')))
+    .toBe(true);
 });
 
 test('Pin69 EPWM1A user flow commits A/B/Trip, persists and exports preview-identical ZIP',
