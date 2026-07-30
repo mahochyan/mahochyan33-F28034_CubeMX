@@ -1,96 +1,78 @@
-# C2000 Config Studio R3 Web Core
+# C2000 Config Studio R3.2 Static
 
-这是面向 `TMS320F28034 / PNT80` 的图形化配置器。R3 阶段只收敛
-Web Core，不新增芯片和外设。
+面向 `TMS320F28034 / PNT80` 的浏览器端引脚复用与初始化代码配置器。
 
-项目主页（GitHub Pages）：
+在线地址：
 
 <https://mahochyan.github.io/mahochyan33-F28034_CubeMX/>
 
-> GitHub Pages 展示项目界面、能力和部署说明。完整配置器依赖 Flask /
-> Waitress API，不能只靠静态 HTML 运行。
+生产版本位于 `dist/`，是 GitHub Pages 可直接托管的纯静态网页。浏览器
+直接读取仓库中的 JavaScript/JSON，完成约束校验、C 代码预览、工程 JSON
+持久化和确定性 ZIP 导出。
 
-## R3 已实现的主线
+> 当前发布状态：`CONFIG_STUDIO_R3.2_STATIC_IN_PROGRESS`。内部自动化和
+> 浏览器验收通过不等于功率级批准；还需要用户在实际网页完成验收。
 
-- 只有一份 `ProjectConfig`：草稿取消不会污染已提交配置。
-- 功能树内嵌单步向导：一次只编辑一个功能，支持上一步、下一步、取消和完成。
-- ePWM A/B 互补配置按模块原子提交，B 路由死区模块派生，Trip 输入一并提交。
-- 预览和 ZIP 导出共用 `generator.generate_project()`，输出可重复。
-- `PNT80` 芯片图完全由 package JSON 驱动，80 个物理脚按顶视图排列。
-- MUX 证据拆分为“信号存在”“数值已核验”“生成器支持”三种状态。
-- Web 模式使用 Waitress，ZIP 在内存中生成，不写服务器 staging。
+## R3.2 主线
 
-## 本地模式
+- MUX golden：127 个有效非 Reserved 选项，差异/多余/缺失均为 0。
+- 17 个已知错误项修正为 MUX3；GPIO35~38 的 JTAG 项不再作为普通候选。
+- `ProjectConfig` 只使用 `schema_version: 1`。
+- 向导提交采用完整 commit plan；冲突时内存与 localStorage 都不改变。
+- ePWM 互补→单路、Trip 禁用、Trip 源切换都会清理旧的派生引脚。
+- 校验、生成器和 ZIP 全部在浏览器端运行。
+- 非 ePWM 外设当前按 `pinmux-only` 处理，不伪装成完整外设初始化。
+- 芯片图由 `PNT80` package JSON 驱动，固定渲染 80 个物理脚。
+- 所有生成的 C/H 文件都带有：
+  - `LOGIC TEST ONLY`
+  - `NOT APPROVED FOR POWER-STAGE ENABLE`
 
-双击：
+## 目录
 
-```bat
-start_config_studio.bat
+```text
+index.html                 静态入口
+assets/                    页面样式
+src/core/                  ProjectConfig、校验、生成、ZIP 核心
+src/devices/TMS320F28034/  浏览器器件数据
+dist/                      GitHub Pages 发布目录
+tests_js/                  浏览器核心单元测试
+tests_e2e/                 Playwright 真实用户流程
+.github/workflows/pages.yml 构建、测试和 Pages 部署
 ```
 
-停止：
+旧的 Python/Flask 文件只保留为参考实现和离线回归工具，不会进入 `dist/`，
+也不是生产网页的运行条件。
 
-```bat
-stop_config_studio.bat
-```
+## 构建与验收
 
-本地模式只监听 `127.0.0.1`，并在 `generator/instance.json` 记录实际
-PID、端口和构建号。
-
-## Web 模式
-
-安装依赖：
+需要 Node.js 22 或更高版本：
 
 ```powershell
-python -m pip install -r requirements.txt
+npm install
+npx playwright install chromium
+npm run test:unit
+npm run build
+npm run test:dist
+npm run test:e2e
 ```
 
-启动一个生产 WSGI 进程：
-
-```powershell
-$env:APP_MODE='web'
-$env:PORT='8080'
-python -m waitress --listen=0.0.0.0:8080 --threads=8 app:app
-```
-
-浏览器打开 `http://localhost:8080/`。Docker/Compose 部署见
-`docs/DEPLOY_WEB.md`。
-
-## GitHub Pages
-
-静态项目主页位于 `docs/index.html`。仓库 `main` 分支更新后，GitHub
-Pages 从 `/docs` 发布；它是项目展示和文档入口，不冒充可执行的后端服务。
-
-## 生成器安全语义
-
-- 未配置的模块不生成对应初始化文件。
-- ePWM 上下计数：`TBPRD = TBCLK / (2 × fPWM)`。
-- `CAU 置位 / CAD 清零`：`CMPA = TBPRD × (1 - duty)`。
-- 互补 B 路由死区模块派生，不复制另一套 AQ。
-- Trip 会选择输入源，并把 `TZA/TZB` 都钳为低电平。
-- I²C 使用开漏语义，启用内部上拉、异步输入资格，同时提示板上外部上拉。
-- 生成代码不会自动释放 ePWM 软件钳位。
-
-## 验收命令
+完整旧回归：
 
 ```powershell
 python -m unittest discover -s tests -v
-python tests\e2e_geometry_bbox.py -v
-python tests\e2e_web_flow.py
-python tests\ccs_build_check.py
 ```
 
-其中 `e2e_web_flow.py` 会启动 Waitress，并用 Playwright/Chromium 操作真实
-页面；不能用历史 43 项单元测试替代浏览器验收。
+`npm run test:e2e` 会把 `dist/` 挂载到 `/test-repo/` 子路径，并通过真实
+Chromium 操作 Pin69/EPWM1A、SCLA、导入导出、刷新持久化和冲突回滚。
+本地测试服务器只属于测试工具，部署后的网页不需要本地端口或后台进程。
 
-## 证据与交付记录
+## 生成代码安全边界
 
-- `docs/R3_BASELINE.md`
-- `docs/PINMUX_EVIDENCE_REPORT.md`
-- `docs/UNVERIFIED_MUX_REPORT.md`
-- `docs/GENERATOR_SEMANTIC_REPORT.md`
-- `docs/R3_CCS_BUILD_LOG.md`
-- `docs/R3_DELIVERY.md`
-- `docs/r3_e2e/`
+- ePWM 初始化期间同时保持软件强制低电平与 OST 钳位。
+- `ReleaseClamp()` 先确认 Trip 输入恢复，再冻结 TBCLK、重置
+  `TBCTR/TBPHS`、清除 Trip、在周期边界重启，最后取消软件钳位。
+- 时钟生成包含 `PLLLOCKPRD`、`MCLKSTS` 和锁定超时检查，不生成 `ESTOP0`。
+- Timer 初始化采用 `TSS/TRB/TIE` 安全顺序，不修改全局中断开关。
+- 生成代码必须经过工程师审查和台架验证，不能直接作为功率级使能依据。
 
-数据依据为 TI `SPRS584Q` 数据手册及本机 TI C2000 头文件/源文件。
+详细内部验收见 [R3.2 静态交付记录](docs/R3_2_STATIC_DELIVERY.md)。

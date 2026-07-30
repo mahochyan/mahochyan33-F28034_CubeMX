@@ -15,6 +15,9 @@ cmd_out.txt
 cmd_err.txt
 docs/r3_server_*.log
 docs/r3_web_*.log
+node_modules/
+test-results/
+playwright-report/
 
 .DS_Store
 Thumbs.db

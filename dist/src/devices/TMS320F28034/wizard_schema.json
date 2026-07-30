@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "description": "R3.2 static inline staircase wizard schema.",
+  "profiles": {
+    "gpio": {
+      "title": "GPIO 配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
+        {"id": "direction", "label": "输入 / 输出", "control": "choice", "default": "output",
+         "choices": [{"value": "output", "label": "输出"}, {"value": "input", "label": "输入"}]},
+        {"id": "initial_level", "label": "初始电平", "control": "choice", "default": "low",
+         "visible_if": {"direction": "output"},
+         "choices": [{"value": "low", "label": "低（安全）"}, {"value": "high", "label": "高"}]},
+        {"id": "pullup", "label": "内部上拉", "control": "choice", "default": "disable",
+         "choices": [{"value": "disable", "label": "禁用"}, {"value": "enable", "label": "启用"}]},
+        {"id": "qualification", "label": "输入资格", "control": "choice", "default": "sync",
+         "visible_if": {"direction": "input"},
+         "choices": [{"value": "sync", "label": "同步"}, {"value": "qual3", "label": "3 次采样"},
+                     {"value": "qual6", "label": "6 次采样"}]},
+        {"id": "summary", "label": "配置摘要", "control": "summary"}
+      ]
+    },
+    "epwm": {
+      "title": "ePWM 配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
+        {"id": "mode", "label": "输出模式", "control": "choice", "default": "complementary",
+         "choices": [{"value": "complementary", "label": "A/B 互补输出"},
+                     {"value": "single", "label": "单路输出"}]},
+        {"id": "frequency_hz", "label": "开关频率 (Hz)", "control": "number",
+         "default": 100000, "min": 100, "max": 1000000},
+        {"id": "count_mode", "label": "计数模式", "control": "choice", "default": "up_down",
+         "choices": [{"value": "up_down", "label": "上下计数（对称）"},
+                     {"value": "up", "label": "向上计数"}]},
+        {"id": "duty", "label": "占空比 (0~1)", "control": "number",
+         "default": 0.5, "min": 0.01, "max": 0.99, "step": 0.01},
+        {"id": "aq_profile", "label": "AQ 波形", "control": "choice",
+         "default": "set_cau_clear_cad",
+         "choices": [{"value": "set_cau_clear_cad", "label": "CAU 置位 / CAD 清零"},
+                     {"value": "clear_cau_set_cad", "label": "CAU 清零 / CAD 置位"}]},
+        {"id": "red_ns", "label": "上升沿死区 RED (ns)", "control": "number",
+         "default": 200, "min": 1, "visible_if": {"mode": "complementary"}},
+        {"id": "fed_ns", "label": "下降沿死区 FED (ns)", "control": "number",
+         "default": 200, "min": 1, "visible_if": {"mode": "complementary"}},
+        {"id": "trip_enabled", "label": "启用硬件 Trip", "control": "boolean", "default": true},
+        {"id": "trip_source", "label": "Trip 输入", "control": "choice", "default": "TZ1",
+         "visible_if": {"trip_enabled": true},
+         "choices": [{"value": "TZ1", "label": "TZ1"}, {"value": "TZ2", "label": "TZ2"},
+                     {"value": "TZ3", "label": "TZ3"}]},
+        {"id": "trip_mode", "label": "Trip 模式", "control": "choice", "default": "one_shot",
+         "visible_if": {"trip_enabled": true},
+         "choices": [{"value": "one_shot", "label": "一次性封锁 OST"},
+                     {"value": "cycle_by_cycle", "label": "逐周期 CBC"}]},
+        {"id": "summary", "label": "配置摘要", "control": "summary"}
+      ]
+    },
+    "i2c": {
+      "title": "I²C 引脚配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
+        {"id": "summary", "label": "I²C 电气摘要", "control": "summary"}
+      ]
+    },
+    "tripzone": {
+      "title": "Trip Zone 引脚配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
+        {"id": "summary", "label": "异步保护输入摘要", "control": "summary"}
+      ]
+    },
+    "generic": {
+      "title": "引脚复用配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
+        {"id": "summary", "label": "Pinmux-only 摘要", "control": "summary"}
+      ]
+    }
+  }
+}

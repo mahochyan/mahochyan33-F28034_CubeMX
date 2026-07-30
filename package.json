@@ -1,0 +1,16 @@
+{
+  "name": "f28034-config-studio-r3-2-static",
+  "version": "3.2.0",
+  "private": true,
+  "description": "Pure static TMS320F28034 pinmux and code generator for GitHub Pages.",
+  "scripts": {
+    "test:unit": "node --test tests_js/*.test.cjs",
+    "build": "node tools/build_static.cjs",
+    "test:dist": "node tools/test_dist.cjs",
+    "test:e2e": "playwright test",
+    "test": "npm run test:unit && npm run build && npm run test:dist && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
