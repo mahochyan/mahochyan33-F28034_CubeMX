@@ -30,11 +30,12 @@
 ## 目录
 
 ```text
-index.html                 静态入口
+index.html                 源码入口（不要直接双击）
 assets/                    页面样式
 src/core/                  ProjectConfig、校验、生成、ZIP 核心
 src/devices/TMS320F28034/  浏览器器件数据
-dist/                      GitHub Pages 发布目录
+dist/index.html            本地双击入口
+dist/                      GitHub Pages 完整发布目录
 tests_js/                  浏览器核心单元测试
 tests_e2e/                 Playwright 真实用户流程
 .github/workflows/pages.yml 构建、测试和 Pages 部署
@@ -42,6 +43,34 @@ tests_e2e/                 Playwright 真实用户流程
 
 旧的 Python/Flask 文件只保留为参考实现和离线回归工具，不会进入 `dist/`，
 也不是生产网页的运行条件。
+
+## 本地直接打开
+
+Windows 本地使用时，请打开构建后的：
+
+```text
+D:\1POWERlearning\program_LLC\F28034_LLC_ConfigStudio\dist\index.html
+```
+
+也可以在 PowerShell 中运行：
+
+```powershell
+start .\dist\index.html
+```
+
+不要直接双击仓库根目录的 `index.html`。根目录文件是源码入口，在
+`file://` 模式下会退回到 `fetch()` 读取器件 JSON；Chrome 会因为本地文件
+安全策略阻止该请求并显示 `Failed to fetch`。`dist/index.html` 已预加载
+`device_bundle.js`，正常启动不需要运行时 JSON 请求。
+
+如果 `dist/` 不存在或内容过期，先重新构建：
+
+```powershell
+cd D:\1POWERlearning\program_LLC\F28034_LLC_ConfigStudio
+npm.cmd install
+npm.cmd run build
+start .\dist\index.html
+```
 
 ## 构建与验收
 
