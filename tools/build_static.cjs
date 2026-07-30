@@ -17,6 +17,36 @@ for (const directory of ['assets', 'src']) {
 }
 fs.writeFileSync(path.join(dist, '.nojekyll'), '', 'utf8');
 
+const deviceRoot = path.join(root, 'src', 'devices', 'TMS320F28034');
+const deviceBundle = {
+  device: 'TMS320F28034',
+  deviceInfo: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'device.json'), 'utf8')),
+  pinmux: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'pinmux.json'), 'utf8')),
+  golden: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'pinmux_golden.json'), 'utf8')),
+  family: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'family.json'), 'utf8')),
+  constraints: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'constraints.json'), 'utf8')),
+  wizards: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'wizard_schema.json'), 'utf8')),
+  packageData: JSON.parse(fs.readFileSync(
+    path.join(deviceRoot, 'packages', 'pnt80.json'), 'utf8')),
+};
+const bundleRelative = 'src/devices/TMS320F28034/device_bundle.js';
+fs.writeFileSync(
+  path.join(dist, ...bundleRelative.split('/')),
+  `window.__F28034_DEVICE_BUNDLE__=${JSON.stringify(deviceBundle)};\n`,
+  'utf8',
+);
+const distIndex = path.join(dist, 'index.html');
+const indexText = fs.readFileSync(distIndex, 'utf8');
+fs.writeFileSync(
+  distIndex,
+  indexText.replace(
+    '<script src="./src/core/device_loader.js"></script>',
+    `<script src="./${bundleRelative}"></script>\n` +
+      '<script src="./src/core/device_loader.js"></script>',
+  ),
+  'utf8',
+);
+
 const forbidden = [
   { pattern: /\/api(?:\/|["'`])/i, label: 'backend route' },
   { pattern: /localhost/i, label: 'local host name' },
