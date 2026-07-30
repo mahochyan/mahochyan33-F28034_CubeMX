@@ -21,7 +21,9 @@ class TestPinmuxEvidence(unittest.TestCase):
                 purposes = {item["purpose"] for item in option["evidence"]}
                 self.assertIn("signal availability on physical pin", purposes)
                 self.assertIn("numeric mux value", purposes)
-        self.assertEqual(count, 131)
+        # R3.2 removes GPIO35..38 JTAG choices from the normal MUX candidate
+        # set; the effective non-reserved golden option count is therefore 127.
+        self.assertEqual(count, 127)
 
     def test_evidence_keys_are_per_option_and_unique(self):
         rows = EVIDENCE["rows"]
