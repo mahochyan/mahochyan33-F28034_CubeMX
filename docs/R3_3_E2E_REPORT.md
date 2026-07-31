@@ -42,16 +42,11 @@
 - 普通 GPIO 累积、删除清理、跨模块累积、多 SOC、重复生成、JSON 往返、
   Preview/ZIP 字节一致均有自动测试。
 
-## 可复现命令
+## 测试证据保留方式
 
-```powershell
-python .\tools\build_official_pin_golden.py
-python -m unittest discover -s tests -p "test_*.py" -v
-npm.cmd run test:unit
-npm.cmd run build
-npm.cmd run test:dist
-npm.cmd run test:e2e
-```
+本报告记录的是项目精简前完成的发布门禁。按后续精简要求，Python、JavaScript
+和 Playwright 测试源码及截图已经从当前目录删除；可从 Git 提交 `df44a86`
+恢复当时的测试代码和逐项证据。当前仓库仍可执行 `npm.cmd run build` 重建静态本体。
 
 生产入口是 `dist/index.html`，可通过 `file://` 直接打开，也可部署到 GitHub Pages；
 运行时不需要 Python、Flask、Docker、本地端口或 `/api`。

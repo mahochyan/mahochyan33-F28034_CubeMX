@@ -9,6 +9,10 @@
 生产版本位于 `dist/`，是 GitHub Pages 可直接托管的纯静态网页。运行时不依赖
 Python、Flask、Docker、本地端口或 `/api` 接口。
 
+仓库已精简为 R3.3 静态本体、当前源码、F28034 golden 数据和必要审计文档。
+旧 Flask/Docker 服务、旧网页、测试源码、测试截图与本地依赖缓存已经移除；
+需要追溯时仍可从 Git 历史提交 `df44a86` 恢复。
+
 > 当前内部状态：`CONFIG_STUDIO_R3.3_PERIPHERAL_GRAPH_INTERNAL_PASS`。
 > 这表示官方数据库、外设资源图和软件验收门禁已通过；用户正式网页验收仍待完成，
 > 更不代表 CCS 编译、硬件实测、功率级使能或电源安全批准。
@@ -73,9 +77,9 @@ R3.3 审计报告：
 因此，ADC、Comparator input、AIO、JTAG、启动模式、外部中断和低功耗唤醒等
 信号不会再被错误地当成普通 GPIO MUX。JTAG/固定电源脚只读显示，不会打开普通配置向导。
 
-## 浏览器验收
+## R3.3 发布前验收记录
 
-Playwright 使用真实 Chromium 逐一点击 Pin1～Pin80，并检查：
+精简前已使用真实 Chromium 逐一点击 Pin1～Pin80，并完成以下检查：
 
 - 80 个物理脚全部可以点击并显示详情
 - `configurable=true` 时功能列表绝不为空；否则测试直接按 P0 失败
@@ -84,7 +88,7 @@ Playwright 使用真实 Chromium 逐一点击 Pin1～Pin80，并检查：
 
 验收报告：
 
-- [80 脚浏览器点击报告](docs/ALL_80_PINS_E2E_REPORT.md)
+- [R3.3 总验收报告](docs/R3_3_E2E_REPORT.md)
 - [物理脚覆盖报告](docs/OFFICIAL_PIN_COVERAGE_REPORT.md)
 - [GPIO MUX 差异报告](docs/OFFICIAL_GPIO_MUX_DIFF.md)
 - [模拟路径报告](docs/OFFICIAL_ANALOG_ROUTE_REPORT.md)
@@ -111,29 +115,23 @@ start .\dist\index.html
 如果 `dist/` 不存在或内容过期：
 
 ```powershell
-npm.cmd install
 python .\tools\build_official_pin_golden.py
 npm.cmd run build
 start .\dist\index.html
 ```
 
-## 构建与完整验收
+`build_official_pin_golden.py` 只使用 Python 标准库；静态构建脚本只使用 Node.js
+内置模块，因此不需要安装 npm 依赖。
 
-需要 Node.js 22 或更高版本、Python 3 和 Chromium：
+## 重新构建
 
 ```powershell
-npm.cmd install
-npx.cmd playwright install chromium
 python .\tools\build_official_pin_golden.py
-npm.cmd run test:unit
-python -m unittest discover -s tests -p "test_*.py"
 npm.cmd run build
-npm.cmd run test:dist
-npm.cmd run test:e2e
 ```
 
-GitHub Actions 会重复执行数据库生成、约束/生成器测试、静态构建和真实浏览器验收，
-全部通过后才把 `dist/` 部署到 GitHub Pages。
+GitHub Actions 会重新构建 `dist/` 后部署到 GitHub Pages。R3.3 的完整测试源码
+已按精简要求删除，历史测试结果与安全边界保留在审计报告和 Git 历史中。
 
 ## 目录
 
@@ -145,9 +143,7 @@ src/devices/TMS320F28034/   浏览器运行时器件数据
 devices/                    可审计的官方 golden 数据源
 tools/                      golden 数据库与静态网页构建工具
 dist/                       GitHub Pages 纯静态生产目录
-tests_js/                   浏览器核心和官方数据库单元测试
-tests_e2e/                  Playwright 真实用户流程
-docs/                       自动生成的覆盖和差异报告
+docs/                       当前 R3.3 与官方数据审计报告
 ```
 
 ## 生成代码的安全边界

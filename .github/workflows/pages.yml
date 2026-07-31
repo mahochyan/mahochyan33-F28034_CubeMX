@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-test-deploy:
+  build-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -27,35 +27,10 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: npm
+          node-version: 24
 
-      - name: Install test runtime
-        run: npm ci
-
-      - name: Install legacy Python regression dependencies
-        run: python -m pip install -r requirements.txt
-
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Build official pin golden database
-        run: python tools/build_official_pin_golden.py
-
-      - name: Verify Python regressions
-        run: python -m unittest discover -s tests -p "test_*.py" -v
-
-      - name: Browser-core unit tests
-        run: npm run test:unit
-
-      - name: Build dist
+      - name: Build pure static dist
         run: npm run build
-
-      - name: Inspect dist
-        run: npm run test:dist
-
-      - name: R3.3 real browser acceptance
-        run: npm run test:e2e
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
