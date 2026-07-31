@@ -49,6 +49,8 @@
           fixed_pin: !!option.support?.fixed_pin,
           support: option.support || {},
           warning: option.warning || null,
+          electrical_profile:
+            option.electrical_profile || option.generator_profile || null,
           generator_profile: option.generator_profile || null,
           related_routes: [option.route_kind || 'gpio_mux'],
         });
@@ -105,6 +107,10 @@
     const constraints = await readJson(fetcher, `${base}/constraints.json`);
     const wizards = await readJson(fetcher, `${base}/wizard_schema.json`);
     const packageData = await readJson(fetcher, `${base}/packages/pnt80.json`);
+    const peripheralInstances = await readJson(
+      fetcher, `${base}/peripheral_instances.json`);
+    const signalGroups = await readJson(fetcher, `${base}/signal_groups.json`);
+    const internalRoutes = await readJson(fetcher, `${base}/internal_routes.json`);
     return {
       device,
       deviceInfo,
@@ -114,6 +120,9 @@
       constraints,
       wizards,
       packageData,
+      peripheralInstances,
+      signalGroups,
+      internalRoutes,
       reverseIndex: buildReverseIndex(pinmux),
     };
   }

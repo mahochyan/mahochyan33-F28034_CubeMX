@@ -30,6 +30,13 @@ async function finishWizard(page) {
   const wizard = page.locator('.inline-wizard');
   await expect(wizard).toBeVisible();
   for (let step = 0; step < 20; step += 1) {
+    const select = wizard.locator('select[data-field]');
+    if (await select.count() && !(await select.inputValue())) {
+      const options = select.locator('option:not([disabled])');
+      if (await options.count() > 1) {
+        await select.selectOption({ index: 1 });
+      }
+    }
     const finish = wizard.locator('[data-action="finish"]');
     if (await finish.count()) {
       await finish.click();
@@ -116,10 +123,10 @@ test('Pin69 EPWM1A user flow commits A/B/Trip, persists and exports preview-iden
     await expect.poll(() => page.evaluate(() => Object.keys(Store.project.pins).sort()))
       .toEqual(['47', '68', '69']);
     const project = await page.evaluate(() => Store.exportConfig());
-    expect(project.schema_version).toBe(1);
+    expect(project.schema_version).toBe(2);
     expect(project.pwm_modules.EPWM1.pin_a).toBe(69);
     expect(project.pwm_modules.EPWM1.pin_b).toBe(68);
-    expect(project.pwm_modules.EPWM1.trip.pin).toBe(47);
+    expect(project.trip_routes.EPWM1_TRIP.source_pin).toBe(47);
 
     await page.locator('#rightTabs [data-tab="code"]').click();
     await expect(page.locator('#codePanel')).toContainText('NOT APPROVED FOR POWER-STAGE ENABLE');
@@ -153,7 +160,7 @@ test('Pin69 EPWM1A user flow commits A/B/Trip, persists and exports preview-iden
       .toBe(68);
   });
 
-test('SCLA pinmux-only user flow produces no ADC file and JSON import restores project',
+test('SCLA user flow creates I2CA module and JSON import restores it',
   async ({ page }) => {
     await waitReady(page);
     await page.locator('#chip-svg .pin[data-pin="3"] .hit').click();
@@ -163,11 +170,17 @@ test('SCLA pinmux-only user flow produces no ADC file and JSON import restores p
     await finishWizard(page);
     await expect.poll(() => page.evaluate(() => Store.project.pins['3']?.function))
       .toBe('SCLA');
+    await expect.poll(() => page.evaluate(() =>
+      !!ConfigStudioApp.getLatestPreview().files['i2c_init.c'],
+    )).toBe(true);
     const files = await page.evaluate(() => Object.keys(
       ConfigStudioApp.getLatestPreview().files,
     ));
     expect(files).toContain('pinmux_init.c');
+    expect(files).toContain('i2c_init.c');
     expect(files).not.toContain('adc_init.c');
+    await expect(page.locator('#assignedPanel')).toContainText('I2CA');
+    await expect(page.locator('#assignedPanel')).toContainText('完整模块对象');
 
     const jsonDownloadPromise = page.waitForEvent('download');
     await page.locator('#btnExportJSON').click();
@@ -224,7 +237,7 @@ test('Trip resource conflict leaves both memory and localStorage unchanged',
           mux_value_verified: true,
           pin_config_supported: true,
           peripheral_init_supported: false,
-          generator_profile: 'gpio_output',
+          electrical_profile: 'gpio_output',
           direction: 'output',
           initial_level: 'low',
           pullup: 'disable',
@@ -240,6 +253,6 @@ test('Trip resource conflict leaves both memory and localStorage unchanged',
     await expect(page.locator('#statusText')).toContainText('没有空闲物理脚');
     expect(await page.evaluate(() => Store.exportJSON())).toBe(occupiedProject);
     expect(await page.evaluate(
-      () => JSON.parse(localStorage.getItem('c2000.config.r3.2')),
+      () => JSON.parse(localStorage.getItem('c2000.config.r3.3')),
     )).toEqual(JSON.parse(occupiedProject));
   });

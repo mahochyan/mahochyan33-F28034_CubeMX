@@ -1,4 +1,4 @@
-name: R3.2.2 Official Static Pages
+name: R3.3 Peripheral Graph Static Pages
 
 on:
   push:
@@ -54,7 +54,7 @@ jobs:
       - name: Inspect dist
         run: npm run test:dist
 
-      - name: Static browser acceptance
+      - name: R3.3 real browser acceptance
         run: npm run test:e2e
 
       - name: Configure Pages

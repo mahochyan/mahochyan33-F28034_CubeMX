@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "device": "TMS320F28034",
+  "groups": {
+    "I2CA": {
+      "instance": "I2CA",
+      "roles": {
+        "sda": {"function": "SDAA", "electrical_profile": "i2c_open_drain", "required_in": ["master", "slave"]},
+        "scl": {"function": "SCLA", "electrical_profile": "i2c_open_drain", "required_in": ["master", "slave"]}
+      }
+    },
+    "SPIA": {
+      "instance": "SPIA",
+      "roles": {
+        "simo": {"function": "SPISIMOA", "electrical_profile": "spi_data_a"},
+        "somi": {"function": "SPISOMIA", "electrical_profile": "spi_data_a"},
+        "clk": {"function": "SPICLKA", "electrical_profile": "spi_clock_a", "required_in": ["3wire", "4wire"]},
+        "ste": {"function": "SPISTEA", "electrical_profile": "spi_ste_a", "optional": true}
+      }
+    },
+    "SPIB": {
+      "instance": "SPIB",
+      "roles": {
+        "simo": {"function": "SPISIMOB", "electrical_profile": "spi_data_b"},
+        "somi": {"function": "SPISOMIB", "electrical_profile": "spi_data_b"},
+        "clk": {"function": "SPICLKB", "electrical_profile": "spi_clock_b", "required_in": ["3wire", "4wire"]},
+        "ste": {"function": "SPISTEB", "electrical_profile": "spi_ste_b", "optional": true}
+      }
+    },
+    "SCIA": {
+      "instance": "SCIA",
+      "roles": {
+        "tx": {"function": "SCITXDA", "electrical_profile": "sci_tx", "required_in": ["tx_only", "full_duplex", "half_duplex"]},
+        "rx": {"function": "SCIRXDA", "electrical_profile": "sci_rx", "required_in": ["rx_only", "full_duplex", "half_duplex"]}
+      }
+    },
+    "LINA": {
+      "instance": "LINA",
+      "roles": {
+        "tx": {"function": "LINTXA", "electrical_profile": "lin_tx", "required_in": ["lin_full", "tx_only", "sci_compat_full"]},
+        "rx": {"function": "LINRXA", "electrical_profile": "lin_rx", "required_in": ["lin_full", "rx_only", "sci_compat_full"]}
+      }
+    },
+    "CANA": {
+      "instance": "CANA",
+      "roles": {
+        "tx": {"function": "CANTXA", "electrical_profile": "can_tx", "required_in": ["normal", "tx_test"]},
+        "rx": {"function": "CANRXA", "electrical_profile": "can_rx", "required_in": ["normal", "listen_only", "rx_test"]}
+      }
+    },
+    "EQEP1": {
+      "instance": "EQEP1",
+      "roles": {
+        "a": {"function": "EQEP1A", "electrical_profile": "eqep_sync_input", "required_in": ["quadrature", "direction_count"]},
+        "b": {"function": "EQEP1B", "electrical_profile": "eqep_sync_input", "required_in": ["quadrature", "direction_count"]},
+        "index": {"function": "EQEP1I", "electrical_profile": "eqep_sync_input", "optional": true},
+        "strobe": {"function": "EQEP1S", "electrical_profile": "eqep_sync_input", "optional": true}
+      }
+    },
+    "ECAP1": {
+      "instance": "ECAP1",
+      "roles": {
+        "io": {"function": "ECAP1", "electrical_profile": "ecap_by_mode", "required_in": ["capture", "apwm"]}
+      }
+    },
+    "HRCAP1": {
+      "instance": "HRCAP1",
+      "roles": {
+        "input": {"function": "HRCAP1", "electrical_profile": "hrcap_sync_input", "required_in": ["capture", "high_resolution"]}
+      }
+    },
+    "HRCAP2": {
+      "instance": "HRCAP2",
+      "roles": {
+        "input": {"function": "HRCAP2", "electrical_profile": "hrcap_sync_input", "required_in": ["capture", "high_resolution"]}
+      }
+    },
+    "EPWM1": {"instance": "EPWM1", "roles": {"a": {"function": "EPWM1A", "electrical_profile": "epwm_output"}, "b": {"function": "EPWM1B", "electrical_profile": "epwm_output", "optional": true}}},
+    "EPWM2": {"instance": "EPWM2", "roles": {"a": {"function": "EPWM2A", "electrical_profile": "epwm_output"}, "b": {"function": "EPWM2B", "electrical_profile": "epwm_output", "optional": true}}},
+    "EPWM3": {"instance": "EPWM3", "roles": {"a": {"function": "EPWM3A", "electrical_profile": "epwm_output"}, "b": {"function": "EPWM3B", "electrical_profile": "epwm_output", "optional": true}}},
+    "EPWM4": {"instance": "EPWM4", "roles": {"a": {"function": "EPWM4A", "electrical_profile": "epwm_output"}, "b": {"function": "EPWM4B", "electrical_profile": "epwm_output", "optional": true}}},
+    "EPWM5": {"instance": "EPWM5", "roles": {"a": {"function": "EPWM5A", "electrical_profile": "epwm_output"}, "b": {"function": "EPWM5B", "electrical_profile": "epwm_output", "optional": true}}},
+    "EPWM6": {"instance": "EPWM6", "roles": {"a": {"function": "EPWM6A", "electrical_profile": "epwm_output"}, "b": {"function": "EPWM6B", "electrical_profile": "epwm_output", "optional": true}}},
+    "EPWM7": {"instance": "EPWM7", "roles": {"a": {"function": "EPWM7A", "electrical_profile": "epwm_output"}, "b": {"function": "EPWM7B", "electrical_profile": "epwm_output", "optional": true}}}
+  },
+  "electrical_profiles": {
+    "gpio_output": {"direction": "output", "pullup": "disable", "qualification": null},
+    "gpio_input": {"direction": "input", "pullup": "disable", "qualification": "sync"},
+    "epwm_output": {"direction": "output", "pullup": "disable", "qualification": null},
+    "trip_async_input": {"direction": "input", "pullup": "disable", "qualification": "async"},
+    "i2c_open_drain": {"direction": "bidirectional", "pullup": "enable", "qualification": "async", "external_pullup_required": true},
+    "spi_data_a": {"direction": "by_spi_mode", "pullup": "disable", "qualification": "sync"},
+    "spi_data_b": {"direction": "by_spi_mode", "pullup": "disable", "qualification": "sync"},
+    "spi_clock_a": {"direction": "by_spi_role", "pullup": "disable", "qualification": "sync"},
+    "spi_clock_b": {"direction": "by_spi_role", "pullup": "disable", "qualification": "sync"},
+    "spi_ste_a": {"direction": "by_spi_role", "pullup": "enable", "qualification": "sync"},
+    "spi_ste_b": {"direction": "by_spi_role", "pullup": "enable", "qualification": "sync"},
+    "sci_tx": {"direction": "output", "pullup": "disable", "qualification": null},
+    "sci_rx": {"direction": "input", "pullup": "enable", "qualification": "async"},
+    "lin_tx": {"direction": "output", "pullup": "disable", "qualification": null},
+    "lin_rx": {"direction": "input", "pullup": "enable", "qualification": "async"},
+    "can_tx": {"direction": "output", "pullup": "disable", "qualification": null},
+    "can_rx": {"direction": "input", "pullup": "enable", "qualification": "async"},
+    "eqep_sync_input": {"direction": "input", "pullup": "enable", "qualification": "sync", "async_forbidden": true},
+    "ecap_by_mode": {"direction": "by_ecap_mode", "pullup": "disable", "qualification": "sync"},
+    "hrcap_sync_input": {"direction": "input", "pullup": "disable", "qualification": "sync"},
+    "pwm_sync_input": {"direction": "input", "pullup": "disable", "qualification": "sync"},
+    "pwm_sync_output": {"direction": "output", "pullup": "disable", "qualification": null},
+    "adc_trigger_output": {"direction": "output", "pullup": "disable", "qualification": null},
+    "comparator_output": {"direction": "output", "pullup": "disable", "qualification": null},
+    "clock_output": {"direction": "output", "pullup": "disable", "qualification": null},
+    "aio_digital": {"direction": "by_aio_mode", "pullup": "disable", "qualification": "sync"}
+  }
+}

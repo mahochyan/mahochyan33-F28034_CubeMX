@@ -43,8 +43,11 @@
     if (!pins.length) return '';
     const modules = [...new Set(pins.map(pin => pin.module).filter(Boolean))];
     if (modules.length) {
-      const module = Store.project.pwm_modules[modules[0]];
-      if (module) return `已配置 · Pin${[module.pin_a, module.pin_b].filter(x => x != null).join('/')}`;
+      const module = Store.moduleConfig(modules[0]);
+      if (module) {
+        return `已配置 ${modules[0]} · Pin${pins.map(pin =>
+          pin.physical_pin).join('/')}`;
+      }
     }
     return `已配置 · Pin${pins.map(pin => pin.physical_pin).join('/')}`;
   }
@@ -154,6 +157,12 @@
       const editing = Store.activeEditor.status === 'editing' &&
         Store.activeEditor.functionId === fn;
       node.classList.toggle('editing', editing);
+      const descriptor = Store.signalDescriptor(fn);
+      node.classList.toggle(
+        'resource-conflict',
+        Store.conflictFunctions.has(fn) ||
+          Store.conflictFunctions.has(descriptor?.instance),
+      );
       if (!editing) {
         const editor = node.querySelector('.inline-editor');
         editor.hidden = true;
@@ -209,6 +218,7 @@
 
   Bus.on('chip:functions', showFunctionsForPin);
   Bus.on('project:committed', repaint);
+  Bus.on('conflicts:changed', repaint);
   Bus.on('editor:changed', editor => {
     if (editor.status !== 'editing') closeEditors();
     repaint();

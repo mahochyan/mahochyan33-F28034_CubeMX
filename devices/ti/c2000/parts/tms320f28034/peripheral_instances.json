@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "device": "TMS320F28034",
+  "sources": [
+    {
+      "document": "SPRS584Q",
+      "url": "https://www.ti.com/lit/ds/sprs584q/sprs584q.pdf"
+    },
+    {
+      "document": "SPRUI10A",
+      "url": "https://www.ti.com/lit/ug/sprui10a/sprui10a.pdf"
+    }
+  ],
+  "instances": {
+    "ADC": {
+      "kind": "adc",
+      "config_collection": "adc",
+      "signal_group": "ADC",
+      "clock_domain": "SYSCLK",
+      "generated_file": "adc_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 8"
+    },
+    "COMP1": {
+      "kind": "comparator",
+      "config_collection": "comparators",
+      "signal_group": "COMP1",
+      "clock_domain": "SYSCLK",
+      "generated_file": "comparator_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 9"
+    },
+    "COMP2": {
+      "kind": "comparator",
+      "config_collection": "comparators",
+      "signal_group": "COMP2",
+      "clock_domain": "SYSCLK",
+      "generated_file": "comparator_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 9"
+    },
+    "COMP3": {
+      "kind": "comparator",
+      "config_collection": "comparators",
+      "signal_group": "COMP3",
+      "clock_domain": "SYSCLK",
+      "generated_file": "comparator_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 9"
+    },
+    "I2CA": {
+      "kind": "i2c",
+      "config_collection": "i2c_modules",
+      "signal_group": "I2CA",
+      "clock_domain": "LSPCLK",
+      "generated_file": "i2c_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 13",
+      "external_requirement": "SDA/SCL external pull-up resistors"
+    },
+    "SPIA": {
+      "kind": "spi",
+      "config_collection": "spi_modules",
+      "signal_group": "SPIA",
+      "clock_domain": "LSPCLK",
+      "generated_file": "spi_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 11"
+    },
+    "SPIB": {
+      "kind": "spi",
+      "config_collection": "spi_modules",
+      "signal_group": "SPIB",
+      "clock_domain": "LSPCLK",
+      "generated_file": "spi_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 11"
+    },
+    "SCIA": {
+      "kind": "sci",
+      "config_collection": "sci_modules",
+      "signal_group": "SCIA",
+      "clock_domain": "LSPCLK",
+      "generated_file": "sci_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 12"
+    },
+    "LINA": {
+      "kind": "lin",
+      "config_collection": "lin_modules",
+      "signal_group": "LINA",
+      "clock_domain": "LSPCLK",
+      "generated_file": "lin_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 15",
+      "external_requirement": "External LIN transceiver for a LIN bus"
+    },
+    "CANA": {
+      "kind": "can",
+      "config_collection": "can_modules",
+      "signal_group": "CANA",
+      "clock_domain": "SYSCLK",
+      "generated_file": "can_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 14",
+      "external_requirement": "External CAN transceiver for a CAN bus"
+    },
+    "EQEP1": {
+      "kind": "eqep",
+      "config_collection": "eqep_modules",
+      "signal_group": "EQEP1",
+      "clock_domain": "SYSCLK",
+      "generated_file": "eqep_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 7"
+    },
+    "ECAP1": {
+      "kind": "ecap",
+      "config_collection": "ecap_modules",
+      "signal_group": "ECAP1",
+      "clock_domain": "SYSCLK",
+      "generated_file": "ecap_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 6"
+    },
+    "HRCAP1": {
+      "kind": "hrcap",
+      "config_collection": "hrcap_modules",
+      "signal_group": "HRCAP1",
+      "clock_domain": "HCCAPCLK",
+      "generated_file": "hrcap_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 5",
+      "shared_resources": ["HCCAL_LIBRARY", "EPWM7_CALIBRATION"]
+    },
+    "HRCAP2": {
+      "kind": "hrcap",
+      "config_collection": "hrcap_modules",
+      "signal_group": "HRCAP2",
+      "clock_domain": "HCCAPCLK",
+      "generated_file": "hrcap_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 5",
+      "shared_resources": ["HCCAL_LIBRARY", "EPWM7_CALIBRATION"]
+    },
+    "EPWM1": {
+      "kind": "epwm",
+      "config_collection": "pwm_modules",
+      "signal_group": "EPWM1",
+      "clock_domain": "TBCLK",
+      "generated_file": "pwm_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 3"
+    },
+    "EPWM2": {
+      "kind": "epwm",
+      "config_collection": "pwm_modules",
+      "signal_group": "EPWM2",
+      "clock_domain": "TBCLK",
+      "generated_file": "pwm_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 3"
+    },
+    "EPWM3": {
+      "kind": "epwm",
+      "config_collection": "pwm_modules",
+      "signal_group": "EPWM3",
+      "clock_domain": "TBCLK",
+      "generated_file": "pwm_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 3"
+    },
+    "EPWM4": {
+      "kind": "epwm",
+      "config_collection": "pwm_modules",
+      "signal_group": "EPWM4",
+      "clock_domain": "TBCLK",
+      "generated_file": "pwm_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 3"
+    },
+    "EPWM5": {
+      "kind": "epwm",
+      "config_collection": "pwm_modules",
+      "signal_group": "EPWM5",
+      "clock_domain": "TBCLK",
+      "generated_file": "pwm_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 3"
+    },
+    "EPWM6": {
+      "kind": "epwm",
+      "config_collection": "pwm_modules",
+      "signal_group": "EPWM6",
+      "clock_domain": "TBCLK",
+      "generated_file": "pwm_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 3"
+    },
+    "EPWM7": {
+      "kind": "epwm",
+      "config_collection": "pwm_modules",
+      "signal_group": "EPWM7",
+      "clock_domain": "TBCLK",
+      "generated_file": "pwm_init.c",
+      "support_level": "peripheral_init",
+      "official_section": "SPRUI10A Chapter 3",
+      "shared_resources": ["EPWM7_CALIBRATION"]
+    }
+  }
+}

@@ -1,4 +1,4 @@
-/* R3.2 schema-driven inline staircase wizard. */
+/* R3.3 schema-driven peripheral-instance staircase wizard. */
 (function () {
   'use strict';
 
@@ -12,7 +12,16 @@
   function profileName() {
     const entry = Store.activeEditor.candidatePins[0];
     const type = entry?.type || 'generic';
-    if (type === 'gpio' || Number(entry?.mux) === 0) return 'gpio';
+    const instance = Store.signalDescriptor(Store.activeEditor.functionId)?.instance;
+    const profiles = {
+      I2CA: 'i2c', SPIA: 'spi', SPIB: 'spi', SCIA: 'sci',
+      LINA: 'lin', CANA: 'can', EQEP1: 'eqep', ECAP1: 'ecap',
+      HRCAP1: 'hrcap', HRCAP2: 'hrcap',
+    };
+    if (profiles[instance]) return profiles[instance];
+    if (type === 'gpio' || (entry?.mux != null && Number(entry.mux) === 0)) {
+      return 'gpio';
+    }
     if (type === 'adc_input') return 'adc';
     if (type === 'comparator_input') return 'comparator_input';
     if (type === 'aio') return 'aio';
@@ -49,6 +58,11 @@
     if (Store.activeEditor.selectedPin != null) {
       patch.selectedPin = Number(Store.activeEditor.selectedPin);
     }
+    const instance = Store.signalDescriptor(Store.activeEditor.functionId)?.instance;
+    if (profileName() === 'hrcap' &&
+        Store.activeEditor.draft?.calibration_instance === undefined) {
+      patch.calibration_instance = instance === 'HRCAP1' ? 'HRCAP2' : 'HRCAP1';
+    }
     Store.updateDraft(patch);
   }
 
@@ -63,8 +77,14 @@
     const editor = Store.activeEditor;
     const draft = editor.draft || {};
     const checked = Store.validateDraft();
+    const descriptor = Store.signalDescriptor(editor.functionId);
+    const derivedInstance = descriptor?.instance ||
+      (profileName() === 'adc' ? 'ADC' :
+        (profileName() === 'comparator_input'
+          ? String(editor.functionId).slice(0, 5) : null));
     const rows = [
       ['功能', editor.functionId],
+      ['外设实例', derivedInstance || '独立引脚'],
       ['物理脚', draft.selectedPin != null ? `Pin${draft.selectedPin}` : '未选择'],
       ['模式', draft.mode || draft.direction || profileName()],
     ];
@@ -82,7 +102,7 @@
     }
     if (profileName() === 'i2c') {
       rows.push(
-        ['生成范围', '仅 pinmux 与电气属性'],
+        ['生成范围', 'I2CA 模块对象 + SDA/SCL + i2c_init.c'],
         ['硬件提示', '板上必须有外部上拉电阻'],
       );
     }
@@ -119,6 +139,30 @@
       }).join('');
       return `<select data-field="${step.id}">
         <option value="">请选择</option>${options}
+      </select>`;
+    }
+    if (step.control === 'signal_pin') {
+      const descriptor = Store.signalDescriptor(Store.activeEditor.functionId);
+      const roleDefinition = descriptor?.group?.roles?.[step.role];
+      if (!roleDefinition) return '<div class="draft-errors">信号角色不存在于设备图</div>';
+      if (descriptor.role === step.role) {
+        return `<div class="draft-ok">当前入口脚：Pin${esc(
+          Store.activeEditor.draft.selectedPin)} / ${esc(roleDefinition.function)}</div>`;
+      }
+      const options = Store.pinsForFunction(roleDefinition.function).map(candidate => {
+        const configured = Store.getPin(candidate.physical_pin);
+        const editingModule = Store.activeEditor.draft?.editingModule;
+        const occupied = configured && configured.module !== editingModule;
+        return `<option value="${candidate.physical_pin}"
+          ${Number(value) === Number(candidate.physical_pin) ? 'selected' : ''}
+          ${occupied ? 'disabled' : ''}>
+          Pin${candidate.physical_pin} / ${esc(roleDefinition.function)}${
+          occupied ? '（已占用）' : ''}
+        </option>`;
+      }).join('');
+      return `<select data-field="${step.id}">
+        <option value="">${step.optional ? '不使用这个可选信号' : '请选择配对物理脚'}</option>
+        ${options}
       </select>`;
     }
     if (step.control === 'choice') {
@@ -177,7 +221,7 @@
         let value;
         if (control.type === 'checkbox') value = control.checked;
         else if (control.type === 'number') value = Number(control.value);
-        else if (step.control === 'candidate_pin') {
+        else if (['candidate_pin', 'signal_pin'].includes(step.control)) {
           value = control.value ? Number(control.value) : null;
         } else value = control.value;
         Store.updateDraft({ [control.dataset.field]: value });
@@ -207,8 +251,5 @@
     });
   }
 
-  Bus.on('draft:changed', () => {
-    if (mountElement && !mountElement.hidden) render();
-  });
   window.Wizard = { mountInline, render };
 })();

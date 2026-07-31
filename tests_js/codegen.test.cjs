@@ -14,6 +14,15 @@ const pinmux = JSON.parse(fs.readFileSync(
   path.join(root, 'src/devices/TMS320F28034/pinmux.json'), 'utf8'));
 const family = JSON.parse(fs.readFileSync(
   path.join(root, 'src/devices/TMS320F28034/family.json'), 'utf8'));
+const signalGroups = JSON.parse(fs.readFileSync(
+  path.join(root, 'src/devices/TMS320F28034/signal_groups.json'), 'utf8'));
+const internalRoutes = JSON.parse(fs.readFileSync(
+  path.join(root, 'src/devices/TMS320F28034/internal_routes.json'), 'utf8'));
+const peripheralInstances = JSON.parse(fs.readFileSync(
+  path.join(root, 'src/devices/TMS320F28034/peripheral_instances.json'), 'utf8'));
+const context = {
+  pinmux, family, signalGroups, internalRoutes, peripheralInstances,
+};
 
 function index() {
   const result = {};
@@ -59,7 +68,7 @@ function pwmProject(extraDraft = {}) {
     },
   };
   const plan = Project.buildCommitPlan({
-    project: blank, editor, pinmux, reverseIndex,
+    project: blank, editor, pinmux, reverseIndex, internalRoutes,
   });
   assert.equal(plan.ok, true, plan.errors?.join('; '));
   return Project.applyAtomically(blank, plan);
@@ -84,7 +93,7 @@ function parseStoredZip(bytes) {
 }
 
 test('every generated source carries the mandatory safety header', () => {
-  const result = Codegen.generateProject(pwmProject(), { pinmux, family });
+  const result = Codegen.generateProject(pwmProject(), context);
   for (const [name, content] of Object.entries(result.files)) {
     if (!/\.[ch]$/.test(name)) continue;
     assert.match(content, /LOGIC TEST ONLY/);
@@ -95,7 +104,7 @@ test('every generated source carries the mandatory safety header', () => {
 });
 
 test('PWM release verifies trip and follows the safe release sequence', () => {
-  const result = Codegen.generateProject(pwmProject(), { pinmux, family });
+  const result = Codegen.generateProject(pwmProject(), context);
   const code = result.files['pwm_init.c'];
   const order = [
     'GpioDataRegs.GPADAT.bit.GPIO12 == 0U',
@@ -125,7 +134,7 @@ test('PWM release verifies trip and follows the safe release sequence', () => {
 test('clock generation includes PLLLOCKPRD, MCLK checks and timeout without ESTOP0', () => {
   const project = Project.createEmptyProject();
   project.system_clock = { mode: 'generated', target_mhz: 60, sysclk_hz: 60000000 };
-  const result = Codegen.generateProject(project, { pinmux, family });
+  const result = Codegen.generateProject(project, context);
   const code = result.files['system_clock_init.c'];
   assert.match(code, /PLLLOCKPRD = 0xFFFFU/);
   assert.ok((code.match(/MCLKSTS/g) || []).length >= 3);
@@ -138,7 +147,7 @@ test('clock generation includes PLLLOCKPRD, MCLK checks and timeout without ESTO
 test('timer uses safe TSS/TRB/TIE ordering and never changes global interrupt state', () => {
   const project = Project.createEmptyProject();
   project.timers.TIMER0 = { period_us: 1000, start_immediately: true };
-  const result = Codegen.generateProject(project, { pinmux, family });
+  const result = Codegen.generateProject(project, context);
   const code = result.files['timer_interrupt_init.c'];
   assert.ok(code.indexOf('TSS = 1U') < code.indexOf('TIE = 0U'));
   assert.ok(code.indexOf('PRD.all') < code.indexOf('TRB = 1U'));
@@ -150,46 +159,47 @@ test('timer uses safe TSS/TRB/TIE ordering and never changes global interrupt st
 
 test('ADC comments explain SOC, trigger and sample window to beginners', () => {
   const project = Project.createEmptyProject();
-  project.adc = {
-    soc: 0,
-    channel: 'ADCINA0',
-    trigger: 'SOFTWARE',
-    acqps: 14,
+  project.adc.socs.SOC0 = {
+    soc: 0, physical_pin: 18, channel: 'ADCINA0',
+    trigger: 'SOFTWARE', acqps: 14,
   };
-  const result = Codegen.generateProject(project, { pinmux, family });
+  project.adc.interrupts.ADCINT1 = {
+    enabled: true, eoc: 'SOC0', continuous: false,
+  };
+  const result = Codegen.generateProject(project, context);
   const code = result.files['adc_init.c'];
-  assert.match(code, /SOC（Start Of Conversion/);
-  assert.match(code, /SOC0 采样 ADCINA0/);
-  assert.match(code, /由 SOFTWARE 启动转换/);
-  assert.match(code, /采样窗口为 15 个 ADC 时钟周期/);
+  assert.match(code, /SOC 是“采样任务槽”/);
+  assert.match(code, /SOC0：采样 ADCINA0，由 SOFTWARE 触发/);
+  assert.match(code, /实际采样 15 个 ADC 时钟周期/);
 });
 
-test('SCLA pinmux-only project does not generate ADC code', () => {
-  const project = Project.createEmptyProject();
-  const option = pinmux.pins['3'].mux_options.find(item => item.function === 'SCLA');
-  project.pins['3'] = {
-    physical_pin: 3,
-    signal: pinmux.pins['3'].primary_signal,
-    gpio_num: pinmux.pins['3'].gpio_num,
-    mux: option.mux,
-    function: option.function,
-    type: option.type,
-    signal_verified: option.signal_verified,
-    mux_value_verified: option.mux_value_verified,
-    pin_config_supported: option.pin_config_supported,
-    peripheral_init_supported: option.peripheral_init_supported,
-    generator_profile: option.generator_profile,
+test('SCLA transaction creates complete I2CA module and not ADC code', () => {
+  const blank = Project.createEmptyProject();
+  const editor = {
+    source: 'test',
+    functionId: 'SCLA',
+    candidatePins: reverseIndex.SCLA,
+    selectedPin: 3,
+    status: 'editing',
+    draft: {
+      selectedPin: 3, role: 'master', pin_sda: 2, pin_scl: 3,
+      bus_hz: 100000, own_address: 32, target_address: 80, fifo: true,
+    },
   };
-  const result = Codegen.generateProject(project, { pinmux, family, activeModule: 'SCLA' });
+  const plan = Project.buildCommitPlan({
+    project: blank, editor, pinmux, reverseIndex, signalGroups, internalRoutes,
+  });
+  assert.equal(plan.ok, true, plan.errors?.join('；'));
+  const project = Project.applyAtomically(blank, plan);
+  const result = Codegen.generateProject(project, { ...context, activeModule: 'I2CA' });
   assert.match(result.files['pinmux_init.c'], /Pin3：GPIO33 切换为 SCLA/);
-  assert.match(result.files['pinmux_init.c'], /MUX 决定/);
-  assert.match(result.files['pinmux_init.c'], /PUD=1 是禁用内部上拉/);
+  assert.match(result.files['pinmux_init.c'], /Pin2：GPIO32 切换为 SDAA/);
+  assert.match(result.files['i2c_init.c'], /I2caRegs\.I2CMDR/);
   assert.equal(result.files['adc_init.c'], undefined);
-  assert.ok(result.findings.some(item => item.rule === 'PINMUX_ONLY'));
 });
 
 test('ZIP entries are byte-identical to preview and ZIP is deterministic', () => {
-  const result = Codegen.generateProject(pwmProject(), { pinmux, family });
+  const result = Codegen.generateProject(pwmProject(), context);
   const first = Zip.createProjectZipBytes(result.files);
   const second = Zip.createProjectZipBytes(result.files);
   assert.deepEqual(first, second);

@@ -8,6 +8,8 @@ global.DeterministicJSON = require('../src/core/deterministic_json.js');
 const Core = require('../src/core/project_config.js');
 const pinmux = JSON.parse(fs.readFileSync(
   path.join(root, 'src/devices/TMS320F28034/pinmux.json'), 'utf8'));
+const internalRoutes = JSON.parse(fs.readFileSync(
+  path.join(root, 'src/devices/TMS320F28034/internal_routes.json'), 'utf8'));
 
 function reverseIndex() {
   const index = {};
@@ -58,13 +60,14 @@ test('successful complementary commit is one complete ProjectConfig', () => {
   const current = Core.createEmptyProject();
   const plan = Core.buildCommitPlan({
     project: current, editor: epwmEditor(), pinmux, reverseIndex: index,
+    internalRoutes,
   });
   assert.equal(plan.ok, true, plan.errors?.join('; '));
   const next = Core.applyAtomically(current, plan);
-  assert.equal(next.schema_version, 1);
+  assert.equal(next.schema_version, 2);
   assert.equal(next.pwm_modules.EPWM1.pin_a, 69);
   assert.equal(next.pwm_modules.EPWM1.pin_b, 68);
-  assert.equal(next.pwm_modules.EPWM1.trip.pin, 47);
+  assert.equal(next.trip_routes.EPWM1_TRIP.source_pin, 47);
   assert.equal(Object.keys(current.pins).length, 0, 'input object must stay unchanged');
 });
 
@@ -78,6 +81,7 @@ test('trip conflict changes neither current ProjectConfig nor plan state', () =>
   const before = JSON.stringify(current);
   const plan = Core.buildCommitPlan({
     project: current, editor: epwmEditor(), pinmux, reverseIndex: index,
+    internalRoutes,
   });
   assert.equal(plan.ok, false);
   assert.match(plan.errors.join(' '), /TZ1.*没有空闲/);
@@ -88,7 +92,7 @@ test('trip conflict changes neither current ProjectConfig nor plan state', () =>
 test('editing complementary to single removes old B and old trip', () => {
   const firstPlan = Core.buildCommitPlan({
     project: Core.createEmptyProject(), editor: epwmEditor(),
-    pinmux, reverseIndex: index,
+    pinmux, reverseIndex: index, internalRoutes,
   });
   const configured = Core.applyAtomically(Core.createEmptyProject(), firstPlan);
   const editor = epwmEditor({
@@ -97,7 +101,7 @@ test('editing complementary to single removes old B and old trip', () => {
     trip_enabled: false,
   });
   const plan = Core.buildCommitPlan({
-    project: configured, editor, pinmux, reverseIndex: index,
+    project: configured, editor, pinmux, reverseIndex: index, internalRoutes,
   });
   assert.equal(plan.ok, true, plan.errors?.join('; '));
   const next = Core.applyAtomically(configured, plan);
@@ -105,13 +109,15 @@ test('editing complementary to single removes old B and old trip', () => {
   assert.equal(next.pins['68'], undefined);
   assert.equal(next.pins['47'], undefined);
   assert.equal(next.pwm_modules.EPWM1.pin_b, null);
-  assert.deepEqual(next.pwm_modules.EPWM1.trip, { enabled: false });
+  assert.deepEqual(next.pwm_modules.EPWM1.trip_route_ids, []);
+  assert.equal(next.trip_routes.EPWM1_TRIP, undefined);
 });
 
 test('editing TZ1 to TZ2 removes old trip pin and assigns a TZ2 pin', () => {
   const blank = Core.createEmptyProject();
   const first = Core.buildCommitPlan({
     project: blank, editor: epwmEditor(), pinmux, reverseIndex: index,
+    internalRoutes,
   });
   const configured = Core.applyAtomically(blank, first);
   const editor = epwmEditor({
@@ -119,19 +125,21 @@ test('editing TZ1 to TZ2 removes old trip pin and assigns a TZ2 pin', () => {
     trip_source: 'TZ2',
   });
   const changed = Core.buildCommitPlan({
-    project: configured, editor, pinmux, reverseIndex: index,
+    project: configured, editor, pinmux, reverseIndex: index, internalRoutes,
   });
   assert.equal(changed.ok, true, changed.errors?.join('; '));
   const next = Core.applyAtomically(configured, changed);
   assert.equal(next.pins['47'], undefined);
-  assert.equal(next.pwm_modules.EPWM1.trip.source, 'TZ2');
-  assert.equal(next.pins[String(next.pwm_modules.EPWM1.trip.pin)].function, 'TZ2');
+  assert.equal(next.trip_routes.EPWM1_TRIP.source, 'TZ2');
+  assert.equal(
+    next.pins[String(next.trip_routes.EPWM1_TRIP.source_pin)].function, 'TZ2');
 });
 
 test('stale plan is rejected atomically', () => {
   const current = Core.createEmptyProject();
   const plan = Core.buildCommitPlan({
     project: current, editor: epwmEditor(), pinmux, reverseIndex: index,
+    internalRoutes,
   });
   current.pins['1'] = { physical_pin: 1, function: 'GPIO22' };
   assert.throws(() => Core.applyAtomically(current, plan), /已变化/);

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "device": "TMS320F28034",
+  "source": {
+    "document": "SPRUI10A",
+    "url": "https://www.ti.com/lit/ug/sprui10a/sprui10a.pdf"
+  },
+  "adc_triggers": {
+    "SOFTWARE": {"kind": "software", "physical_pin": null},
+    "CPUTIMER0": {"kind": "internal_trigger", "owner": "TIMER0", "physical_pin": null},
+    "CPUTIMER1": {"kind": "internal_trigger", "owner": "TIMER1", "physical_pin": null},
+    "CPUTIMER2": {"kind": "internal_trigger", "owner": "TIMER2", "physical_pin": null},
+    "EPWM1_SOCA": {"kind": "internal_trigger", "owner": "EPWM1", "event": "SOCA", "physical_pin": null},
+    "EPWM1_SOCB": {"kind": "internal_trigger", "owner": "EPWM1", "event": "SOCB", "physical_pin": null},
+    "EPWM2_SOCA": {"kind": "internal_trigger", "owner": "EPWM2", "event": "SOCA", "physical_pin": null},
+    "EPWM2_SOCB": {"kind": "internal_trigger", "owner": "EPWM2", "event": "SOCB", "physical_pin": null},
+    "EPWM3_SOCA": {"kind": "internal_trigger", "owner": "EPWM3", "event": "SOCA", "physical_pin": null},
+    "EPWM3_SOCB": {"kind": "internal_trigger", "owner": "EPWM3", "event": "SOCB", "physical_pin": null},
+    "EPWM4_SOCA": {"kind": "internal_trigger", "owner": "EPWM4", "event": "SOCA", "physical_pin": null},
+    "EPWM4_SOCB": {"kind": "internal_trigger", "owner": "EPWM4", "event": "SOCB", "physical_pin": null},
+    "EPWM5_SOCA": {"kind": "internal_trigger", "owner": "EPWM5", "event": "SOCA", "physical_pin": null},
+    "EPWM5_SOCB": {"kind": "internal_trigger", "owner": "EPWM5", "event": "SOCB", "physical_pin": null},
+    "EPWM6_SOCA": {"kind": "internal_trigger", "owner": "EPWM6", "event": "SOCA", "physical_pin": null},
+    "EPWM6_SOCB": {"kind": "internal_trigger", "owner": "EPWM6", "event": "SOCB", "physical_pin": null},
+    "EPWM7_SOCA": {"kind": "internal_trigger", "owner": "EPWM7", "event": "SOCA", "physical_pin": null},
+    "EPWM7_SOCB": {"kind": "internal_trigger", "owner": "EPWM7", "event": "SOCB", "physical_pin": null}
+  },
+  "trip_sources": {
+    "TZ1": {"kind": "external_tz", "requires_physical_pin": true},
+    "TZ2": {"kind": "external_tz", "requires_physical_pin": true},
+    "TZ3": {"kind": "external_tz", "requires_physical_pin": true},
+    "COMP1OUT": {"kind": "comparator", "owner": "COMP1", "requires_physical_pin": false},
+    "COMP2OUT": {"kind": "comparator", "owner": "COMP2", "requires_physical_pin": false},
+    "COMP3OUT": {"kind": "comparator", "owner": "COMP3", "requires_physical_pin": false},
+    "CLOCKFAIL": {"kind": "clockfail", "requires_physical_pin": false},
+    "EQEP1ERR": {"kind": "eqep_error", "owner": "EQEP1", "requires_physical_pin": false}
+  },
+  "pwm_sync": {
+    "internal": {
+      "source_instances": ["EPWM1", "EPWM2", "EPWM3", "EPWM4", "EPWM5", "EPWM6", "EPWM7"],
+      "target_instances": ["EPWM1", "EPWM2", "EPWM3", "EPWM4", "EPWM5", "EPWM6", "EPWM7"],
+      "physical_pin": null
+    },
+    "external_input": {"function": "EPWMSYNCI", "requires_physical_pin": true},
+    "external_output": {"function": "EPWMSYNCO", "requires_physical_pin": true}
+  },
+  "interrupt_vectors": {
+    "ADCINT1": {"pie_group": 1, "pie_channel": 1},
+    "ADCINT2": {"pie_group": 10, "pie_channel": 2},
+    "SCIRXINTA": {"pie_group": 9, "pie_channel": 1},
+    "SCITXINTA": {"pie_group": 9, "pie_channel": 2},
+    "I2CINT1A": {"pie_group": 8, "pie_channel": 1},
+    "I2CINT2A": {"pie_group": 8, "pie_channel": 2},
+    "ECAN0INTA": {"pie_group": 9, "pie_channel": 5},
+    "ECAN1INTA": {"pie_group": 9, "pie_channel": 6},
+    "EQEP1INT": {"pie_group": 5, "pie_channel": 1},
+    "ECAP1INT": {"pie_group": 4, "pie_channel": 1}
+  },
+  "shared_resources": {
+    "EPWM7_CALIBRATION": {
+      "owners": ["EPWM7", "HRCAP1", "HRCAP2"],
+      "exclusive_during_calibration": true,
+      "official_section": "SPRUI10A 5.4.1.1"
+    },
+    "LINA_REGISTER_BLOCK": {
+      "owners": ["LINA.lin", "LINA.sci_compat"],
+      "exclusive": true,
+      "official_section": "SPRUI10A Chapter 15"
+    }
+  }
+}

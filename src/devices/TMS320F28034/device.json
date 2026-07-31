@@ -2,10 +2,10 @@
   "device": "TMS320F28034",
   "part_number": "TMS320F28034PNT",
   "family": "f2803x",
-  "status": "CONFIG_STUDIO_R3.2.2_OFFICIAL_PIN_DATABASE_INTERNAL_PASS",
+  "status": "CONFIG_STUDIO_R3.3_PERIPHERAL_GRAPH_INTERNAL_PASS",
   "source_datasheet": "SPRS584Q",
   "source_verified": true,
-  "last_verified": "2026-07-30",
+  "last_verified": "2026-07-31",
   "packages": [
     "PNT80"
   ],

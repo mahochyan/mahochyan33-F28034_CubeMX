@@ -1,16 +1,17 @@
-/* R3.2.2 static application coordinator. All validation/generation stays in-browser. */
+/* R3.3 static application coordinator. All validation/generation stays in-browser. */
 (function () {
   'use strict';
 
   let previewTimer = null;
   let latestPreview = null;
+  let previousGeneratedFiles = {};
 
   async function boot() {
-    setStatus('正在加载 R3.2.2 官方器件数据…');
+    setStatus('正在加载 R3.3 外设图、内部路由与官方器件数据…');
     try {
       const data = await DeviceLoader.loadDeviceData('TMS320F28034');
       Store.setConfig({
-        build_id: 'R3.2.2-OFFICIAL-STATIC',
+        build_id: 'R3.3-PERIPHERAL-GRAPH-STATIC',
         default_device: data.device,
         devices: [{ device: data.device, status: 'golden' }],
       });
@@ -20,6 +21,9 @@
       Store.setConstraints(data.constraints);
       Store.setIndex(data.reverseIndex);
       Store.setWizards(data.wizards);
+      Store.setPeripheralInstances(data.peripheralInstances);
+      Store.setSignalGroups(data.signalGroups);
+      Store.setInternalRoutes(data.internalRoutes);
       Store.setPackage(data.packageData);
       buildDeviceSelect(data.device);
       Store.restore();
@@ -32,8 +36,8 @@
       Search.init();
       refreshPreview();
       document.getElementById('dataSource').textContent =
-        'SPRS584Q · PN80 80/80 · MUX 127/127 · ANALOG 28/28 · STATIC';
-      setStatus(`R3.2.2 官方数据版已就绪 · ${Chip.count()} 个 PNT80 pad`);
+        'SPRS584Q + SPRUI10A · PN80 80/80 · MUX 127/127 · PERIPHERAL GRAPH · STATIC';
+      setStatus(`R3.3 外设图版已就绪 · ${Chip.count()} 个 PNT80 pad`);
       document.documentElement.dataset.appReady = 'true';
     } catch (error) {
       setStatus(`启动失败：${error.message}`, true);
@@ -71,7 +75,11 @@
 
   function validation() {
     return ConstraintChecker.validateProject(
-      Store.exportConfig(), Store.pinmux, Store.family,
+      Store.exportConfig(), Store.pinmux, Store.family, {
+        signalGroups: Store.signalGroups,
+        internalRoutes: Store.internalRoutes,
+        peripheralInstances: Store.peripheralInstances,
+      },
     );
   }
 
@@ -89,11 +97,18 @@
       });
       return checked;
     }
-    latestPreview = Codegen.generateProject(Store.exportConfig(), {
+    const nextPreview = Codegen.generateProject(Store.exportConfig(), {
       pinmux: Store.pinmux,
       family: Store.family,
+      signalGroups: Store.signalGroups,
+      internalRoutes: Store.internalRoutes,
+      peripheralInstances: Store.peripheralInstances,
       activeModule: activeModule(),
     });
+    nextPreview.diff = Codegen.diffGeneratedFiles(
+      previousGeneratedFiles, nextPreview.files);
+    previousGeneratedFiles = DeterministicJSON.clone(nextPreview.files);
+    latestPreview = nextPreview;
     Detail.setPreview(latestPreview);
     Detail.renderCheck(latestPreview);
     return latestPreview;
@@ -120,12 +135,15 @@
     latestPreview = Codegen.generateProject(Store.exportConfig(), {
       pinmux: Store.pinmux,
       family: Store.family,
+      signalGroups: Store.signalGroups,
+      internalRoutes: Store.internalRoutes,
+      peripheralInstances: Store.peripheralInstances,
       activeModule: activeModule(),
     });
     Detail.setPreview(latestPreview);
     ZipExporter.downloadProjectZip(
       latestPreview.files,
-      'TMS320F28034_ConfigStudio_R3_2.zip',
+      'TMS320F28034_ConfigStudio_R3_3.zip',
     );
     setStatus(`已导出 ${Object.keys(latestPreview.files).length} 个文件；内容与预览逐字节一致`);
   }
@@ -168,7 +186,7 @@
     document.getElementById('btnExportJSON').addEventListener('click', () => {
       downloadText(
         Store.exportJSON() + '\n',
-        'TMS320F28034_ProjectConfig_R3_2.json',
+        'TMS320F28034_ProjectConfig_R3_3.json',
         'application/json',
       );
       setStatus('已导出 ProjectConfig JSON');
@@ -202,6 +220,7 @@
       Chip.repaint();
     });
     Bus.on('function:active', () => Chip.repaint());
+    Bus.on('conflicts:changed', () => Chip.repaint());
     Bus.on('project:committed', () => {
       Chip.repaint();
       Tree.repaint();

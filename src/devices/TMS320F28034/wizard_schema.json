@@ -1,106 +1,175 @@
 {
-  "schema_version": 3,
-  "description": "Sole schema for the R3 inline single-step editor.",
+  "schema_version": 4,
+  "description": "R3.3 peripheral-instance atomic transaction wizards.",
   "profiles": {
     "gpio": {
       "title": "GPIO 配置",
       "steps": [
         {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
-        {"id": "direction", "label": "输入 / 输出", "control": "choice",
-         "default": "output",
-         "choices": [{"value": "output", "label": "输出"}, {"value": "input", "label": "输入"}]},
-        {"id": "initial_level", "label": "初始电平", "control": "choice",
-         "default": "low", "visible_if": {"direction": "output"},
-         "choices": [{"value": "low", "label": "低（安全）"}, {"value": "high", "label": "高"}]},
-        {"id": "pullup", "label": "内部上拉", "control": "choice",
-         "default": "disable",
-         "choices": [{"value": "disable", "label": "禁用"}, {"value": "enable", "label": "启用"}]},
-        {"id": "qualification", "label": "输入资格", "control": "choice",
-         "default": "sync", "visible_if": {"direction": "input"},
-         "choices": [{"value": "sync", "label": "同步"}, {"value": "qual3", "label": "3 次采样"},
-                     {"value": "qual6", "label": "6 次采样"}]},
+        {"id": "direction", "label": "输入 / 输出", "control": "choice", "default": "output", "choices": [{"value": "output", "label": "输出"}, {"value": "input", "label": "输入"}]},
+        {"id": "initial_level", "label": "初始电平", "control": "choice", "default": "low", "visible_if": {"direction": "output"}, "choices": [{"value": "low", "label": "低（安全）"}, {"value": "high", "label": "高"}]},
+        {"id": "pullup", "label": "内部上拉", "control": "choice", "default": "disable", "choices": [{"value": "disable", "label": "禁用"}, {"value": "enable", "label": "启用"}]},
+        {"id": "qualification", "label": "输入资格", "control": "choice", "default": "sync", "visible_if": {"direction": "input"}, "choices": [{"value": "sync", "label": "同步"}, {"value": "qual3", "label": "3 次采样"}, {"value": "qual6", "label": "6 次采样"}]},
         {"id": "summary", "label": "配置摘要", "control": "summary"}
       ]
     },
     "adc": {
-      "title": "ADC 模拟输入配置",
+      "title": "ADC SOC 集合配置",
       "steps": [
         {"id": "selectedPin", "label": "选择 ADC 物理脚", "control": "candidate_pin"},
-        {"id": "soc", "label": "SOC 任务槽 (0~15)", "control": "number",
-         "default": 0, "min": 0, "max": 15},
-        {"id": "trigger", "label": "转换触发源", "control": "choice", "default": "SOFTWARE",
-         "choices": [{"value": "SOFTWARE", "label": "软件触发"},
-                     {"value": "EPWM1_SOCA", "label": "ePWM1 SOCA"},
-                     {"value": "CPUTIMER0", "label": "CPU Timer0"}]},
-        {"id": "acqps", "label": "采样窗口 ACQPS (实际周期数=N+1)", "control": "number",
-         "default": 14, "min": 0, "max": 63},
-        {"id": "interrupt", "label": "ADC 中断", "control": "choice", "default": "ADCINT1",
-         "choices": [{"value": "ADCINT1", "label": "ADCINT1"}]},
+        {"id": "soc", "label": "SOC 任务槽（0～15）", "control": "number", "default": 0, "min": 0, "max": 15},
+        {"id": "trigger", "label": "转换触发源", "control": "choice", "default": "SOFTWARE", "choices": [{"value": "SOFTWARE", "label": "软件触发"}, {"value": "EPWM1_SOCA", "label": "内部 ePWM1 SOCA"}, {"value": "CPUTIMER0", "label": "内部 CPU Timer0"}]},
+        {"id": "acqps", "label": "采样窗口 ACQPS（实际 N+1 周期）", "control": "number", "default": 14, "min": 0, "max": 63},
+        {"id": "interrupt", "label": "转换完成中断", "control": "choice", "default": "ADCINT1", "choices": [{"value": "ADCINT1", "label": "ADCINT1"}, {"value": "ADCINT2", "label": "ADCINT2"}, {"value": "NONE", "label": "不使用中断"}]},
         {"id": "summary", "label": "ADC 配置摘要", "control": "summary"}
       ]
     },
     "comparator_input": {
-      "title": "Comparator 模拟输入路径",
+      "title": "Comparator 模块配置",
       "steps": [
-        {"id": "selectedPin", "label": "选择比较器模拟输入脚", "control": "candidate_pin"},
-        {"id": "summary", "label": "路径摘要（pin path only）", "control": "summary"}
+        {"id": "selectedPin", "label": "选择比较器外部模拟输入", "control": "candidate_pin"},
+        {"id": "input_side", "label": "连接到比较器哪一侧", "control": "choice", "default": "positive", "choices": [{"value": "positive", "label": "正输入"}, {"value": "negative", "label": "负输入"}]},
+        {"id": "dac_value", "label": "另一侧内部 DAC（0～1023）", "control": "number", "default": 512, "min": 0, "max": 1023},
+        {"id": "hysteresis", "label": "启用迟滞", "control": "boolean", "default": true},
+        {"id": "summary", "label": "Comparator 配置摘要", "control": "summary"}
       ]
     },
     "aio": {
       "title": "数字 AIO 配置",
       "steps": [
         {"id": "selectedPin", "label": "选择 AIO 物理脚", "control": "candidate_pin"},
-        {"id": "direction", "label": "AIO 输入 / 输出", "control": "choice", "default": "output",
-         "choices": [{"value": "output", "label": "输出"}, {"value": "input", "label": "输入"}]},
-        {"id": "initial_level", "label": "输出初始电平", "control": "choice", "default": "low",
-         "visible_if": {"direction": "output"},
-         "choices": [{"value": "low", "label": "低（安全）"}, {"value": "high", "label": "高"}]},
+        {"id": "direction", "label": "AIO 输入 / 输出", "control": "choice", "default": "output", "choices": [{"value": "output", "label": "输出"}, {"value": "input", "label": "输入"}]},
+        {"id": "initial_level", "label": "输出初始电平", "control": "choice", "default": "low", "visible_if": {"direction": "output"}, "choices": [{"value": "low", "label": "低（安全）"}, {"value": "high", "label": "高"}]},
         {"id": "summary", "label": "AIO 配置摘要", "control": "summary"}
       ]
     },
     "epwm": {
-      "title": "ePWM 配置",
+      "title": "ePWM 模块配置",
       "steps": [
         {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
-        {"id": "mode", "label": "输出模式", "control": "choice", "default": "complementary",
-         "choices": [{"value": "complementary", "label": "A/B 互补输出"},
-                     {"value": "single", "label": "单路输出"}]},
-        {"id": "frequency_hz", "label": "开关频率 (Hz)", "control": "number",
-         "default": 100000, "min": 100, "max": 1000000},
-        {"id": "count_mode", "label": "计数模式", "control": "choice", "default": "up_down",
-         "choices": [{"value": "up_down", "label": "上下计数（对称）"},
-                     {"value": "up", "label": "向上计数"}]},
-        {"id": "duty", "label": "占空比 (0~1)", "control": "number",
-         "default": 0.5, "min": 0.01, "max": 0.99, "step": 0.01},
-        {"id": "aq_profile", "label": "AQ 波形", "control": "choice",
-         "default": "set_cau_clear_cad",
-         "choices": [{"value": "set_cau_clear_cad", "label": "CAU 置位 / CAD 清零"},
-                     {"value": "clear_cau_set_cad", "label": "CAU 清零 / CAD 置位"}]},
-        {"id": "red_ns", "label": "上升沿死区 RED (ns)", "control": "number",
-         "default": 200, "min": 1, "visible_if": {"mode": "complementary"}},
-        {"id": "fed_ns", "label": "下降沿死区 FED (ns)", "control": "number",
-         "default": 200, "min": 1, "visible_if": {"mode": "complementary"}},
+        {"id": "mode", "label": "输出模式", "control": "choice", "default": "complementary", "choices": [{"value": "complementary", "label": "A/B 互补"}, {"value": "single", "label": "单路"}]},
+        {"id": "frequency_hz", "label": "开关频率（Hz）", "control": "number", "default": 100000, "min": 100, "max": 1000000},
+        {"id": "count_mode", "label": "计数模式", "control": "choice", "default": "up_down", "choices": [{"value": "up_down", "label": "上下计数"}, {"value": "up", "label": "向上计数"}]},
+        {"id": "duty", "label": "占空比（0～1）", "control": "number", "default": 0.5, "min": 0.01, "max": 0.99, "step": 0.01},
+        {"id": "aq_profile", "label": "AQ 波形", "control": "choice", "default": "set_cau_clear_cad", "choices": [{"value": "set_cau_clear_cad", "label": "CAU 置位 / CAD 清零"}, {"value": "clear_cau_set_cad", "label": "CAU 清零 / CAD 置位"}]},
+        {"id": "red_ns", "label": "上升沿死区 RED（ns）", "control": "number", "default": 200, "min": 1, "visible_if": {"mode": "complementary"}},
+        {"id": "fed_ns", "label": "下降沿死区 FED（ns）", "control": "number", "default": 200, "min": 1, "visible_if": {"mode": "complementary"}},
         {"id": "trip_enabled", "label": "启用硬件 Trip", "control": "boolean", "default": true},
-        {"id": "trip_source", "label": "Trip 输入", "control": "choice",
-         "default": "TZ1", "visible_if": {"trip_enabled": true},
-         "choices": [{"value": "TZ1", "label": "TZ1"}, {"value": "TZ2", "label": "TZ2"},
-                     {"value": "TZ3", "label": "TZ3"}]},
-        {"id": "trip_mode", "label": "Trip 模式", "control": "choice",
-         "default": "one_shot", "visible_if": {"trip_enabled": true},
-         "choices": [{"value": "one_shot", "label": "一次性封锁 OST"},
-                     {"value": "cycle_by_cycle", "label": "逐周期 CBC"}]},
-        {"id": "summary", "label": "配置摘要", "control": "summary"}
+        {"id": "trip_source", "label": "Trip 来源", "control": "choice", "default": "TZ1", "visible_if": {"trip_enabled": true}, "choices": [{"value": "TZ1", "label": "外部 TZ1"}, {"value": "TZ2", "label": "外部 TZ2"}, {"value": "TZ3", "label": "外部 TZ3"}, {"value": "COMP1OUT", "label": "内部 COMP1OUT"}, {"value": "COMP2OUT", "label": "内部 COMP2OUT"}, {"value": "COMP3OUT", "label": "内部 COMP3OUT"}, {"value": "CLOCKFAIL", "label": "内部 Clock Fail"}, {"value": "EQEP1ERR", "label": "内部 eQEP1 Error"}]},
+        {"id": "trip_mode", "label": "Trip 模式", "control": "choice", "default": "one_shot", "visible_if": {"trip_enabled": true}, "choices": [{"value": "one_shot", "label": "一次性锁存 OST"}, {"value": "cycle_by_cycle", "label": "逐周期 CBC"}]},
+        {"id": "summary", "label": "ePWM 配置摘要", "control": "summary"}
       ]
     },
     "i2c": {
-      "title": "I²C 引脚配置",
+      "title": "I2CA 完整模块配置",
       "steps": [
-        {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
-        {"id": "summary", "label": "I²C 电气摘要", "control": "summary"}
+        {"id": "selectedPin", "label": "当前入口物理脚", "control": "candidate_pin"},
+        {"id": "role", "label": "I2C 角色", "control": "choice", "default": "master", "choices": [{"value": "master", "label": "主机"}, {"value": "slave", "label": "从机"}]},
+        {"id": "pin_sda", "role": "sda", "label": "选择 SDAA 物理脚", "control": "signal_pin"},
+        {"id": "pin_scl", "role": "scl", "label": "选择 SCLA 物理脚", "control": "signal_pin"},
+        {"id": "bus_hz", "label": "总线速度（Hz）", "control": "number", "default": 100000, "min": 1000, "max": 400000},
+        {"id": "own_address", "label": "本机 7-bit 地址", "control": "number", "default": 32, "min": 0, "max": 127},
+        {"id": "target_address", "label": "默认目标 7-bit 地址", "control": "number", "default": 80, "min": 0, "max": 127},
+        {"id": "fifo", "label": "启用 FIFO", "control": "boolean", "default": true},
+        {"id": "summary", "label": "I2CA 原子事务摘要", "control": "summary"}
+      ]
+    },
+    "spi": {
+      "title": "SPIA/SPIB 完整模块配置",
+      "steps": [
+        {"id": "selectedPin", "label": "当前入口物理脚", "control": "candidate_pin"},
+        {"id": "role", "label": "SPI 角色", "control": "choice", "default": "master", "choices": [{"value": "master", "label": "主机"}, {"value": "slave", "label": "从机"}]},
+        {"id": "wire_mode", "label": "线制", "control": "choice", "default": "4wire", "choices": [{"value": "4wire", "label": "4-wire"}, {"value": "3wire", "label": "3-wire"}]},
+        {"id": "data_mode", "label": "数据方向", "control": "choice", "default": "full_duplex", "choices": [{"value": "full_duplex", "label": "全双工"}, {"value": "tx", "label": "只发送"}, {"value": "rx", "label": "只接收"}]},
+        {"id": "ste_strategy", "label": "片选策略", "control": "choice", "default": "no_cs", "choices": [{"value": "no_cs", "label": "不使用片选"}, {"value": "hardware_ste", "label": "硬件 STE"}]},
+        {"id": "pin_simo", "role": "simo", "label": "选择 SIMO/MOMI", "control": "signal_pin", "optional": true},
+        {"id": "pin_somi", "role": "somi", "label": "选择 SOMI/SISO", "control": "signal_pin", "optional": true},
+        {"id": "pin_clk", "role": "clk", "label": "选择 SPI CLK", "control": "signal_pin"},
+        {"id": "pin_ste", "role": "ste", "label": "选择可选 STE", "control": "signal_pin", "optional": true},
+        {"id": "cpol", "label": "CPOL", "control": "number", "default": 0, "min": 0, "max": 1},
+        {"id": "cpha", "label": "CPHA", "control": "number", "default": 0, "min": 0, "max": 1},
+        {"id": "word_length", "label": "字长（bit）", "control": "number", "default": 8, "min": 1, "max": 16},
+        {"id": "baud_hz", "label": "SPI 速率（Hz）", "control": "number", "default": 1000000, "min": 1000, "max": 5000000},
+        {"id": "summary", "label": "SPI 原子事务摘要", "control": "summary"}
+      ]
+    },
+    "sci": {
+      "title": "SCIA 完整模块配置",
+      "steps": [
+        {"id": "selectedPin", "label": "当前入口物理脚", "control": "candidate_pin"},
+        {"id": "mode", "label": "通信方向", "control": "choice", "default": "full_duplex", "choices": [{"value": "full_duplex", "label": "全双工"}, {"value": "tx_only", "label": "只发送"}, {"value": "rx_only", "label": "只接收"}, {"value": "half_duplex", "label": "半双工"}]},
+        {"id": "pin_tx", "role": "tx", "label": "选择 SCITXDA", "control": "signal_pin", "optional": true},
+        {"id": "pin_rx", "role": "rx", "label": "选择 SCIRXDA", "control": "signal_pin", "optional": true},
+        {"id": "baud", "label": "波特率", "control": "number", "default": 115200, "min": 1200, "max": 1000000},
+        {"id": "data_bits", "label": "数据位", "control": "number", "default": 8, "min": 1, "max": 8},
+        {"id": "stop_bits", "label": "停止位", "control": "number", "default": 1, "min": 1, "max": 2},
+        {"id": "summary", "label": "SCIA 原子事务摘要", "control": "summary"}
+      ]
+    },
+    "lin": {
+      "title": "LINA 完整模块配置",
+      "steps": [
+        {"id": "selectedPin", "label": "当前入口物理脚", "control": "candidate_pin"},
+        {"id": "mode", "label": "寄存器工作模式", "control": "choice", "default": "lin", "choices": [{"value": "lin", "label": "LIN 模式"}, {"value": "sci_compat", "label": "SCI-compatible 模式"}]},
+        {"id": "direction", "label": "方向", "control": "choice", "default": "full_duplex", "choices": [{"value": "full_duplex", "label": "双向"}, {"value": "tx_only", "label": "只发送"}, {"value": "rx_only", "label": "只接收"}]},
+        {"id": "pin_tx", "role": "tx", "label": "选择 LINTXA", "control": "signal_pin", "optional": true},
+        {"id": "pin_rx", "role": "rx", "label": "选择 LINRXA", "control": "signal_pin", "optional": true},
+        {"id": "baud", "label": "波特率", "control": "number", "default": 19200, "min": 1000, "max": 1000000},
+        {"id": "summary", "label": "LINA 原子事务摘要", "control": "summary"}
+      ]
+    },
+    "can": {
+      "title": "CANA 完整模块配置",
+      "steps": [
+        {"id": "selectedPin", "label": "当前入口物理脚（内部回环时不会占用）", "control": "candidate_pin"},
+        {"id": "mode", "label": "CAN 模式", "control": "choice", "default": "normal", "choices": [{"value": "normal", "label": "正常 TX+RX"}, {"value": "listen_only", "label": "只监听 RX"}, {"value": "self_test_loopback", "label": "内部自测回环（无物理脚）"}, {"value": "tx_test", "label": "TX 诊断"}, {"value": "rx_test", "label": "RX 诊断"}]},
+        {"id": "pin_tx", "role": "tx", "label": "选择 CANTXA", "control": "signal_pin", "optional": true},
+        {"id": "pin_rx", "role": "rx", "label": "选择 CANRXA", "control": "signal_pin", "optional": true},
+        {"id": "baud_hz", "label": "位速率（bit/s）", "control": "number", "default": 500000, "min": 10000, "max": 1000000},
+        {"id": "brp", "label": "BRP", "control": "number", "default": 5, "min": 1, "max": 64},
+        {"id": "tseg1", "label": "TSEG1（不可为 0）", "control": "number", "default": 8, "min": 1, "max": 16},
+        {"id": "tseg2", "label": "TSEG2（不可为 0）", "control": "number", "default": 3, "min": 1, "max": 8},
+        {"id": "summary", "label": "CANA 原子事务摘要", "control": "summary"}
+      ]
+    },
+    "eqep": {
+      "title": "eQEP1 完整模块配置",
+      "steps": [
+        {"id": "selectedPin", "label": "当前入口物理脚", "control": "candidate_pin"},
+        {"id": "mode", "label": "计数模式", "control": "choice", "default": "quadrature", "choices": [{"value": "quadrature", "label": "正交计数"}, {"value": "direction_count", "label": "方向-计数"}]},
+        {"id": "pin_a", "role": "a", "label": "选择 EQEP1A", "control": "signal_pin"},
+        {"id": "pin_b", "role": "b", "label": "选择 EQEP1B", "control": "signal_pin"},
+        {"id": "pin_index", "role": "index", "label": "选择可选 Index", "control": "signal_pin", "optional": true},
+        {"id": "pin_strobe", "role": "strobe", "label": "选择可选 Strobe", "control": "signal_pin", "optional": true},
+        {"id": "qualification", "label": "输入资格（禁止 async）", "control": "choice", "default": "sync", "choices": [{"value": "sync", "label": "同步"}, {"value": "qual3", "label": "3 次采样"}, {"value": "qual6", "label": "6 次采样"}]},
+        {"id": "position_max", "label": "位置计数上限", "control": "number", "default": 4294967295, "min": 1, "max": 4294967295},
+        {"id": "summary", "label": "eQEP1 原子事务摘要", "control": "summary"}
+      ]
+    },
+    "ecap": {
+      "title": "eCAP1 完整模块配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择 ECAP1 物理脚", "control": "candidate_pin"},
+        {"id": "mode", "label": "互斥工作模式", "control": "choice", "default": "capture", "choices": [{"value": "capture", "label": "捕获输入"}, {"value": "apwm", "label": "APWM 输出"}]},
+        {"id": "prescaler", "label": "预分频", "control": "number", "default": 1, "min": 1, "max": 62},
+        {"id": "period", "label": "APWM 周期", "control": "number", "default": 1000, "min": 1},
+        {"id": "compare", "label": "APWM 比较值", "control": "number", "default": 500, "min": 1},
+        {"id": "summary", "label": "eCAP1 原子事务摘要", "control": "summary"}
+      ]
+    },
+    "hrcap": {
+      "title": "HRCAP 完整模块与校准配置",
+      "steps": [
+        {"id": "selectedPin", "label": "选择 HRCAP 物理脚", "control": "candidate_pin"},
+        {"id": "mode", "label": "捕获精度", "control": "choice", "default": "capture", "choices": [{"value": "capture", "label": "普通捕获"}, {"value": "high_resolution", "label": "高分辨率（需要 HCCal）"}]},
+        {"id": "calibration_mode", "label": "HCCal 校准方式", "control": "choice", "default": "startup", "choices": [{"value": "startup", "label": "启动时校准"}, {"value": "runtime", "label": "运行时周期校准"}, {"value": "none", "label": "不校准（仅普通捕获）"}]},
+        {"id": "calibration_instance", "label": "专用校准 HRCAP 实例", "control": "choice", "default": "HRCAP2", "choices": [{"value": "HRCAP1", "label": "HRCAP1"}, {"value": "HRCAP2", "label": "HRCAP2"}]},
+        {"id": "hccal_library", "label": "HCCal 库名称", "control": "choice", "default": "TI_HCCal", "choices": [{"value": "TI_HCCal", "label": "TI HCCal library"}]},
+        {"id": "summary", "label": "HRCAP 原子事务摘要", "control": "summary"}
       ]
     },
     "tripzone": {
-      "title": "Trip Zone 引脚配置",
+      "title": "Trip Zone 外部引脚配置",
       "steps": [
         {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
         {"id": "summary", "label": "异步保护输入摘要", "control": "summary"}
@@ -110,7 +179,7 @@
       "title": "引脚复用配置",
       "steps": [
         {"id": "selectedPin", "label": "选择物理脚", "control": "candidate_pin"},
-        {"id": "summary", "label": "Pinmux-only 摘要", "control": "summary"}
+        {"id": "summary", "label": "独立引脚摘要", "control": "summary"}
       ]
     }
   }

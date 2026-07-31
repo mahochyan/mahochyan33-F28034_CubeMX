@@ -326,6 +326,54 @@ def function_direction(function: str) -> str:
     return "io"
 
 
+def electrical_profile(function: str) -> str | None:
+    """Assign generation semantics while building the device database.
+
+    Runtime code is forbidden from guessing by substring.  This builder turns
+    each official function into an explicit, reviewable database field.
+    """
+    fn = function.upper()
+    exact = {
+        "SDAA": "i2c_open_drain",
+        "SCLA": "i2c_open_drain",
+        "SCITXDA": "sci_tx",
+        "SCIRXDA": "sci_rx",
+        "LINTXA": "lin_tx",
+        "LINRXA": "lin_rx",
+        "CANTXA": "can_tx",
+        "CANRXA": "can_rx",
+        "ECAP1": "ecap_by_mode",
+        "HRCAP1": "hrcap_sync_input",
+        "HRCAP2": "hrcap_sync_input",
+        "TZ1": "trip_async_input",
+        "TZ2": "trip_async_input",
+        "TZ3": "trip_async_input",
+        "EPWMSYNCI": "pwm_sync_input",
+        "EPWMSYNCO": "pwm_sync_output",
+        "ADCSOCAO": "adc_trigger_output",
+        "ADCSOCBO": "adc_trigger_output",
+        "COMP1OUT": "comparator_output",
+        "COMP2OUT": "comparator_output",
+        "COMP3OUT": "comparator_output",
+        "XCLKOUT": "clock_output",
+    }
+    if fn in exact:
+        return exact[fn]
+    if fn.startswith("GPIO"):
+        return None
+    if fn.startswith("EPWM") and fn.endswith(("A", "B")):
+        return "epwm_output"
+    if fn.startswith("SPISIMO") or fn.startswith("SPISOMI"):
+        return f"spi_data_{fn[-1].lower()}"
+    if fn.startswith("SPICLK"):
+        return f"spi_clock_{fn[-1].lower()}"
+    if fn.startswith("SPISTE"):
+        return f"spi_ste_{fn[-1].lower()}"
+    if fn.startswith("EQEP1"):
+        return "eqep_sync_input"
+    raise ValueError(f"no explicit electrical profile for {function}")
+
+
 def register_metadata(gpio: int) -> dict[str, object]:
     port = "A" if gpio <= 31 else "B"
     if gpio <= 15:
@@ -435,15 +483,15 @@ def build() -> tuple[dict, dict, dict]:
         if "comparator" in analog:
             analog_paths.append(route_entry(
                 analog["comparator"], "comparator_input", "analog",
-                route=True, peripheral=False, source_section="Table 7-42",
-                always_available=True, generator_boundary="pin_path_only",
+                route=True, peripheral=True, source_section="Table 7-42",
+                always_available=True,
             ))
         aio_function = None
         if "aio" in analog:
             aio = analog["aio"]
             aio_bit = int(aio[3:])
             aio_function = route_entry(
-                aio, "aio", "aio", route=True, peripheral=False,
+                aio, "aio", "aio", route=True, peripheral=True,
                 source_section="Table 7-42", aiomux_bit=aio_bit,
                 aiomux_field=f"GpioCtrlRegs.AIOMUX1.bit.{aio}",
                 dir_field=f"GpioCtrlRegs.AIODIR.bit.{aio}",
@@ -464,21 +512,20 @@ def build() -> tuple[dict, dict, dict]:
                     function_type(function),
                     "gpio_mux",
                     route=True,
-                    peripheral=bool(
-                        function_type(function) == "epwm"
-                        and function.endswith(("A", "B"))
-                    ),
+                    peripheral=function_type(function) in {
+                        "epwm", "i2c", "spi_a", "spi_b", "sci", "lin",
+                        "can", "eqep", "ecap", "hrcap", "tripzone",
+                        "epwm_sync", "adc_soc_output", "comparator_output",
+                        "clock_output",
+                    },
                     source_section="Table 7-40" if gpio <= 31 else "Table 7-41",
                     mux=mux,
                     direction=function_direction(function),
                     signal_verified=True,
                     mux_value_verified=True,
                     source_verified=True,
-                    generator_profile=(
-                        "trip_async_input"
-                        if function_type(function) == "tripzone"
-                        else None
-                    ),
+                    electrical_profile=electrical_profile(function),
+                    generator_profile=electrical_profile(function),
                 )
                 entry["generator_supported"] = entry["peripheral_init_supported"]
                 entry["evidence"] = [{
@@ -905,7 +952,14 @@ def write_reports(golden: dict, runtime: dict, result: dict) -> None:
 def copy_runtime_assets() -> None:
     STATIC_ROOT.mkdir(parents=True, exist_ok=True)
     (STATIC_ROOT / "packages").mkdir(parents=True, exist_ok=True)
-    for name in ("pinmux.json", "pinmux_golden.json", "official_pin_golden.json"):
+    for name in (
+        "pinmux.json",
+        "pinmux_golden.json",
+        "official_pin_golden.json",
+        "peripheral_instances.json",
+        "signal_groups.json",
+        "internal_routes.json",
+    ):
         shutil.copyfile(DEVICE_ROOT / name, STATIC_ROOT / name)
     shutil.copyfile(
         DEVICE_ROOT / "packages" / "pnt80.json",
@@ -920,9 +974,10 @@ def copy_runtime_assets() -> None:
     for private_key in ("device_header_path", "include_path", "source_path"):
         device.pop(private_key, None)
     device.update({
-        "status": "CONFIG_STUDIO_R3.2.2_OFFICIAL_PIN_DATABASE_INTERNAL_PASS",
+        "status": "CONFIG_STUDIO_R3.3_PERIPHERAL_GRAPH_INTERNAL_PASS",
         "source_datasheet": "SPRS584Q",
         "source_verified": True,
+        "last_verified": "2026-07-31",
         "source_sections": list(SOURCE["sections"].values()),
         "runtime": "static-browser",
     })

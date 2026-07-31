@@ -26,6 +26,12 @@ const deviceBundle = {
   family: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'family.json'), 'utf8')),
   constraints: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'constraints.json'), 'utf8')),
   wizards: JSON.parse(fs.readFileSync(path.join(deviceRoot, 'wizard_schema.json'), 'utf8')),
+  peripheralInstances: JSON.parse(fs.readFileSync(
+    path.join(deviceRoot, 'peripheral_instances.json'), 'utf8')),
+  signalGroups: JSON.parse(fs.readFileSync(
+    path.join(deviceRoot, 'signal_groups.json'), 'utf8')),
+  internalRoutes: JSON.parse(fs.readFileSync(
+    path.join(deviceRoot, 'internal_routes.json'), 'utf8')),
   packageData: JSON.parse(fs.readFileSync(
     path.join(deviceRoot, 'packages', 'pnt80.json'), 'utf8')),
 };
@@ -77,4 +83,4 @@ const html = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 if (/(?:src|href)=["']\/(?!\/)/i.test(html)) {
   throw new Error('index.html contains a root-relative asset URL');
 }
-console.log(`R3.2.2 official static build: ${productionFiles.length} files -> ${dist}`);
+console.log(`R3.3 peripheral graph static build: ${productionFiles.length} files -> ${dist}`);

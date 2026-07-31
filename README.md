@@ -1,4 +1,4 @@
-# C2000 Config Studio R3.2.2 Official Static
+# C2000 Config Studio R3.3 Peripheral Graph Static
 
 面向 `TMS320F28034PNT / PNT80` 的浏览器端引脚复用、配置检查与 C 代码生成器。
 
@@ -9,10 +9,35 @@
 生产版本位于 `dist/`，是 GitHub Pages 可直接托管的纯静态网页。运行时不依赖
 Python、Flask、Docker、本地端口或 `/api` 接口。
 
-> 当前内部状态：`CONFIG_STUDIO_R3.2.2_OFFICIAL_PIN_DATABASE_INTERNAL_PASS`。
-> 这表示官方引脚数据库和软件验收门禁已通过，不代表硬件实测、功率级使能或电源安全批准。
+> 当前内部状态：`CONFIG_STUDIO_R3.3_PERIPHERAL_GRAPH_INTERNAL_PASS`。
+> 这表示官方数据库、外设资源图和软件验收门禁已通过；用户正式网页验收仍待完成，
+> 更不代表 CCS 编译、硬件实测、功率级使能或电源安全批准。
 
-## R3.2.2 完整官方引脚数据库
+## R3.3：从单脚 PinMux 升级为完整外设
+
+现在选择 `SCLA`、`SPISIMOA`、`CANTXA`、`EQEP1A` 等功能时，网页建立的是完整
+外设模块对象，而不是一条孤立 PinMux：
+
+- Peripheral instance：I2CA、SPIA/B、SCIA、LINA、CANA、EQEP1、ECAP1、
+  HRCAP1/2、COMP1～3、EPWM1～7
+- Signal group：按模式检查 I2C SDA/SCL、SPI 数据/时钟/片选、CAN TX/RX、
+  eQEP A/B 等成组关系
+- Internal route：ePWM SOCA/B → ADC、Comparator → Trip、ePWM 同步与中断路由
+- Shared resource：HRCAP 校准与应用 EPWM7 等跨模块冲突
+
+ADC 已升级为 SOC0～SOC15 集合。生成器只读取完整 schema v2 ProjectConfig，
+每次从零全量重生成：新增配置保留旧配置，删除配置不会留下旧 C 文本。
+
+R3.3 审计报告：
+
+- [外设联动矩阵](docs/PERIPHERAL_LINKAGE_MATRIX.md)
+- [资源冲突矩阵](docs/RESOURCE_CONFLICT_MATRIX.md)
+- [内部路由矩阵](docs/INTERNAL_ROUTE_MATRIX.md)
+- [代码生成所有权](docs/CODEGEN_OWNERSHIP_REPORT.md)
+- [ProjectConfig schema v2](docs/PROJECTCONFIG_SCHEMA_V2.md)
+- [R3.3 浏览器与自动验收](docs/R3_3_E2E_REPORT.md)
+
+## R3.2.2 延续的完整官方引脚数据库
 
 本版本不再逐个修补管脚，而是由
 [`tools/build_official_pin_golden.py`](tools/build_official_pin_golden.py)
@@ -107,7 +132,7 @@ npm.cmd run test:dist
 npm.cmd run test:e2e
 ```
 
-GitHub Actions 会重复执行数据库生成、单元测试、静态构建和真实浏览器验收，
+GitHub Actions 会重复执行数据库生成、约束/生成器测试、静态构建和真实浏览器验收，
 全部通过后才把 `dist/` 部署到 GitHub Pages。
 
 ## 目录

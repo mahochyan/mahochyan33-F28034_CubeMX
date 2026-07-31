@@ -1,6 +1,6 @@
 {
-  "name": "f28034-config-studio-r3-2-static",
-  "version": "3.2.2",
+  "name": "f28034-config-studio-r3-3-static",
+  "version": "3.3.0",
   "private": true,
   "description": "Pure static TMS320F28034PNT official pin database and code generator for GitHub Pages.",
   "scripts": {

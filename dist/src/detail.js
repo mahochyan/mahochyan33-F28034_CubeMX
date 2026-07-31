@@ -142,14 +142,12 @@
     for (const [name, module] of modules) {
       pins.push(pinLabel(module.pin_a, `${name}A`));
       if (module.pin_b != null) pins.push(pinLabel(module.pin_b, `${name}B`));
-      if (module.trip?.enabled && module.trip.pin != null) {
-        pins.push(pinLabel(
-          module.trip.pin,
-          String(module.trip.source || 'Trip').toUpperCase().endsWith('N')
-            ? String(module.trip.source).toUpperCase()
-            : `${String(module.trip.source).toUpperCase()}N`,
-        ));
-      }
+      (module.trip_route_ids || []).forEach(routeId => {
+        const route = Store.project.trip_routes?.[routeId];
+        if (route?.source_kind === 'external_tz' && route.source_pin != null) {
+          pins.push(pinLabel(route.source_pin, route.source));
+        }
+      });
       releases.push(`${name}_ReleaseClamp()`);
     }
     return {
@@ -184,7 +182,10 @@
         }
         return `Pin${pin.physical_pin} / ${fn} 是输出脚；初始化后通过 ${def?.set_field || 'SET 寄存器'} 置高、${def?.clr_field || 'CLEAR 寄存器'} 置低。`;
       }
-      return `Pin${pin.physical_pin} 已切换为 ${fn}；本工具只完成这个脚的 MUX/上拉/输入资格配置，还需要由你的业务代码初始化并使用 ${fn} 所属外设。`;
+      const instance = pin.module && Store.moduleConfig(pin.module);
+      return instance
+        ? `Pin${pin.physical_pin} 已作为 ${pin.module}.${pin.role} 切换为 ${fn}；对应 xxx_init.c 会初始化模块寄存器，业务代码再负责收发或读取数据。`
+        : `Pin${pin.physical_pin} 已切换为 ${fn}；这是独立引脚路由，请按右侧生成报告确认使用边界。`;
     });
     return {
       intro: 'PinMux 只负责把封装上的物理脚连接到芯片内部 GPIO 或外设模块，不会自动完成所有外设业务逻辑。',
@@ -198,22 +199,24 @@
 
   function adcGuide() {
     const adc = Store.project.adc;
-    if (!adc) {
+    const socs = Object.entries(adc?.socs || {})
+      .sort((a, b) => Number(a[1].soc) - Number(b[1].soc));
+    if (!socs.length) {
       return {
         intro: '当前工程没有 ADC 配置。',
         pins: [],
         steps: ['先在功能向导中选择 ADC 通道、SOC、触发源和采样窗口。'],
       };
     }
-    const pin = Object.values(Store.pinmux?.pins || {}).find(def =>
-      String(def.primary_signal || '').toUpperCase() === String(adc.channel).toUpperCase());
+    const [socName, soc] = socs[0];
     return {
-      intro: `SOC${adc.soc} 会按 ${adc.trigger} 触发方式采样 ${adc.channel}，采样窗口为 ${Number(adc.acqps) + 1} 个 ADC 时钟周期。`,
-      pins: pin ? [pinLabel(pin.physical_pin, adc.channel)] : [String(adc.channel)],
+      intro: `工程共有 ${socs.length} 个 ADC SOC。示例 ${socName} 会按 ${soc.trigger} 触发方式采样 ${soc.channel}，采样窗口为 ${Number(soc.acqps) + 1} 个 ADC 时钟周期。`,
+      pins: socs.map(([, item]) =>
+        pinLabel(item.physical_pin, item.channel)).filter(Boolean),
       steps: [
         '先确认输入电压没有超过芯片 ADC 允许范围，并保证模拟地与采样电路连接正确。',
         '在主程序中调用 Generated_InitAll() 完成 ADC 上电和 SOC 配置。',
-        `触发转换后，从对应的 ADCRESULT${adc.soc} 结果寄存器读取采样值；再按你的分压比例换算成实际电压。`,
+        `触发转换后，从对应的 ADCRESULT${soc.soc} 结果寄存器读取 ${socName}；再按你的分压比例换算成实际电压。`,
       ],
       warning: '这里的说明不替代模拟前端量程、RC 滤波和校准计算。',
     };
@@ -224,6 +227,22 @@
     if (/^pwm_init\.[ch]$/.test(file)) return pwmGuide();
     if (/^pinmux_init\.[ch]$/.test(file)) return pinmuxGuide();
     if (/^adc_init\.[ch]$/.test(file)) return adcGuide();
+    const moduleGuide = /^(i2c|spi|sci|lin|can|eqep|ecap|hrcap|comparator)_init\.[ch]$/.exec(file);
+    if (moduleGuide) {
+      const label = moduleGuide[1].toUpperCase();
+      return {
+        intro: `${label} 文件负责外设模块寄存器；物理脚 MUX 单独放在 pinmux_init.c，两部分都由同一个 ProjectConfig 生成。`,
+        pins: Store.assignedList()
+          .filter(pin => String(pin.module || '').toLowerCase()
+            .startsWith(moduleGuide[1] === 'comparator' ? 'comp' : moduleGuide[1]))
+          .map(pin => pinLabel(pin.physical_pin, pin.function)).filter(Boolean),
+        steps: [
+          '先调用 Generated_InitAll()，它会按依赖顺序先配置物理脚，再配置这个模块。',
+          '根据模块对象里的模式、速率和角色，在业务代码中发送、接收或读取数据。',
+          '通信总线还要核对板级上拉、收发器、电平和终端电阻，寄存器初始化不能替代硬件检查。',
+        ],
+      };
+    }
     if (/^generated_init_all\.[ch]$/.test(file)) {
       return {
         intro: '这是主程序最先使用的统一初始化入口；它先把 PWM 相关脚拉低，再按安全顺序调用各模块初始化。',
@@ -347,31 +366,69 @@
   function renderAssigned() {
     const root = document.getElementById('assignedPanel');
     const pins = Store.assignedList();
-    if (!pins.length) {
-      root.innerHTML = '<div class="empty-state dim">尚未配置任何引脚。</div>';
+    const groups = new Map();
+    pins.forEach(pin => {
+      const key = Store.moduleConfig(pin.module)
+        ? `MODULE:${pin.module}` : `PIN:${pin.physical_pin}`;
+      if (!groups.has(key)) {
+        groups.set(key, {
+          key,
+          module: key.startsWith('MODULE:') ? pin.module : null,
+          pins: [],
+        });
+      }
+      groups.get(key).pins.push(pin);
+    });
+    const pinlessCollections = [
+      'can_modules', 'i2c_modules', 'spi_modules', 'sci_modules',
+      'lin_modules', 'eqep_modules', 'ecap_modules', 'hrcap_modules',
+      'comparators',
+    ];
+    pinlessCollections.forEach(collection => {
+      Object.keys(Store.project?.[collection] || {}).forEach(instance => {
+        const key = `MODULE:${instance}`;
+        if (!groups.has(key)) groups.set(key, { key, module: instance, pins: [] });
+      });
+    });
+    const assigned = [...groups.values()].sort((a, b) =>
+      String(a.module || `ZZ${a.pins[0]?.physical_pin}`)
+        .localeCompare(String(b.module || `ZZ${b.pins[0]?.physical_pin}`)));
+    if (!assigned.length) {
+      root.innerHTML = '<div class="empty-state dim">尚未配置任何外设实例或独立引脚。</div>';
       return;
     }
-    root.innerHTML = pins.map(pin => `
-      <details class="assigned-item" data-pin="${pin.physical_pin}">
-        <summary>Pin${pin.physical_pin} ${esc(pin.signal)} / ${esc(pin.function)}
-          ${pin.peripheral_init_supported
-            ? '<span class="state-tag t-sel">外设初始化</span>'
-            : '<span class="unverified">pinmux-only</span>'}
+    root.innerHTML = assigned.map(group => {
+      const first = group.pins[0];
+      const module = group.module && Store.moduleConfig(group.module);
+      const title = group.module
+        ? `${group.module} · ${group.pins.length} 个物理信号`
+        : `Pin${first.physical_pin} ${first.signal} / ${first.function}`;
+      return `
+      <details class="assigned-item" data-pin="${first?.physical_pin ?? ''}"
+        data-module="${esc(group.module || '')}">
+        <summary>${esc(title)}
+          ${module
+            ? '<span class="state-tag t-sel">完整模块对象</span>'
+            : '<span class="state-tag">独立引脚</span>'}
         </summary>
-        <pre>${esc(JSON.stringify(pinSummary(pin), null, 2))}</pre>
+        <pre>${esc(JSON.stringify(module
+          ? { instance: group.module, config: module, pins: group.pins }
+          : pinSummary(first), null, 2))}</pre>
         <div class="assigned-actions">
-          <button type="button" class="btn btn-sm" data-action="edit">编辑</button>
-          <button type="button" class="btn btn-sm" data-action="locate">在芯片图定位</button>
+          ${first ? '<button type="button" class="btn btn-sm" data-action="edit">编辑</button>' : ''}
+          ${first ? '<button type="button" class="btn btn-sm" data-action="locate">在芯片图定位</button>' : ''}
           <button type="button" class="btn btn-sm" data-action="delete">删除</button>
         </div>
-      </details>`).join('');
+      </details>`;
+    }).join('');
     root.querySelectorAll('.assigned-item').forEach(item => {
       const pin = Number(item.dataset.pin);
-      item.querySelector('[data-action="locate"]').addEventListener('click', () => {
+      const moduleName = item.dataset.module || null;
+      item.querySelector('[data-action="locate"]')?.addEventListener('click', () => {
         Store.selectPin(pin);
         Chip.focusPin(pin);
       });
-      item.querySelector('[data-action="edit"]').addEventListener('click', () => {
+      item.querySelector('[data-action="edit"]')?.addEventListener('click', () => {
         if (!Store.editPin(pin)) return;
         document.querySelector('#midTabs [data-tab="tree"]').click();
         const configured = Store.getPin(pin);
@@ -383,10 +440,12 @@
       });
       item.querySelector('[data-action="delete"]').addEventListener('click', () => {
         const configured = Store.getPin(pin);
-        const message = configured?.module
-          ? `删除 Pin${pin} 会原子删除整个 ${configured.module} A/B/Trip 组，继续吗？`
+        const message = moduleName
+          ? `删除会原子移除整个 ${moduleName}、它的全部信号脚和内部路由，继续吗？`
           : `删除 Pin${pin} 配置，继续吗？`;
-        if (window.confirm(message)) Store.removePin(pin);
+        if (!window.confirm(message)) return;
+        if (moduleName) Store.removeModule(moduleName);
+        else Store.removePin(pin);
       });
     });
   }

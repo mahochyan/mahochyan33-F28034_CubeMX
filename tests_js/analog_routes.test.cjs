@@ -7,10 +7,17 @@ const ROOT = path.resolve(__dirname, '..');
 const read = relative => JSON.parse(fs.readFileSync(path.join(ROOT, relative), 'utf8'));
 const pinmux = read('src/devices/TMS320F28034/pinmux.json');
 const family = read('src/devices/TMS320F28034/family.json');
+const signalGroups = read('src/devices/TMS320F28034/signal_groups.json');
+const internalRoutes = read('src/devices/TMS320F28034/internal_routes.json');
+const peripheralInstances =
+  read('src/devices/TMS320F28034/peripheral_instances.json');
 const Loader = require('../src/core/device_loader.js');
 const Project = require('../src/core/project_config.js');
 const Codegen = require('../src/core/codegen.js');
 const index = Loader.buildReverseIndex(pinmux);
+const context = {
+  pinmux, family, signalGroups, internalRoutes, peripheralInstances,
+};
 
 function editor(functionId, physicalPin, draft = {}) {
   return {
@@ -66,13 +73,23 @@ test('ADC transaction generates SOC and ADCINT but no GPIO register writes', () 
     }),
     pinmux,
     reverseIndex: index,
+    signalGroups,
+    internalRoutes,
   });
   assert.equal(plan.ok, true, plan.errors?.join('；'));
   const project = Project.applyAtomically(blank, plan);
-  assert.equal(project.adc.channel, 'ADCINA6');
-  assert.equal(project.adc.physical_pin, 12);
+  assert.equal(project.adc.socs.SOC3.channel, 'ADCINA6');
+  assert.equal(project.adc.socs.SOC3.physical_pin, 12);
   assert.equal(Object.keys(project.pins).length, 0);
-  const result = Codegen.generateProject(project, { pinmux, family });
+  project.pwm_modules.EPWM1 = {
+    mode: 'single', pin_a: 69, pin_b: null, count_mode: 'up_down',
+    frequency_hz: 100000, duty: 0.5, aq_profile: 'set_cau_clear_cad',
+    deadband: { enabled: false }, trip_route_ids: [],
+  };
+  project.pwm_event_triggers.EPWM1 = {
+    SOCA: { enabled: true, source: 4, prescale: 1 },
+  };
+  const result = Codegen.generateProject(project, context);
   assert.match(result.files['adc_init.c'], /ADCSOC3CTL\.bit\.CHSEL/);
   assert.match(result.files['adc_init.c'], /INTSEL1N2\.bit\.INT1SEL/);
   assert.doesNotMatch(result.files['adc_init.c'], /GPA(?:MUX|DIR|PUD)/);
@@ -86,14 +103,17 @@ test('Comparator input is saved as pin-path-only and never enters GPIO pinmux', 
     editor: editor('COMP3A', 12),
     pinmux,
     reverseIndex: index,
+    signalGroups,
+    internalRoutes,
   });
   assert.equal(plan.ok, true, plan.errors?.join('；'));
   const project = Project.applyAtomically(blank, plan);
-  assert.equal(project.comparator_inputs.COMP3A.generator_boundary, 'pin_path_only');
-  assert.equal(project.comparator_inputs.COMP3A.gpio_registers_forbidden, true);
+  assert.equal(project.comparators.COMP3.positive.function, 'COMP3A');
+  assert.equal(project.comparators.COMP3.positive.physical_pin, 12);
   assert.equal(Object.keys(project.pins).length, 0);
-  const result = Codegen.generateProject(project, { pinmux, family });
+  const result = Codegen.generateProject(project, context);
   assert.doesNotMatch(result.files['pinmux_init.c'], /Pin12/);
+  assert.match(result.files['comparator_init.c'], /Comp3Regs/);
 });
 
 test('AIO generation uses only AIOMUX/AIODIR/AIO data fields', () => {
@@ -105,10 +125,12 @@ test('AIO generation uses only AIOMUX/AIODIR/AIO data fields', () => {
     }),
     pinmux,
     reverseIndex: index,
+    signalGroups,
+    internalRoutes,
   });
   assert.equal(plan.ok, true, plan.errors?.join('；'));
   const project = Project.applyAtomically(blank, plan);
-  const result = Codegen.generateProject(project, { pinmux, family });
+  const result = Codegen.generateProject(project, context);
   const source = result.files['pinmux_init.c'];
   assert.match(source, /GpioCtrlRegs\.AIOMUX1\.bit\.AIO6 = 0U/);
   assert.match(source, /GpioCtrlRegs\.AIODIR\.bit\.AIO6 = 1U/);

@@ -53,6 +53,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -71,13 +72,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -85,8 +86,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "eqep_sync_input",
+          "generator_profile": "eqep_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -103,13 +105,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -117,8 +119,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_tx",
+          "generator_profile": "lin_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -151,6 +154,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -169,13 +173,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -183,8 +187,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "eqep_sync_input",
+          "generator_profile": "eqep_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -201,13 +206,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -215,8 +220,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_tx",
+          "generator_profile": "lin_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -396,6 +402,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -414,13 +421,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -428,8 +435,9 @@
           "direction": "io_open_drain",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "i2c_open_drain",
+          "generator_profile": "i2c_open_drain",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -446,13 +454,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -460,8 +468,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "pwm_sync_input",
+          "generator_profile": "pwm_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -478,13 +487,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -492,8 +501,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "adc_trigger_output",
+          "generator_profile": "adc_trigger_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -526,6 +536,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -544,13 +555,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -558,8 +569,9 @@
           "direction": "io_open_drain",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "i2c_open_drain",
+          "generator_profile": "i2c_open_drain",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -576,13 +588,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -590,8 +602,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "pwm_sync_input",
+          "generator_profile": "pwm_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -608,13 +621,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -622,8 +635,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "adc_trigger_output",
+          "generator_profile": "adc_trigger_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -726,6 +740,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -744,13 +759,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -758,8 +773,9 @@
           "direction": "io_open_drain",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "i2c_open_drain",
+          "generator_profile": "i2c_open_drain",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -776,13 +792,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -790,8 +806,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "pwm_sync_output",
+          "generator_profile": "pwm_sync_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -808,13 +825,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -822,8 +839,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "adc_trigger_output",
+          "generator_profile": "adc_trigger_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -856,6 +874,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -874,13 +893,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -888,8 +907,9 @@
           "direction": "io_open_drain",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "i2c_open_drain",
+          "generator_profile": "i2c_open_drain",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -906,13 +926,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -920,8 +940,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "pwm_sync_output",
+          "generator_profile": "pwm_sync_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -938,13 +959,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -952,8 +973,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "adc_trigger_output",
+          "generator_profile": "adc_trigger_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -1055,6 +1077,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -1073,13 +1096,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -1087,8 +1110,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "eqep_sync_input",
+          "generator_profile": "eqep_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -1105,13 +1129,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -1119,8 +1143,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_rx",
+          "generator_profile": "lin_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -1153,6 +1178,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -1171,13 +1197,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -1185,8 +1211,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "eqep_sync_input",
+          "generator_profile": "eqep_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -1203,13 +1230,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -1217,8 +1244,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_rx",
+          "generator_profile": "lin_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -1396,6 +1424,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -1414,13 +1443,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -1428,8 +1457,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -1462,6 +1492,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -1480,13 +1511,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -1494,8 +1525,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -1572,6 +1604,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -1590,13 +1623,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -1604,8 +1637,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -1638,6 +1672,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -1656,13 +1691,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -1670,8 +1705,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -2013,18 +2049,17 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-42",
-          "always_available": true,
-          "generator_boundary": "pin_path_only"
+          "always_available": true
         }
       ],
       "aio_function": {
@@ -2034,13 +2069,13 @@
         "support": {
           "signal_present": true,
           "pin_route_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "fixed_pin": false
         },
         "signal_verified": true,
         "pin_config_supported": true,
-        "peripheral_init_supported": false,
+        "peripheral_init_supported": true,
         "read_only_special_role": false,
         "source_document": "SPRS584Q",
         "source_section": "Table 7-42",
@@ -2179,18 +2214,17 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-42",
-          "always_available": true,
-          "generator_boundary": "pin_path_only"
+          "always_available": true
         }
       ],
       "aio_function": {
@@ -2200,13 +2234,13 @@
         "support": {
           "signal_present": true,
           "pin_route_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "fixed_pin": false
         },
         "signal_verified": true,
         "pin_config_supported": true,
-        "peripheral_init_supported": false,
+        "peripheral_init_supported": true,
         "read_only_special_role": false,
         "source_document": "SPRS584Q",
         "source_section": "Table 7-42",
@@ -2322,18 +2356,17 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-42",
-          "always_available": true,
-          "generator_boundary": "pin_path_only"
+          "always_available": true
         }
       ],
       "aio_function": {
@@ -2343,13 +2376,13 @@
         "support": {
           "signal_present": true,
           "pin_route_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "fixed_pin": false
         },
         "signal_verified": true,
         "pin_config_supported": true,
-        "peripheral_init_supported": false,
+        "peripheral_init_supported": true,
         "read_only_special_role": false,
         "source_document": "SPRS584Q",
         "source_section": "Table 7-42",
@@ -2793,18 +2826,17 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-42",
-          "always_available": true,
-          "generator_boundary": "pin_path_only"
+          "always_available": true
         }
       ],
       "aio_function": {
@@ -2814,13 +2846,13 @@
         "support": {
           "signal_present": true,
           "pin_route_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "fixed_pin": false
         },
         "signal_verified": true,
         "pin_config_supported": true,
-        "peripheral_init_supported": false,
+        "peripheral_init_supported": true,
         "read_only_special_role": false,
         "source_document": "SPRS584Q",
         "source_section": "Table 7-42",
@@ -2936,18 +2968,17 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-42",
-          "always_available": true,
-          "generator_boundary": "pin_path_only"
+          "always_available": true
         }
       ],
       "aio_function": {
@@ -2957,13 +2988,13 @@
         "support": {
           "signal_present": true,
           "pin_route_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "fixed_pin": false
         },
         "signal_verified": true,
         "pin_config_supported": true,
-        "peripheral_init_supported": false,
+        "peripheral_init_supported": true,
         "read_only_special_role": false,
         "source_document": "SPRS584Q",
         "source_section": "Table 7-42",
@@ -3102,18 +3133,17 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-42",
-          "always_available": true,
-          "generator_boundary": "pin_path_only"
+          "always_available": true
         }
       ],
       "aio_function": {
@@ -3123,13 +3153,13 @@
         "support": {
           "signal_present": true,
           "pin_route_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "fixed_pin": false
         },
         "signal_verified": true,
         "pin_config_supported": true,
-        "peripheral_init_supported": false,
+        "peripheral_init_supported": true,
         "read_only_special_role": false,
         "source_document": "SPRS584Q",
         "source_section": "Table 7-42",
@@ -3238,6 +3268,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -3256,13 +3287,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -3270,8 +3301,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "hrcap_sync_input",
+          "generator_profile": "hrcap_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -3288,13 +3320,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -3302,8 +3334,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_ste_b",
+          "generator_profile": "spi_ste_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -3336,6 +3369,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -3354,13 +3388,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -3368,8 +3402,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "hrcap_sync_input",
+          "generator_profile": "hrcap_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -3386,13 +3421,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -3400,8 +3435,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_ste_b",
+          "generator_profile": "spi_ste_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -3579,6 +3615,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -3597,13 +3634,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -3611,8 +3648,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "can_tx",
+          "generator_profile": "can_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -3645,6 +3683,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -3663,13 +3702,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -3677,8 +3716,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "can_tx",
+          "generator_profile": "can_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -3910,6 +3950,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -3928,13 +3969,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -3942,8 +3983,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "can_rx",
+          "generator_profile": "can_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -3976,6 +4018,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -3994,13 +4037,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4008,8 +4051,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "can_rx",
+          "generator_profile": "can_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4243,6 +4287,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -4261,13 +4306,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4275,8 +4320,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "sci_tx",
+          "generator_profile": "sci_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4293,13 +4339,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4307,8 +4353,9 @@
           "direction": "io_open_drain",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "i2c_open_drain",
+          "generator_profile": "i2c_open_drain",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4325,13 +4372,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4339,8 +4386,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4373,6 +4421,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -4391,13 +4440,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4405,8 +4454,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "sci_tx",
+          "generator_profile": "sci_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4423,13 +4473,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4437,8 +4487,9 @@
           "direction": "io_open_drain",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "i2c_open_drain",
+          "generator_profile": "i2c_open_drain",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4455,13 +4506,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4469,8 +4520,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4764,6 +4816,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -4782,13 +4835,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4796,8 +4849,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "hrcap_sync_input",
+          "generator_profile": "hrcap_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4814,13 +4868,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4828,8 +4882,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_clock_b",
+          "generator_profile": "spi_clock_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4862,6 +4917,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -4880,13 +4936,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4894,8 +4950,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "hrcap_sync_input",
+          "generator_profile": "hrcap_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -4912,13 +4969,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -4926,8 +4983,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_clock_b",
+          "generator_profile": "spi_clock_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5153,6 +5211,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -5185,7 +5244,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -5203,13 +5263,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5217,8 +5277,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_tx",
+          "generator_profile": "lin_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5235,13 +5296,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5249,8 +5310,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "hrcap_sync_input",
+          "generator_profile": "hrcap_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5283,6 +5345,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -5315,7 +5378,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -5333,13 +5397,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5347,8 +5411,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_tx",
+          "generator_profile": "lin_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5365,13 +5430,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5379,8 +5444,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "hrcap_sync_input",
+          "generator_profile": "hrcap_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5560,6 +5626,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -5578,13 +5645,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5592,8 +5659,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "sci_rx",
+          "generator_profile": "sci_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5610,13 +5678,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5624,8 +5692,9 @@
           "direction": "io_open_drain",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "i2c_open_drain",
+          "generator_profile": "i2c_open_drain",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5642,13 +5711,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5656,8 +5725,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5690,6 +5760,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -5708,13 +5779,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5722,8 +5793,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "sci_rx",
+          "generator_profile": "sci_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5740,13 +5812,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5754,8 +5826,9 @@
           "direction": "io_open_drain",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "i2c_open_drain",
+          "generator_profile": "i2c_open_drain",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5772,13 +5845,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -5786,8 +5859,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -5990,6 +6064,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -6008,13 +6083,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6022,8 +6097,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_clock_a",
+          "generator_profile": "spi_clock_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6040,13 +6116,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6054,8 +6130,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_tx",
+          "generator_profile": "lin_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6072,13 +6149,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6086,8 +6163,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "clock_output",
+          "generator_profile": "clock_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6120,6 +6198,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -6138,13 +6217,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6152,8 +6231,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_clock_a",
+          "generator_profile": "spi_clock_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6170,13 +6250,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6184,8 +6264,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_tx",
+          "generator_profile": "lin_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6202,13 +6283,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6216,8 +6297,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "clock_output",
+          "generator_profile": "clock_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6446,6 +6528,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -6464,13 +6547,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6478,8 +6561,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_a",
+          "generator_profile": "spi_data_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6496,13 +6580,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6510,8 +6594,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6544,6 +6629,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -6562,13 +6648,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6576,8 +6662,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_a",
+          "generator_profile": "spi_data_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6594,13 +6681,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6608,8 +6695,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6814,6 +6902,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -6846,7 +6935,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -6864,13 +6954,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6878,8 +6968,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "adc_trigger_output",
+          "generator_profile": "adc_trigger_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -6912,6 +7003,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -6944,7 +7036,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -6962,13 +7055,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -6976,8 +7069,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "adc_trigger_output",
+          "generator_profile": "adc_trigger_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -7175,6 +7269,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -7193,13 +7288,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -7207,8 +7302,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_b",
+          "generator_profile": "spi_data_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -7241,6 +7337,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -7259,13 +7356,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -7273,8 +7370,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_b",
+          "generator_profile": "spi_data_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -7451,6 +7549,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -7485,6 +7584,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -7564,6 +7664,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -7582,13 +7683,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -7596,8 +7697,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_a",
+          "generator_profile": "spi_data_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -7614,13 +7716,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -7628,8 +7730,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -7662,6 +7765,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -7680,13 +7784,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -7694,8 +7798,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_a",
+          "generator_profile": "spi_data_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -7712,13 +7817,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -7726,8 +7831,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -7933,6 +8039,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -7951,13 +8058,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -7965,8 +8072,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -7983,13 +8091,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -7997,8 +8105,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "sci_tx",
+          "generator_profile": "sci_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8015,13 +8124,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -8029,8 +8138,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_b",
+          "generator_profile": "spi_data_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8063,6 +8173,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -8081,13 +8192,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -8095,8 +8206,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8113,13 +8225,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -8127,8 +8239,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "sci_tx",
+          "generator_profile": "sci_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8145,13 +8258,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -8159,8 +8272,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_b",
+          "generator_profile": "spi_data_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8338,6 +8452,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -8370,7 +8485,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -8404,6 +8520,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -8436,7 +8553,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -8515,6 +8633,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -8547,7 +8666,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -8565,13 +8685,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -8579,8 +8699,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "sci_rx",
+          "generator_profile": "sci_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8613,6 +8734,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -8645,7 +8767,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -8663,13 +8786,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -8677,8 +8800,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "sci_rx",
+          "generator_profile": "sci_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8858,6 +8982,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -8890,7 +9015,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -8908,13 +9034,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -8922,8 +9048,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "pwm_sync_input",
+          "generator_profile": "pwm_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8940,13 +9067,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -8954,8 +9081,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "pwm_sync_output",
+          "generator_profile": "pwm_sync_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -8988,6 +9116,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -9020,7 +9149,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -9038,13 +9168,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -9052,8 +9182,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "pwm_sync_input",
+          "generator_profile": "pwm_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -9070,13 +9201,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -9084,8 +9215,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "pwm_sync_output",
+          "generator_profile": "pwm_sync_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -9501,6 +9633,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -9519,13 +9652,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -9533,8 +9666,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_ste_a",
+          "generator_profile": "spi_ste_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -9551,13 +9685,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -9565,8 +9699,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_rx",
+          "generator_profile": "lin_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -9583,13 +9718,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -9597,8 +9732,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "ecap_by_mode",
+          "generator_profile": "ecap_by_mode",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -9631,6 +9767,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -9649,13 +9786,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -9663,8 +9800,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_ste_a",
+          "generator_profile": "spi_ste_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -9681,13 +9819,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -9695,8 +9833,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_rx",
+          "generator_profile": "lin_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -9713,13 +9852,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -9727,8 +9866,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "ecap_by_mode",
+          "generator_profile": "ecap_by_mode",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -9952,6 +10092,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -9986,6 +10127,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10065,6 +10207,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10099,6 +10242,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10219,6 +10363,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10253,6 +10398,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10378,6 +10524,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10412,6 +10559,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10512,6 +10660,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10546,6 +10695,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10648,6 +10798,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10680,7 +10831,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -10698,13 +10850,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -10712,8 +10864,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_rx",
+          "generator_profile": "lin_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -10730,13 +10883,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -10744,8 +10897,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "hrcap_sync_input",
+          "generator_profile": "hrcap_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -10778,6 +10932,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -10810,7 +10965,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -10828,13 +10984,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -10842,8 +10998,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_rx",
+          "generator_profile": "lin_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -10860,13 +11017,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -10874,8 +11031,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "hrcap_sync_input",
+          "generator_profile": "hrcap_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -11055,6 +11213,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -11087,7 +11246,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -11105,13 +11265,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -11119,8 +11279,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_a",
+          "generator_profile": "spi_data_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -11137,13 +11298,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -11151,8 +11312,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "ecap_by_mode",
+          "generator_profile": "ecap_by_mode",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -11185,6 +11347,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -11217,7 +11380,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -11235,13 +11399,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -11249,8 +11413,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_a",
+          "generator_profile": "spi_data_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -11267,13 +11432,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -11281,8 +11446,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "ecap_by_mode",
+          "generator_profile": "ecap_by_mode",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -11491,6 +11657,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -11523,7 +11690,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -11557,6 +11725,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -11589,7 +11758,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -11819,6 +11989,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -11851,7 +12022,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -11885,6 +12057,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -11917,7 +12090,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -12017,6 +12191,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -12049,7 +12224,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -12067,13 +12243,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -12081,8 +12257,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "adc_trigger_output",
+          "generator_profile": "adc_trigger_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -12115,6 +12292,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -12147,7 +12325,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -12165,13 +12344,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -12179,8 +12358,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "adc_trigger_output",
+          "generator_profile": "adc_trigger_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -12380,6 +12560,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -12412,7 +12593,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -12430,13 +12612,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -12444,8 +12626,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_a",
+          "generator_profile": "spi_data_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -12462,13 +12645,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -12476,8 +12659,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -12510,6 +12694,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -12542,7 +12727,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -12560,13 +12746,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -12574,8 +12760,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_a",
+          "generator_profile": "spi_data_a",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -12592,13 +12779,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -12606,8 +12793,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -12816,6 +13004,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -12848,7 +13037,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -12882,6 +13072,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -12914,7 +13105,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -13145,6 +13337,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -13177,7 +13370,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -13195,13 +13389,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -13209,8 +13403,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -13243,6 +13438,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -13275,7 +13471,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -13293,13 +13490,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -13307,8 +13504,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -13517,6 +13715,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -13549,7 +13748,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -13583,6 +13783,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -13615,7 +13816,8 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
+          "electrical_profile": "epwm_output",
+          "generator_profile": "epwm_output",
           "generator_supported": true,
           "evidence": [
             {
@@ -14030,6 +14232,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -14048,13 +14251,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -14062,8 +14265,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14080,13 +14284,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -14094,8 +14298,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14128,6 +14333,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -14146,13 +14352,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -14160,8 +14366,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14178,13 +14385,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-41",
@@ -14192,8 +14399,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14297,6 +14505,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -14315,13 +14524,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14329,8 +14538,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14347,13 +14557,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14361,8 +14571,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_rx",
+          "generator_profile": "lin_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14379,13 +14590,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14393,8 +14604,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_ste_b",
+          "generator_profile": "spi_ste_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14427,6 +14639,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -14445,13 +14658,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14459,8 +14672,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14477,13 +14691,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14491,8 +14705,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_rx",
+          "generator_profile": "lin_rx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14509,13 +14724,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14523,8 +14738,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_ste_b",
+          "generator_profile": "spi_ste_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14703,6 +14919,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -14721,13 +14938,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14735,8 +14952,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14753,13 +14971,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14767,8 +14985,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_b",
+          "generator_profile": "spi_data_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14801,6 +15020,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -14819,13 +15039,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14833,8 +15053,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -14851,13 +15072,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -14865,8 +15086,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_b",
+          "generator_profile": "spi_data_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15046,6 +15268,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -15064,13 +15287,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15078,8 +15301,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15096,13 +15320,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15110,8 +15334,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_tx",
+          "generator_profile": "lin_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15128,13 +15353,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15142,8 +15367,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_clock_b",
+          "generator_profile": "spi_clock_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15176,6 +15402,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -15194,13 +15421,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15208,8 +15435,9 @@
           "direction": "input",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": "trip_async_input",
           "generator_profile": "trip_async_input",
-          "generator_supported": false,
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15226,13 +15454,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15240,8 +15468,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "lin_tx",
+          "generator_profile": "lin_tx",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15258,13 +15487,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15272,8 +15501,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_clock_b",
+          "generator_profile": "spi_clock_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15452,6 +15682,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -15470,13 +15701,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15484,8 +15715,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "eqep_sync_input",
+          "generator_profile": "eqep_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15502,13 +15734,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15516,8 +15748,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15550,6 +15783,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -15568,13 +15802,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15582,8 +15816,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "eqep_sync_input",
+          "generator_profile": "eqep_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15600,13 +15835,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15614,8 +15849,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15794,6 +16030,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -15812,13 +16049,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15826,8 +16063,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "eqep_sync_input",
+          "generator_profile": "eqep_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15844,13 +16082,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15858,8 +16096,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15892,6 +16131,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -15910,13 +16150,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15924,8 +16164,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "eqep_sync_input",
+          "generator_profile": "eqep_sync_input",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -15942,13 +16183,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -15956,8 +16197,9 @@
           "direction": "output",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "comparator_output",
+          "generator_profile": "comparator_output",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -16136,6 +16378,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -16154,13 +16397,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -16168,8 +16411,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "ecap_by_mode",
+          "generator_profile": "ecap_by_mode",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -16186,13 +16430,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -16200,8 +16444,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_b",
+          "generator_profile": "spi_data_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -16234,6 +16479,7 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
+          "electrical_profile": null,
           "generator_profile": null,
           "generator_supported": false,
           "evidence": [
@@ -16252,13 +16498,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -16266,8 +16512,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "ecap_by_mode",
+          "generator_profile": "ecap_by_mode",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",
@@ -16284,13 +16531,13 @@
           "support": {
             "signal_present": true,
             "pin_route_supported": true,
-            "peripheral_init_supported": false,
+            "peripheral_init_supported": true,
             "read_only_special_role": false,
             "fixed_pin": false
           },
           "signal_verified": true,
           "pin_config_supported": true,
-          "peripheral_init_supported": false,
+          "peripheral_init_supported": true,
           "read_only_special_role": false,
           "source_document": "SPRS584Q",
           "source_section": "Table 7-40",
@@ -16298,8 +16545,9 @@
           "direction": "io",
           "mux_value_verified": true,
           "source_verified": true,
-          "generator_profile": null,
-          "generator_supported": false,
+          "electrical_profile": "spi_data_b",
+          "generator_profile": "spi_data_b",
+          "generator_supported": true,
           "evidence": [
             {
               "document": "SPRS584Q",

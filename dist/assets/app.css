@@ -328,6 +328,9 @@ body{
   align-items:center;padding:8px 10px;border:0;color:var(--text);background:transparent;
   text-align:left;cursor:pointer}
 .function-row:hover,.function-node.editing>.function-row{background:#1f2937}
+.function-node.resource-conflict>.function-row{
+  background:#d43a3a2e;color:#ffb3b3;box-shadow:inset 3px 0 0 var(--err)
+}
 .route-support{font:9px var(--mono);color:var(--faint);max-width:150px;
   overflow:hidden;text-overflow:ellipsis}
 .configured-badge{color:#7ee787;font-size:11px}
