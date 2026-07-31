@@ -217,7 +217,7 @@ class TestDeviceInfo(unittest.TestCase):
     def test_supported_and_offline(self):
         self.assertEqual(
             DEVICE["status"],
-            "CONFIG_STUDIO_R3.2.2_OFFICIAL_PIN_DATABASE_INTERNAL_PASS",
+            "CONFIG_STUDIO_R3.3_PERIPHERAL_GRAPH_INTERNAL_PASS",
         )
         self.assertEqual(DEVICE["max_sysclk_mhz"], 60)
         sr = DEVICE["safety_rules"]
